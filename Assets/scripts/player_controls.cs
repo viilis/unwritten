@@ -2,7 +2,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
 
-public class FPSController : MonoBehaviour
+public class player_controls : MonoBehaviour
 {
     public Camera playerCamera;
     public float walkSpeed = 3f;
@@ -28,8 +28,6 @@ public class FPSController : MonoBehaviour
 
     void Update()
     {
-        #region Handles Movement
-
         // Press Left Shift to run
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
         // Disables running when not grounded aka player cannot run when in air
@@ -39,9 +37,6 @@ public class FPSController : MonoBehaviour
         float movementDirectionY = moveDirection.y;
         moveDirection = (transform.TransformDirection(Vector3.forward) * curSpeedX) + (transform.TransformDirection(Vector3.right) * curSpeedY);
 
-        #endregion
-
-        #region Handles Jumping
         if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
         {
             moveDirection.y = jumpPower;
@@ -56,9 +51,6 @@ public class FPSController : MonoBehaviour
             moveDirection.y -= gravity * Time.deltaTime;
         }
 
-        #endregion
-
-        #region Handles Rotation
         characterController.Move(moveDirection * Time.deltaTime);
 
         if (canMove)
@@ -68,7 +60,5 @@ public class FPSController : MonoBehaviour
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
-
-        #endregion
     }
 }
