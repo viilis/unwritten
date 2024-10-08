@@ -54,7 +54,7 @@ public class player_interactions : MonoBehaviour
     private void InteractionsFromSight()
     {
         //TODO: This raycast is calculated by every frame. May need optimization. For example: shoot raycast only if player moves and add debounce to that.
-        
+        Debug.Log("`InteractionsFromSight` raycast");
         if (Physics.Raycast(playerCamera.position, playerCamera.forward, out RaycastHit hitItemInfo, interactionDistance, LayerMask))
         {
             // Read only objects
