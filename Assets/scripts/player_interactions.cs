@@ -34,12 +34,27 @@ public class player_interactions : MonoBehaviour
         {
             InteractionsFromSight();
         }
+
+        // if player presses E, it shoots out a raycast, if raycast hits readable object, it displays text on the canvas
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            Ray ray = new Ray(playerCamera.position, playerCamera.forward);
+            if(Physics.Raycast(ray, out RaycastHit hitItemInfo, interactionDistance))
+            {
+                if (hitItemInfo.transform.TryGetComponent(out readble_object readable))
+                    {
+                        var TMP = canvas.GetComponent<TMP_Text>();
+                        TMP.text = readable.GetInteractionText().Length > 0 ? $"{readable.GetInteractionText()}" : TMP.text;
+                        canvas.SetActive(true);
+                    }   
+            }       
+        }
     }
 
     private void InteractionsFromSight()
     {
         //TODO: This raycast is calculated by every frame. May need optimization. For example: shoot raycast only if player moves and add debounce to that.
-        Debug.Log("`InteractionsFromSight` raycast");
+        
         if (Physics.Raycast(playerCamera.position, playerCamera.forward, out RaycastHit hitItemInfo, interactionDistance, LayerMask))
         {
             // Read only objects

@@ -9,9 +9,16 @@ public class readble_object : MonoBehaviour
 {
     [SerializeField]
     private string readableText;
+    [SerializeField]
+    private string interactionText;
 
     public string GetReadableText()
     {
         return readableText;
+    }
+
+    public string GetInteractionText()
+    {
+        return interactionText;
     }
 }
