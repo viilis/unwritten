@@ -19,6 +19,8 @@ public class PlayerInteraction : MonoBehaviour
     private InputAction _lookAction;
     private InputAction _moveAction;
 
+    private ReadableObject obj;
+
     private Caster<ReadableObject> _readCaster;
 
     private void Awake()
@@ -65,13 +67,15 @@ public class PlayerInteraction : MonoBehaviour
 
     private void OnInteraction(InputAction.CallbackContext context)
     {
+        Debug.Log("OnInterAction");
         _readCaster.TryCast();
     }
 
     // Move these into Ingame ui thing
     private void OnLook(InputAction.CallbackContext context)
     {
-        ReadableObject obj = _readCaster.TryCast();
+        Debug.Log("OnLook");
+        obj = _readCaster.TryCast();
 
         if (obj is not null)
         {
@@ -81,7 +85,8 @@ public class PlayerInteraction : MonoBehaviour
 
     private void OnMove(InputAction.CallbackContext context)
     {
-        ReadableObject obj = _readCaster.TryCast();
+        Debug.Log("OnMove");
+        obj = _readCaster.TryCast();
 
         if (obj is not null)
         {

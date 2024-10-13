@@ -3,7 +3,7 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager>
 {
     [SerializeField]
-    private InGameUI inGameUI;
+    private GameObject inGameUI;
 
     private Daytimes _daytime;
 
@@ -12,5 +12,10 @@ public class GameManager : Singleton<GameManager>
     public GameManager()
     {
         Daytime = Daytimes.Morning;
+    }
+
+    private void Update()
+    {
+
     }
 }
