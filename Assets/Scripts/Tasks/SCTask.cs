@@ -22,6 +22,5 @@ public abstract class SCTask : MonoBehaviour, ITask
     {
         _isCompleted = true;
         OnTaskComplition?.Invoke(_taskName);
-        PlayerSanity.DecreaseSanity(sanityHit);
     }
 }

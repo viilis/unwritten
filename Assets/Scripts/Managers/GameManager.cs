@@ -3,23 +3,25 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-    private Daytimes _daytime;
-
-    public Daytimes Daytime { get => _daytime; set => _daytime = value; }
+    private TaskManager _taskmanager;
+    private TimeManager _timemanager;
 
     public GameManager()
     {
-        Daytime = Daytimes.Morning;
+        _taskmanager = new TaskManager();
+        _timemanager = new TimeManager();
     }
 
     void OnEnable()
     {
         TimeManager.OnHourChange += OnHourlyChange;
+        PlayerSanity.OnSanityChange += OnSanityChange;
     }
 
     void OnDisable()
     {
         TimeManager.OnHourChange -= OnHourlyChange;
+        PlayerSanity.OnSanityChange -= OnSanityChange;
     }
 
     private void OnHourlyChange(int hours)
@@ -27,8 +29,13 @@ public class GameManager : Singleton<GameManager>
         Debug.Log(hours);
     }
 
+    private void OnSanityChange(float currentState)
+    {
+        Debug.Log(currentState);
+    }
+
     void Update()
     {
-        Debug.Log(PlayerSanity.GetSanity());
+
     }
 }

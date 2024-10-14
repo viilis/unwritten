@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class MedTask : SCTask, IInteractable

@@ -22,11 +22,5 @@ public abstract class WTask : MonoBehaviour, ITask
     {
         _isCompleted = true;
         OnTaskComplition?.Invoke(name);
-        PlayerSanity.IncreaseSanity(sanityHit);
-    }
-
-    public Action<string> GetAction()
-    {
-        return OnTaskComplition;
     }
 }

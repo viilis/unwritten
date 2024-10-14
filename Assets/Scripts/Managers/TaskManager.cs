@@ -4,8 +4,11 @@ using System.Collections.Generic;
 using Unity;
 using UnityEngine;
 
-public class TaskManager : MonoBehaviour
+public class TaskManager
 {
+    public Action<Task> OnTaskAdded;
+
+    public List<Task> Tasks { get; } = new();
 
     private void OnEnable()
     {
