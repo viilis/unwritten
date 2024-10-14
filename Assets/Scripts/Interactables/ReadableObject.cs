@@ -23,22 +23,12 @@ public class ReadableObject : MonoBehaviour, IInteractable
         TMP_Text text = dialogPanel.transform.GetComponentInChildren<TMP_Text>();
         text.SetText(readableText);
 
-        if (!dialogPanel.activeSelf)
-        {
-            dialogPanel.SetActive(true);
-        }
+        dialogPanel.SetActive(!dialogPanel.activeSelf);
     }
 
-    public void UndoInteraction()
+    public void Undo()
     {
-        if (dialogPanel.activeSelf)
-        {
-            dialogPanel.SetActive(false);
-        }
-    }
-
-    public void ActionBeforeInteraction()
-    {
-        _outline.OutlineMode = Outline.Mode.OutlineVisible;
+        _outline.OutlineMode = Outline.Mode.OutlineHidden;
+        dialogPanel.SetActive(!dialogPanel.activeSelf);
     }
 }

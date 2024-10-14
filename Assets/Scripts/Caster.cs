@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Extend with other interfaces what should utilize raycasting e.g. IShooting
-public class Caster<T> where T : MonoBehaviour, IInteractable
+public class Caster<T>
 {
     private Transform _transform;
     private float _interactionDistance = 2.0f;
     private LayerMask _mask;
+
+    private bool _debug = false;
 
     public Caster(LayerMask mask, Transform originSource, float interactionDistance)
     {
@@ -16,8 +18,18 @@ public class Caster<T> where T : MonoBehaviour, IInteractable
         _interactionDistance = interactionDistance;
     }
 
-    public T TryCast()
+    public Caster(LayerMask mask, Transform originSource, float interactionDistance, bool debug)
     {
+        _mask = mask;
+        _transform = originSource;
+        _interactionDistance = interactionDistance;
+        _debug = debug;
+    }
+
+    public T Cast()
+    {
+        if (_debug) { Debug.DrawRay(_transform.position, _transform.forward, Color.green, 2); };
+
         if (Physics.Raycast(_transform.position, _transform.forward, out RaycastHit raycastHit, _interactionDistance, _mask))
         {
             if (raycastHit.transform.TryGetComponent(out T component))
@@ -26,12 +38,12 @@ public class Caster<T> where T : MonoBehaviour, IInteractable
             }
             else
             {
-                return null;
+                return default(T);
             }
         }
         else
         {
-            return null;
+            return default(T);
         }
     }
 }

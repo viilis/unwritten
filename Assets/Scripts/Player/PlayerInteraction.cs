@@ -13,19 +13,23 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField]
     private LayerMask layerMask;
 
+    //TODO: Move from here
+    [SerializeField]
+    private AudioClip clip;
+
+    // For inputs
     private PlayerControls _playerControls;
     private Transform _playerCamera;
     private InputAction _interactAction;
     private InputAction _lookAction;
     private InputAction _moveAction;
 
-    private ReadableObject obj;
-
-    private Caster<ReadableObject> _readCaster;
+    private Caster<IInteractable> _iCaster;
+    private IInteractable _obj;
 
     private void Awake()
     {
-        _playerCamera = GetComponentInChildren<Transform>();
+        _playerCamera = Camera.main.transform;
         _playerControls = new PlayerControls();
 
         _interactAction = _playerControls.Gameplay.Interact;
@@ -35,8 +39,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Start()
     {
-        // Not really usable but good example
-        _readCaster = new Caster<ReadableObject>(layerMask, _playerCamera, interactionDistance);
+        _iCaster = new Caster<IInteractable>(layerMask, _playerCamera, interactionDistance);
     }
 
     private void OnEnable()
@@ -68,29 +71,37 @@ public class PlayerInteraction : MonoBehaviour
     private void OnInteraction(InputAction.CallbackContext context)
     {
         Debug.Log("OnInterAction");
-        _readCaster.TryCast();
+
+        _obj = _iCaster.Cast();
+
+        _obj?.Interact();
+        //SoundManager.Instance.PlaySoundFX(clip, this.transform, 1f);
     }
 
     // Move these into Ingame ui thing
     private void OnLook(InputAction.CallbackContext context)
     {
-        Debug.Log("OnLook");
-        obj = _readCaster.TryCast();
-
-        if (obj is not null)
+        var temp = _iCaster.Cast();
+        if (temp != null)
         {
-            obj.ActionBeforeInteraction();
+            temp?.Interact();
+        }
+        else
+        {
+            _obj?.Undo();
         }
     }
 
     private void OnMove(InputAction.CallbackContext context)
     {
-        Debug.Log("OnMove");
-        obj = _readCaster.TryCast();
-
-        if (obj is not null)
+        var temp = _iCaster.Cast();
+        if (temp != null)
         {
-            obj.ActionBeforeInteraction();
+            temp?.Interact();
+        }
+        else
+        {
+            _obj?.Undo();
         }
     }
 }
