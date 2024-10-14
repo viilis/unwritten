@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 
+[RequireComponent(typeof(Outline))]
 public class ReadableObject : MonoBehaviour, IInteractable
 {
     [SerializeField]

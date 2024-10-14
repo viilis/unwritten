@@ -1,9 +1,9 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using Unity;
 using UnityEngine;
+using UnityEngine.Events;
 
-public abstract class SCTask : MonoBehaviour, ITask
+public abstract class WTask : MonoBehaviour, ITask
 {
     [SerializeField]
     private float sanityHit = 0;
@@ -11,18 +11,18 @@ public abstract class SCTask : MonoBehaviour, ITask
     [SerializeField]
     private string _taskName;
 
-    public Action<string> OnTaskComplition;
+    private Action<string> OnTaskComplition;
 
     private bool _isCompleted = false;
-    public bool isCompleted => _isCompleted;
 
+    public bool isCompleted => _isCompleted;
     public string taskName => _taskName;
 
     public void Complete()
     {
         _isCompleted = true;
-        OnTaskComplition?.Invoke(_taskName);
-        PlayerSanity.DecreaseSanity(sanityHit);
+        OnTaskComplition?.Invoke(name);
+        PlayerSanity.IncreaseSanity(sanityHit);
     }
 
     public Action<string> GetAction()

@@ -2,13 +2,17 @@ using System;
 using Unity;
 using UnityEngine;
 
-public class TimeManager : MonoBehaviour
-{
-    public static Action OnMinuteChange;
-    public static Action OnHourChange;
 
-    public static int Minute { get; private set; }
-    public static int Hour { get; private set; }
+// --- Observer pattern ---
+// You can make anything to subscribe OnHour/MinuteChange and this class Invokes them
+// at every in-game minute/hour change. Could be used for e.g. clock object
+public class TimeManager : Singleton<TimeManager>
+{
+    public static Action<int> OnMinuteChange;
+    public static Action<int> OnHourChange;
+
+    public int Minute { get; private set; }
+    public int Hour { get; private set; }
 
     private float _minToIRL = 0.5f;
     private float _timer;
@@ -28,12 +32,17 @@ public class TimeManager : MonoBehaviour
         if (_timer <= 0)
         {
             Minute++;
-            OnMinuteChange?.Invoke();
-            if (Minute <= 60)
+            OnMinuteChange?.Invoke(Minute);
+            if (Minute >= 60)
             {
                 Hour++;
                 Minute = 0;
-                OnHourChange?.Invoke();
+                OnHourChange?.Invoke(Hour);
+
+                if (Hour >= 24)
+                {
+                    Hour = 0;
+                }
             }
             _timer = _minToIRL;
         }
