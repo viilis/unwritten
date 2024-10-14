@@ -11,7 +11,7 @@ public abstract class SCTask : MonoBehaviour, ITask
     [SerializeField]
     private string _taskName;
 
-    public Action<string> OnTaskComplition;
+    public static Action<string> OnTaskComplition;
 
     private bool _isCompleted = false;
     public bool isCompleted => _isCompleted;
@@ -23,10 +23,5 @@ public abstract class SCTask : MonoBehaviour, ITask
         _isCompleted = true;
         OnTaskComplition?.Invoke(_taskName);
         PlayerSanity.DecreaseSanity(sanityHit);
-    }
-
-    public Action<string> GetAction()
-    {
-        return OnTaskComplition;
     }
 }

@@ -3,10 +3,6 @@ using UnityEngine;
 
 public class MedTask : SCTask, IInteractable
 {
-    private void Awake()
-    {
-        TaskManager.tasks.Add(this);
-    }
 
     public void ActionBeforeInteraction()
     {

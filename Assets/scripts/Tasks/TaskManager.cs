@@ -6,24 +6,13 @@ using UnityEngine;
 
 public class TaskManager : MonoBehaviour
 {
-    public static List<ITask> tasks;
 
     private void OnEnable()
     {
-        tasks.ForEach(_t =>
-        {
-            Action<string> action = _t.GetAction();
-            action += OnCompletion;
-        });
     }
 
     private void OnDisable()
     {
-        tasks.ForEach(_t =>
-        {
-            Action<string> action = _t.GetAction();
-            action -= OnCompletion;
-        });
     }
 
     private void OnCompletion(string name)
