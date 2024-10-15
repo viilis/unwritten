@@ -13,10 +13,6 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField]
     private LayerMask layerMask;
 
-    //TODO: Move from here
-    [SerializeField]
-    private AudioClip clip;
-
     // For inputs
     private PlayerControls _playerControls;
     private Transform _playerCamera;
@@ -39,7 +35,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Start()
     {
-        _iCaster = new Caster<IInteractable>(layerMask, _playerCamera, interactionDistance);
+        _iCaster = new Caster<IInteractable>(layerMask, _playerCamera, interactionDistance, true);
     }
 
     private void OnEnable()
@@ -71,20 +67,19 @@ public class PlayerInteraction : MonoBehaviour
     private void OnInteraction(InputAction.CallbackContext context)
     {
         Debug.Log("OnInterAction");
-        _iCaster.Cast()?.Interact();
-        //SoundManager.Instance.PlaySoundFX(clip, this.transform, 1f);
+        _iCaster.GetHitComponent()?.Interact();
     }
 
     // Move these into Ingame ui thing
     private void OnLook(InputAction.CallbackContext context)
     {
-        var result = _iCaster.Cast();
+        var result = _iCaster.GetHitComponent();
         OnSight(result);
     }
 
     private void OnMove(InputAction.CallbackContext context)
     {
-        var result = _iCaster.Cast();
+        var result = _iCaster.GetHitComponent();
         OnSight(result);
     }
 
