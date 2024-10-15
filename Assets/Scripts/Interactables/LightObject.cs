@@ -15,9 +15,14 @@ public class LightObject : MonoBehaviour, IInteractable
         _light.enabled = !_light.enabled;
     }
 
-    public void Undo()
+    public void BeforeInteraction()
     {
-        _light.enabled = !_light.enabled;
+        return;
+    }
+
+    public void UndoBeforeInteraction()
+    {
+        return;
     }
 
     // Start is called before the first frame update

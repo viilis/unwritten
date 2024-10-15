@@ -71,37 +71,42 @@ public class PlayerInteraction : MonoBehaviour
     private void OnInteraction(InputAction.CallbackContext context)
     {
         Debug.Log("OnInterAction");
-
-        _obj = _iCaster.Cast();
-
-        _obj?.Interact();
+        _iCaster.Cast()?.Interact();
         //SoundManager.Instance.PlaySoundFX(clip, this.transform, 1f);
     }
 
     // Move these into Ingame ui thing
     private void OnLook(InputAction.CallbackContext context)
     {
-        var temp = _iCaster.Cast();
-        if (temp != null)
-        {
-            temp?.Interact();
-        }
-        else
-        {
-            _obj?.Undo();
-        }
+        var result = _iCaster.Cast();
+        OnSight(result);
     }
 
     private void OnMove(InputAction.CallbackContext context)
     {
-        var temp = _iCaster.Cast();
-        if (temp != null)
+        var result = _iCaster.Cast();
+        OnSight(result);
+    }
+
+    private void OnSight(IInteractable castResult)
+    {
+        if (castResult != null)
         {
-            temp?.Interact();
+            if (_obj != castResult && _obj != null)
+            {
+                _obj.UndoBeforeInteraction();
+            }
+
+            _obj = castResult;
+            _obj.BeforeInteraction();
         }
         else
         {
-            _obj?.Undo();
+            if (_obj != null)
+            {
+                _obj.UndoBeforeInteraction();
+                _obj = null;
+            }
         }
     }
 }

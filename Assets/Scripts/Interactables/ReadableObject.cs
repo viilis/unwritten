@@ -26,9 +26,15 @@ public class ReadableObject : MonoBehaviour, IInteractable
         dialogPanel.SetActive(!dialogPanel.activeSelf);
     }
 
-    public void Undo()
+    public void BeforeInteraction()
     {
+        Debug.Log("Before", this);
+        _outline.OutlineMode = Outline.Mode.OutlineVisible;
+    }
+
+    public void UndoBeforeInteraction()
+    {
+        Debug.Log("Undo Before", this);
         _outline.OutlineMode = Outline.Mode.OutlineHidden;
-        dialogPanel.SetActive(!dialogPanel.activeSelf);
     }
 }
