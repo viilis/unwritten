@@ -19,8 +19,8 @@ public class PlayerAudio : MonoBehaviour
     {
         if (_cc.velocity != Vector3.zero)
         {
-            Transform _footposition = this.transform;
-            _footposition.position = new Vector3(_footposition.position.x, _footposition.position.y - 1f, _footposition.position.z);
+            // Transform _footposition = this.transform;
+            // _footposition.position = new Vector3(_footposition.position.x, _footposition.position.y - 1f, _footposition.position.z);
 
             try
             {

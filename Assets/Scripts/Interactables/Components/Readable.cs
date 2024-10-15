@@ -1,39 +1,15 @@
 using TMPro;
 using UnityEngine;
 
-public class Readable : MonoBehaviour
+public class Readable
 {
-    [SerializeField]
-    private string readableText;
+    private string _readableText;
+    private GameObject _dialogPanel;
 
-    [SerializeField]
-    private GameObject dialogPanel;
+    private DialogBase _dialogBase
 
-    private Outline _outline;
-    public Outline Outline { get => _outline; set => _outline = value; }
-
-    private void Start()
+    public Readable(string text)
     {
-        _outline = GetComponent<Outline>();
-    }
-
-    public void Interact()
-    {
-        TMP_Text text = dialogPanel.transform.GetComponentInChildren<TMP_Text>();
-        text.SetText(readableText);
-
-        dialogPanel.SetActive(!dialogPanel.activeSelf);
-    }
-
-    public void BeforeInteraction()
-    {
-        Debug.Log("Before", this);
-        _outline.OutlineMode = Outline.Mode.OutlineVisible;
-    }
-
-    public void UndoBeforeInteraction()
-    {
-        Debug.Log("Undo Before", this);
-        _outline.OutlineMode = Outline.Mode.OutlineHidden;
+        _readableText = text;
     }
 }

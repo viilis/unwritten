@@ -17,6 +17,7 @@ public class ColorSwitcher
         _originalColor = material.color;
     }
 
+    // TODO: Changes on materials are permanent.
     public void SwitchColor()
     {
         if (!isChanged)
