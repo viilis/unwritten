@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Outline))]
 public class InteractableLamp : MonoBehaviour, IInteractable, IEvent
 {
     [SerializeField]
@@ -17,21 +18,28 @@ public class InteractableLamp : MonoBehaviour, IInteractable, IEvent
 
     private LightSwitcher _switcher;
     private AudioPerAction _audioPlayer;
+    private Outline _outline;
 
     private void Start()
     {
+        _outline = GetComponent<Outline>();
+        _outline.OutlineMode = Outline.Mode.OutlineHidden;
+        _outline.OutlineWidth = 0f;
+
         _audioPlayer = new AudioPerAction(audioClip, audioPosition, volume);
         _switcher = new LightSwitcher(attachedLight, true);
     }
 
     public void BeforeInteraction()
     {
-        return;
+        _outline.OutlineMode = Outline.Mode.OutlineVisible;
+        _outline.OutlineWidth = 10f;
     }
 
     public void UndoBeforeInteraction()
     {
-        return;
+        _outline.OutlineMode = Outline.Mode.OutlineHidden;
+        _outline.OutlineWidth = 0f;
     }
 
     public void OnEnable()
