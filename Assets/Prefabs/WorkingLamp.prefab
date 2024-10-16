@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 765b41e8c1b0c9151b036c90debc3286, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 150.05
+      value: 147.21658
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 765b41e8c1b0c9151b036c90debc3286, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.95
+      value: 0.548
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 765b41e8c1b0c9151b036c90debc3286, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 141.211
+      value: 160.018
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 765b41e8c1b0c9151b036c90debc3286, type: 3}
       propertyPath: m_LocalRotation.w
@@ -77,7 +77,7 @@ PrefabInstance:
       addedObject: {fileID: 8426031124458463921}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 765b41e8c1b0c9151b036c90debc3286, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4461547232513582788}
+      addedObject: {fileID: 2193430658472228486}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 765b41e8c1b0c9151b036c90debc3286, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2644584868591314123}
@@ -149,7 +149,7 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &4461547232513582788
+--- !u!114 &2193430658472228486
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,10 +158,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6092483517157135016}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67a4599241ee9f280922cee69f3a4b11, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b3adfc48ba23663693d520da156827a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOn: 1
+  attachedLight: {fileID: 8426031124458463921}
+  audioClip: {fileID: 8300000, guid: f73a989a52b6e1466bb3c93870d3c6b9, type: 3}
+  audioPosition: {fileID: 6901495770216826898}
+  volume: 1
 --- !u!65 &2644584868591314123
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -183,3 +186,8 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0026770756, y: 0.0035025438, z: 0.0026770756}
   m_Center: {x: 0, y: 0.0017512721, z: -1.7462298e-10}
+--- !u!4 &6901495770216826898 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 765b41e8c1b0c9151b036c90debc3286, type: 3}
+  m_PrefabInstance: {fileID: 6362936097636347897}
+  m_PrefabAsset: {fileID: 0}

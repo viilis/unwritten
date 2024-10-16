@@ -26,7 +26,7 @@ public class Caster<T>
         _debug = debug;
     }
 
-    public T Cast()
+    public T GetHitComponent()
     {
         if (_debug) { Debug.DrawRay(_transform.position, _transform.forward, Color.green, 2); };
 
