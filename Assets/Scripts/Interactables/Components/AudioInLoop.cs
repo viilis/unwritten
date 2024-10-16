@@ -14,7 +14,7 @@ public class AudioInLoop
     {
         _audioClip = audioClip;
         _position = position;
-        _volume = volume;
+        _volume = volume * SoundManager.Instance.globalVolume;
     }
 
     public void StartPlaying()

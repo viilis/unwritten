@@ -1,6 +1,7 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class InteractableTv : MonoBehaviour, IInteractable
+public class InteractableTv : MonoBehaviour, IInteractable, IEvent
 {
     [SerializeField]
     private GameObject lightObj;
@@ -41,6 +42,16 @@ public class InteractableTv : MonoBehaviour, IInteractable
         restore = material.color;
     }
 
+    private void OnEnable()
+    {
+        EventManager.OnParanormalElectronicsEvent += OnEventTrigger;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OnParanormalElectronicsEvent -= OnEventTrigger;
+    }
+
     public void Interact()
     {
         _lSwitcher.Switch();
@@ -57,6 +68,12 @@ public class InteractableTv : MonoBehaviour, IInteractable
     public void UndoBeforeInteraction()
     {
         return;
+    }
+
+    public void OnEventTrigger()
+    {
+        // Turns creepy tv on or off
+        Interact();
     }
 
     private void OnDestroy()

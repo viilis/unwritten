@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class InteractableLamp : MonoBehaviour, IInteractable
+public class InteractableLamp : MonoBehaviour, IInteractable, IEvent
 {
     [SerializeField]
     private Light attachedLight;
@@ -34,10 +34,25 @@ public class InteractableLamp : MonoBehaviour, IInteractable
         return;
     }
 
+    public void OnEnable()
+    {
+        EventManager.OnParanormalElectronicsEvent += OnEventTrigger;
+    }
+
+    public void OnDisable()
+    {
+        EventManager.OnParanormalElectronicsEvent += OnEventTrigger;
+    }
+
     public void Interact()
     {
         _switcher.Switch();
         _audioPlayer.PlayOnce();
     }
 
+    public void OnEventTrigger()
+    {
+        //TODO: Implement
+        return;
+    }
 }

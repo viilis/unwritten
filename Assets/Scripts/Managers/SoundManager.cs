@@ -9,7 +9,7 @@ public class SoundManager : Singleton<SoundManager>
     private AudioSource soundFXObject;
 
     [SerializeField]
-    private float globalVolume = 1f;
+    public float globalVolume { get; private set; } = 1f;
 
     // Uses stack, works in lifo pattern.
     public AudioSource PlayInLoop(AudioClip audioClip, Transform positionOfPlay, float volume)
