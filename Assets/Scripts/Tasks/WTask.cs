@@ -3,7 +3,7 @@ using Unity;
 using UnityEngine;
 using UnityEngine.Events;
 
-public abstract class WTask : MonoBehaviour, ITask
+public class WTask : MonoBehaviour, ITask
 {
     [SerializeField]
     private float sanityHit = 0;
