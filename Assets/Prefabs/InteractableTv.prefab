@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: -6532036016299495493}
   - component: {fileID: 4437524922316645774}
   - component: {fileID: 3232481626361083038}
+  - component: {fileID: 4690698427169238550}
   m_Layer: 3
   m_Name: InteractableTv
   m_TagString: Untagged
@@ -220,3 +221,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.22646034, y: 1.1503989, z: 1.8259611}
   m_Center: {x: 0.046209037, y: 0.5775544, z: 0.0059756637}
+--- !u!114 &4690698427169238550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5571195706714242258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []

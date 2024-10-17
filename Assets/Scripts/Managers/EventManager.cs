@@ -24,8 +24,8 @@ public class EventManager : Singleton<EventManager>
         if (_timer <= 0)
         {
             // Call action e.g OnParanormalElectronicsEvent?.Invoke();
-            //OnParanormalElectronicsEvent?.Invoke();
-            //OnParanormalObjMovementEvent?.Invoke();
+            OnParanormalElectronicsEvent?.Invoke();
+            OnParanormalObjMovementEvent?.Invoke();
             _timer = eventInterval;
         }
     }

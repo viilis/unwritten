@@ -22,24 +22,37 @@ public class InteractableTv : MonoBehaviour, IInteractable, IEvent
     [SerializeField]
     private Color newcolor;
 
+    private Outline _outline;
     private Light _light;
     private ColorSwitcher _cSwitcher;
     private LightSwitcher _lSwitcher;
     private AudioInLoop _audioPlayer;
-    private Color restore;
+    private Color _restore;
+
+    private float _outlineWidth;
 
     private void Start()
     {
         _audioPlayer = new AudioInLoop(audioClip, audioPosition, volume);
         _cSwitcher = new ColorSwitcher(newcolor, material);
 
+        // Outline init
+        _outline = GetComponent<Outline>();
+        _outline.OutlineMode = Outline.Mode.OutlineHidden;
+        _outlineWidth = _outline.OutlineWidth;
+
+        //hide until first interaction;
+        _outline.OutlineWidth = 0f;
+
+        // Light init
         _light = lightObj.GetComponent<Light>();
         if (_light != null)
         {
             _lSwitcher = new LightSwitcher(_light, false);
         }
 
-        restore = material.color;
+        //material init
+        _restore = material.color;
     }
 
     private void OnEnable()
@@ -61,13 +74,15 @@ public class InteractableTv : MonoBehaviour, IInteractable, IEvent
 
     public void BeforeInteraction()
     {
-        return;
+        _outline.OutlineMode = Outline.Mode.OutlineVisible;
+        _outline.OutlineWidth = _outlineWidth;
     }
 
 
     public void UndoBeforeInteraction()
     {
-        return;
+        _outline.OutlineMode = Outline.Mode.OutlineHidden;
+        _outline.OutlineWidth = 0f; ;
     }
 
     public void OnEventTrigger()
@@ -78,6 +93,6 @@ public class InteractableTv : MonoBehaviour, IInteractable, IEvent
 
     private void OnDestroy()
     {
-        material.color = restore;
+        material.color = _restore;
     }
 }
