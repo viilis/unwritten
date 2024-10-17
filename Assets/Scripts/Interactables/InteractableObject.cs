@@ -11,17 +11,17 @@ public class InteractableObject : MonoBehaviour, IInteractable
 
     public void BeforeInteraction()
     {
-        _outline.OutlineMode = Outline.Mode.OutlineVisible;
+        _outline.OutlineWidth = 5;
     }
 
     public void Interact()
     {
-        _outline.OutlineMode = Outline.Mode.OutlineHidden;
+        _outline.OutlineWidth = 0;
         StartCoroutine(_sceneswitcher.GoToNextScene(sceneName));
     }
     public void UndoBeforeInteraction()
     {
-        _outline.OutlineMode = Outline.Mode.OutlineHidden;
+        _outline.OutlineWidth = 0;
 
     }
 
@@ -30,7 +30,7 @@ public class InteractableObject : MonoBehaviour, IInteractable
     {
         _sceneswitcher = GetComponent<SceneSwitcher>();
         _outline = GetComponent<Outline>();
-        _outline.OutlineMode = Outline.Mode.OutlineHidden;
+        _outline.OutlineWidth = 0;
     }
 
 }
