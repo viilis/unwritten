@@ -19,11 +19,15 @@ public class InteractableLamp : MonoBehaviour, IInteractable, IEvent
     private LightSwitcher _switcher;
     private AudioPerAction _audioPlayer;
     private Outline _outline;
+    private float _outlineWidth;
 
     private void Start()
     {
         _outline = GetComponent<Outline>();
         _outline.OutlineMode = Outline.Mode.OutlineHidden;
+        _outlineWidth = _outline.OutlineWidth;
+
+        //hide until first interaction;
         _outline.OutlineWidth = 0f;
 
         _audioPlayer = new AudioPerAction(audioClip, audioPosition, volume);
@@ -33,7 +37,7 @@ public class InteractableLamp : MonoBehaviour, IInteractable, IEvent
     public void BeforeInteraction()
     {
         _outline.OutlineMode = Outline.Mode.OutlineVisible;
-        _outline.OutlineWidth = 10f;
+        _outline.OutlineWidth = _outlineWidth;
     }
 
     public void UndoBeforeInteraction()
@@ -60,7 +64,7 @@ public class InteractableLamp : MonoBehaviour, IInteractable, IEvent
 
     public void OnEventTrigger()
     {
-        //TODO: Implement
+        //TODO: Implement flickering
         return;
     }
 }
