@@ -4,6 +4,7 @@ using UnityEngine;
 public class EventManager : Singleton<EventManager>
 {
     public static event Action OnParanormalElectronicsEvent;
+    public static event Action OnParanormalObjMovementEvent;
 
     [SerializeField]
     private float eventInterval = 5f; // 5 seconds
@@ -24,6 +25,7 @@ public class EventManager : Singleton<EventManager>
         {
             // Call action e.g OnParanormalElectronicsEvent?.Invoke();
             //OnParanormalElectronicsEvent?.Invoke();
+            //OnParanormalObjMovementEvent?.Invoke();
             _timer = eventInterval;
         }
     }
