@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Outline))]
@@ -31,7 +32,7 @@ public class InteractableLamp : MonoBehaviour, IInteractable, IEvent
         _outline.OutlineWidth = 0f;
 
         _audioPlayer = new AudioPerAction(audioClip, audioPosition, volume);
-        _switcher = new LightSwitcher(attachedLight, true);
+        _switcher = new LightSwitcher(attachedLight, false);
     }
 
     public void BeforeInteraction()
@@ -58,8 +59,15 @@ public class InteractableLamp : MonoBehaviour, IInteractable, IEvent
 
     public void Interact()
     {
-        _switcher.Switch();
-        _audioPlayer.PlayOnce();
+        try
+        {
+            _switcher.Switch();
+            _audioPlayer.PlayOnce();
+        }
+        catch (Exception err)
+        {
+            Debug.LogException(err);
+        }
     }
 
     public void OnEventTrigger()

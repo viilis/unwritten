@@ -66,6 +66,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void OnInteraction(InputAction.CallbackContext context)
     {
+        PlayerSanity.DecreaseSanity(30);
         _iCaster.GetHitComponent()?.Interact();
     }
 

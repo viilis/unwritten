@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -67,9 +68,16 @@ public class InteractableTv : MonoBehaviour, IInteractable, IEvent
 
     public void Interact()
     {
-        _lSwitcher.Switch();
-        _cSwitcher.SwitchColor();
-        if (!_audioPlayer.isPlaying) { _audioPlayer.StartPlaying(); } else { _audioPlayer.StopPlaying(); }
+        try
+        {
+            _lSwitcher.Switch();
+            _cSwitcher.SwitchColor();
+            if (!_audioPlayer.isPlaying) { _audioPlayer.StartPlaying(); } else { _audioPlayer.StopPlaying(); }
+        }
+        catch (Exception err)
+        {
+            Debug.LogException(err);
+        }
     }
 
     public void BeforeInteraction()
