@@ -5,9 +5,13 @@ public class EventManager : Singleton<EventManager>
 {
     public static event Action OnParanormalElectronicsEvent;
     public static event Action OnParanormalObjMovementEvent;
+    public static event Action OnParanormalAudioEvent;
+    public static event Action OnInternalVoicesEvent;
+    public static event Action OnTalkingItemsEvent;
+    public static event Action OnParanormalDoorSlamEvent;
 
     [SerializeField]
-    private float eventInterval = 5f; // 5 seconds
+    private float eventInterval = 10f; // 5 seconds
 
     [SerializeField]
     private float level1Threshold = 70f;
@@ -31,6 +35,7 @@ public class EventManager : Singleton<EventManager>
         {
             Debug.Log("Level 1.");
             //OnParanormalObjMovementEvent?.Invoke();
+            OnInternalVoicesEvent?.Invoke();
         }
 
         if (currentSanity <= level2Threshold)
@@ -57,8 +62,10 @@ public class EventManager : Singleton<EventManager>
 
         if (_timer <= 0)
         {
-            // Call action e.g OnParanormalElectronicsEvent?.Invoke();
+            // Call action e.g OnParanormalAudioEvent?.Invoke();
+            Debug.Log("Invoked on interval" + eventInterval);
             _timer = eventInterval;
+            OnParanormalDoorSlamEvent?.Invoke();
         }
     }
 

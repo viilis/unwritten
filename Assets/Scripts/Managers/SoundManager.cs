@@ -11,6 +11,17 @@ public class SoundManager : Singleton<SoundManager>
     [SerializeField]
     public float globalVolume { get; private set; } = 1f;
 
+    public AudioSource CreateSource(AudioClip audioClip, Transform positionOfPlay, float volume)
+    {
+        AudioSource aS = Instantiate(soundFXObject, positionOfPlay.position, Quaternion.identity);
+
+        aS.loop = false;
+        aS.clip = audioClip;
+        aS.volume = volume;
+
+        return aS;
+    }
+
     // Uses stack, works in lifo pattern.
     public AudioSource PlayInLoop(AudioClip audioClip, Transform positionOfPlay, float volume)
     {

@@ -104,11 +104,11 @@ GameObject:
   - component: {fileID: 3333594924935296615}
   - component: {fileID: 7276091417084034798}
   - component: {fileID: 6345564993703944149}
+  - component: {fileID: 1498495165666909976}
   - component: {fileID: 9135532845017335552}
   - component: {fileID: 5389077064387656114}
   - component: {fileID: 6590022328068697613}
   - component: {fileID: 5938264771626753486}
-  - component: {fileID: 1096857527806118128}
   m_Layer: 0
   m_Name: Movable_Player
   m_TagString: Untagged
@@ -189,6 +189,20 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1498495165666909976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2867460175870602526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df4fce621f673cb5e9180c4f7e56e3f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioClip: {fileID: 8300000, guid: db5343db7ad762eb49ee00ae7081b934, type: 3}
+  _volume: 1
 --- !u!114 &9135532845017335552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,7 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 3
   runSpeed: 4
-  gravity: 9.81
+  gravity: 9
 --- !u!114 &6590022328068697613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,16 +260,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d4428513d30612068a0d72ad5ab729b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1096857527806118128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2867460175870602526}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 723628f6c027ed4199df8c62a8b8de45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  footStep: {fileID: 8300000, guid: 4721231cac110a51fa2dd1bb94d89bfd, type: 3}
