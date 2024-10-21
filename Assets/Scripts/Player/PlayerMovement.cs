@@ -1,7 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-
-//TODO: I forgor gravity :D
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,7 +9,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float runSpeed = 4f;
 
-    private Vector3 moveDirection;
+    [SerializeField]
+    private float gravity = 16f;
+
+    private Vector3 moveDirection = Vector3.zero;
 
     private CharacterController _cc;
     private PlayerControls _playerControls;
@@ -46,6 +47,12 @@ public class PlayerMovement : MonoBehaviour
 
         float movementDirectionY = moveDirection.y;
         moveDirection = (transform.TransformDirection(Vector3.forward) * curSpeedX) + (transform.TransformDirection(Vector3.right) * curSpeedZ);
+
+
+        if (!_cc.isGrounded)
+        {
+            moveDirection.y -= gravity;
+        }
 
         _cc.Move(moveDirection * Time.deltaTime);
     }

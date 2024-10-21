@@ -30,13 +30,13 @@ public class EventManager : Singleton<EventManager>
         if (currentSanity <= level1Threshold)
         {
             Debug.Log("Level 1.");
-            OnParanormalObjMovementEvent?.Invoke();
+            //OnParanormalObjMovementEvent?.Invoke();
         }
 
         if (currentSanity <= level2Threshold)
         {
             Debug.Log("Level 2.");
-            OnParanormalElectronicsEvent?.Invoke();
+            //OnParanormalElectronicsEvent?.Invoke();
         }
 
         if (currentSanity <= level3Threshold)

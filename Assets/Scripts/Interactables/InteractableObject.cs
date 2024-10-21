@@ -7,6 +7,7 @@ public class InteractableObject : MonoBehaviour, IInteractable
 {
     private Outline _outline;
     private SceneSwitcher _sceneswitcher;
+
     public string sceneName;
 
     public void BeforeInteraction()
@@ -19,10 +20,10 @@ public class InteractableObject : MonoBehaviour, IInteractable
         _outline.OutlineWidth = 0;
         StartCoroutine(_sceneswitcher.GoToNextScene(sceneName));
     }
+
     public void UndoBeforeInteraction()
     {
         _outline.OutlineWidth = 0;
-
     }
 
     // Start is called before the first frame update
@@ -32,5 +33,4 @@ public class InteractableObject : MonoBehaviour, IInteractable
         _outline = GetComponent<Outline>();
         _outline.OutlineWidth = 0;
     }
-
 }
