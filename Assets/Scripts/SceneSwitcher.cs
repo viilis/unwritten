@@ -9,7 +9,7 @@ public class SceneSwitcher : MonoBehaviour
 
     void Start()
     {
-        fade = FindObjectOfType<FadeInOut>();
+        fade = GetComponent<FadeInOut>();
     }
 
     public IEnumerator GoToNextScene(string sceneName)

@@ -9,6 +9,11 @@ public class InteractableObject : MonoBehaviour, IInteractable
     private SceneSwitcher _sceneswitcher;
 
     public string sceneName;
+    private WTask _wTask;
+    private SCTask _scTask;
+
+    [SerializeField]
+    private bool isWorkTask;
 
     public void BeforeInteraction()
     {
@@ -18,7 +23,15 @@ public class InteractableObject : MonoBehaviour, IInteractable
     public void Interact()
     {
         _outline.OutlineWidth = 0;
-        StartCoroutine(_sceneswitcher.GoToNextScene(sceneName));
+        if (isWorkTask)
+        {
+            _wTask.Complete();
+        }
+        else if (!isWorkTask)
+        {
+            _scTask.Complete();
+        }
+
     }
 
     public void UndoBeforeInteraction()
@@ -29,7 +42,8 @@ public class InteractableObject : MonoBehaviour, IInteractable
     // Start is called before the first frame update
     void Start()
     {
-        _sceneswitcher = GetComponent<SceneSwitcher>();
+        _wTask = GetComponent<WTask>();
+        _scTask = GetComponent<SCTask>();
         _outline = GetComponent<Outline>();
         _outline.OutlineWidth = 0;
     }
