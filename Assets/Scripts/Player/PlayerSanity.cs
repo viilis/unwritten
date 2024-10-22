@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerSanity : MonoBehaviour
 {
-    public static Action<float> OnSanityChange;
+    public static event Action<float> OnSanityChange;
 
     [SerializeField]
     private static float _sanity = 100;

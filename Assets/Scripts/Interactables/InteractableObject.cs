@@ -6,6 +6,9 @@ using UnityEngine;
 public class InteractableObject : MonoBehaviour, IInteractable
 {
     private Outline _outline;
+    private SceneSwitcher _sceneswitcher;
+
+    public string sceneName;
     private WTask _wTask;
     private SCTask _scTask;
 
@@ -20,20 +23,20 @@ public class InteractableObject : MonoBehaviour, IInteractable
     public void Interact()
     {
         _outline.OutlineWidth = 0;
-        if(isWorkTask)
+        if (isWorkTask)
         {
             _wTask.Complete();
-        } 
-        else if(!isWorkTask)
+        }
+        else if (!isWorkTask)
         {
             _scTask.Complete();
         }
 
     }
+
     public void UndoBeforeInteraction()
     {
         _outline.OutlineWidth = 0;
-
     }
 
     // Start is called before the first frame update
@@ -44,5 +47,4 @@ public class InteractableObject : MonoBehaviour, IInteractable
         _outline = GetComponent<Outline>();
         _outline.OutlineWidth = 0;
     }
-
 }
