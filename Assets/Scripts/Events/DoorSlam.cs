@@ -33,6 +33,8 @@ public class DoorSlam : MonoBehaviour, IEvent
         {
             _animator.Play("paranormal_door_closed", 0, 0f);
             _audioPlayer.PlayOnce();
+            _readyState = !_readyState;
+            EventManager.OnParanormalDoorSlamEvent -= OnEventTrigger;
         }
     }
 
