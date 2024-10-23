@@ -6,9 +6,6 @@ using UnityEngine;
 public class InteractableObject : MonoBehaviour, IInteractable
 {
     private Outline _outline;
-    private SceneSwitcher _sceneswitcher;
-
-    public string sceneName;
     private WTask _wTask;
     private SCTask _scTask;
 
