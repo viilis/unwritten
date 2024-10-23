@@ -1,0 +1,9 @@
+Hello,
+
+These files are both made for the people who wish to either have all of the mesh joined
+together or want everything seperated. 
+
+All of the objects are UV mapped as well as optimized or use and I have also made sure
+that no textures corrupt as long as that texture folder stays where it is.
+
+Enjoy!
