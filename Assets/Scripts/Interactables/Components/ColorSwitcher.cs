@@ -14,7 +14,7 @@ public class ColorSwitcher
     {
         _newColor = color;
         _material = material;
-        _originalColor = material.color;
+        _originalColor = material.GetColor("_Color");
     }
 
     // TODO: Changes on materials are permanent.
@@ -22,12 +22,12 @@ public class ColorSwitcher
     {
         if (!isChanged)
         {
-            _material.color = _newColor;
+            _material.SetColor("_Color", _newColor);
             isChanged = !isChanged;
         }
         else
         {
-            _material.color = _originalColor;
+            _material.SetColor("_Color", _originalColor);
             isChanged = !isChanged;
         }
     }
