@@ -372,6 +372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: test_level_1
+  isWorkTask: 0
 --- !u!114 &156988385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,7 +543,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1498495165666909976, guid: 4fb6356f69ecb265ebe0e454356cab41, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1498495165666909976, guid: 4fb6356f69ecb265ebe0e454356cab41, type: 3}
       propertyPath: _audioClip
@@ -1351,6 +1352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: test_level_1
+  isWorkTask: 0
 --- !u!114 &1275590271
 MonoBehaviour:
   m_ObjectHideFlags: 0

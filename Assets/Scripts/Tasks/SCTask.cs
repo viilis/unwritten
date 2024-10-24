@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class SCTask : MonoBehaviour, ITask
 {
+    public static Action<string> OnTaskCompletion;
+
     [SerializeField]
     private float sanityHit = 0;
 
@@ -12,9 +14,7 @@ public class SCTask : MonoBehaviour, ITask
     private string _taskName;
     [SerializeField]
     private string _sceneName;
-    public TaskManager _taskManager;
     private SceneSwitcher _sceneswitcher;
-    public static Action<string> OnTaskCompletion;
 
     public bool _isCompleted = false;
     public bool isCompleted => _isCompleted;
@@ -24,7 +24,7 @@ public class SCTask : MonoBehaviour, ITask
     {
         _isCompleted = true;
         OnTaskCompletion?.Invoke(name);
-        _taskManager.OnCompletion(_taskName, false);
+        TaskManager.Instance.OnCompletion(_taskName, false);
         StartCoroutine(_sceneswitcher.GoToNextScene(_sceneName));
     }
 

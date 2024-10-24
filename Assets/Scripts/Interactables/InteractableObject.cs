@@ -24,11 +24,10 @@ public class InteractableObject : MonoBehaviour, IInteractable
         {
             _wTask.Complete();
         }
-        else if (!isWorkTask)
+        else
         {
             _scTask.Complete();
         }
-
     }
 
     public void UndoBeforeInteraction()
