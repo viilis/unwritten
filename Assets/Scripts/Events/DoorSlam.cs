@@ -32,11 +32,10 @@ public class DoorSlam : MonoBehaviour, IEvent
 
     public void OnTriggerEnter()
     {
-        if (_readyState)
+        if (_animator.GetCurrentAnimatorStateInfo(0).IsName(_opened))
         {
             _animator.Play(_closed, 0, 0f);
             _audioPlayer.PlayOnce();
-            _readyState = !_readyState;
             EventManager.OnParanormalDoorSlamEvent -= OnEventTrigger;
         }
     }
@@ -53,12 +52,9 @@ public class DoorSlam : MonoBehaviour, IEvent
 
     public void OnEventTrigger()
     {
-        Debug.Log(_animator.GetCurrentAnimatorStateInfo(0).shortNameHash);
-
         if (_animator.GetCurrentAnimatorStateInfo(0).IsName(_closed))
         {
             _animator.Play(_opened, 0, 0);
-            _readyState = true;
         }
     }
 }
