@@ -1,42 +1,33 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Unity;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class TaskManager : Singleton<TaskManager>
 {
-    private static int wTasksDone;
-    private static int scTasksDone;
+    [SerializeField]
+    private string[] sceneNames;
+
+    private SceneSwitcher _sw;
+
+    private void Start()
+    {
+        _sw = GetComponent<SceneSwitcher>();
+    }
 
     private void OnEnable()
     {
-        WTask.OnTaskCompletionEvent += WhenTaskComplitionTriggered;
+        Task.OnTaskCompletionEvent += WhenTaskComplitionTriggered;
     }
 
     private void OnDisable()
     {
-        WTask.OnTaskCompletionEvent -= WhenTaskComplitionTriggered;
+        Task.OnTaskCompletionEvent -= WhenTaskComplitionTriggered;
     }
 
-    public void OnCompletion(string name, bool isWorkTask)
+    private void WhenTaskComplitionTriggered(TaskBase tb)
     {
-        if (isWorkTask)
-        {
-            wTasksDone++;
-        }
-        else
-        {
-            scTasksDone++;
-        }
-
-        Debug.Log("Completed task: " + name + ", is work task?: " + isWorkTask);
-        Debug.Log("Work tasks done: " + wTasksDone + " self care tasks done: " + scTasksDone);
-    }
-
-    private void WhenTaskComplitionTriggered(string taskName)
-    {
-
+        Debug.Log("Completed task: " + tb.taskName);
+        PlayerSanity.ChangeSanity(tb.sanityHit);
+        //StartCoroutine(_sw.GoToNextScene(sceneNames[0]));
     }
 }

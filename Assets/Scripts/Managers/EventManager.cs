@@ -11,6 +11,7 @@ public class EventManager : Singleton<EventManager>
     public static event Action OnParanormalDoorSlamEvent;
 
     [SerializeField]
+    [Tooltip("Can be used for calling events between x sec intervals. Defaults to 10 which translates to 5 seconds IRL time.")]
     private float eventInterval = 10f; // 5 seconds
 
     [SerializeField]
@@ -34,19 +35,20 @@ public class EventManager : Singleton<EventManager>
         if (currentSanity <= level1Threshold)
         {
             Debug.Log("Level 1.");
-            //OnParanormalObjMovementEvent?.Invoke();
-            OnInternalVoicesEvent?.Invoke();
+            OnParanormalObjMovementEvent?.Invoke();
         }
 
         if (currentSanity <= level2Threshold)
         {
             Debug.Log("Level 2.");
-            //OnParanormalElectronicsEvent?.Invoke();
+            OnParanormalElectronicsEvent?.Invoke();
+            OnParanormalDoorSlamEvent?.Invoke();
         }
 
         if (currentSanity <= level3Threshold)
         {
             Debug.Log("Level 3.");
+            OnInternalVoicesEvent?.Invoke();
         }
     }
 
@@ -65,7 +67,6 @@ public class EventManager : Singleton<EventManager>
             // Call action e.g OnParanormalAudioEvent?.Invoke();
             Debug.Log("Invoked on interval" + eventInterval);
             _timer = eventInterval;
-            OnParanormalDoorSlamEvent?.Invoke();
         }
     }
 

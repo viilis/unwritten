@@ -1,33 +1,59 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class Task
+[RequireComponent(typeof(Outline))]
+public class Task : MonoBehaviour, IInteractable
 {
-    public TaskBase Base { get; private set; }
-    public TaskStatus Status { get; private set; }
+    public static event Action<TaskBase> OnTaskCompletionEvent;
 
-    public Task(TaskBase _base)
+    private Outline _outline;
+    private float _outlineWidth;
+
+    [SerializeField]
+    private string _sceneName;
+
+    [SerializeField]
+    private TaskBase taskBase;
+
+    private void Start()
     {
-        Base = _base;
+        if (taskBase.taskState == TaskStates.Done)
+        {
+            gameObject.SetActive(!gameObject.activeSelf);
+        }
+
+        _outline = GetComponent<Outline>();
+        _outline.OutlineMode = Outline.Mode.OutlineHidden;
+        _outlineWidth = _outline.OutlineWidth;
+
+        //hide until first interaction;
+        _outline.OutlineWidth = 0f;
     }
 
-    public IEnumerable StartTask()
+    public void Interact()
     {
-        Status = TaskStatus.Started;
+        if (taskBase.taskState != TaskStates.Done)
+        {
+            taskBase.taskState = TaskStates.Done;
+            OnTaskCompletionEvent?.Invoke(taskBase);
 
-        yield return "started task";
+            //TODO: Disables gameobject aka makes it disappear
+            gameObject.SetActive(!gameObject.activeSelf);
+        }
     }
 
-    public IEnumerable CompleteTask()
+    public void BeforeInteraction()
     {
-        Status = TaskStatus.Completed;
-
-        yield return "completed";
+        _outline.OutlineMode = Outline.Mode.OutlineVisible;
+        _outline.OutlineWidth = _outlineWidth;
     }
-}
 
-public enum TaskStatus
-{
-    None, Started, Completed
+    public void UndoBeforeInteraction()
+    {
+        _outline.OutlineMode = Outline.Mode.OutlineHidden;
+        _outline.OutlineWidth = 0f;
+    }
 }

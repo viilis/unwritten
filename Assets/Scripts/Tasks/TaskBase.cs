@@ -5,6 +5,13 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Tasks/Task base")]
 public class TaskBase : ScriptableObject
 {
-    [SerializeField] public string taskName { get; }
-    [SerializeField] public string description { get; }
+    public string taskName;
+    public string taskDescription;
+
+    public TaskStates taskState = TaskStates.notStarted;
+
+    public DialogBase dialogBase;
+
+    [Range(-50, 50f)]
+    public float sanityHit = 0f;
 }

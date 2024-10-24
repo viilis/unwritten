@@ -10,15 +10,9 @@ public class PlayerSanity : MonoBehaviour
     [SerializeField]
     private static float _sanity = 100;
 
-    public static void IncreaseSanity(float amount)
+    public static void ChangeSanity(float amount)
     {
         _sanity += amount;
-        OnSanityChange?.Invoke(_sanity);
-    }
-
-    public static void DecreaseSanity(float amount)
-    {
-        _sanity -= amount;
         OnSanityChange?.Invoke(_sanity);
     }
 
