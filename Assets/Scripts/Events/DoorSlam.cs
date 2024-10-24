@@ -50,7 +50,10 @@ public class DoorSlam : MonoBehaviour, IEvent
 
     public void OnEventTrigger()
     {
-        _animator.Play("paranormal_door_opened", 0, 0);
-        _readyState = true;
+        if (!_readyState)
+        {
+            _animator.Play("paranormal_door_opened", 0, 0);
+            _readyState = true;
+        }
     }
 }
