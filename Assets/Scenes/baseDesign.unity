@@ -456,6 +456,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Room
       objectReference: {fileID: 0}
+    - target: {fileID: 4061539242311650884, guid: 020124c1901752c4aae1d87eaed37a8f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5.8685894
+      objectReference: {fileID: 0}
     - target: {fileID: 4737660854222434341, guid: 020124c1901752c4aae1d87eaed37a8f, type: 3}
       propertyPath: m_Intensity
       value: 3.5

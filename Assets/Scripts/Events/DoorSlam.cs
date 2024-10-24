@@ -18,6 +18,9 @@ public class DoorSlam : MonoBehaviour, IEvent
     private BoxCollider _boxCollider;
     private bool _readyState;
 
+    private string _opened = "paranormal_door_opened";
+    private string _closed = "paranormal_door_closed";
+
     private void Start()
     {
         _audioPlayer = new AudioPerAction(_closeClip, gameObject.transform, _volume);
@@ -31,7 +34,7 @@ public class DoorSlam : MonoBehaviour, IEvent
     {
         if (_readyState)
         {
-            _animator.Play("paranormal_door_closed", 0, 0f);
+            _animator.Play(_closed, 0, 0f);
             _audioPlayer.PlayOnce();
             _readyState = !_readyState;
             EventManager.OnParanormalDoorSlamEvent -= OnEventTrigger;
@@ -50,9 +53,11 @@ public class DoorSlam : MonoBehaviour, IEvent
 
     public void OnEventTrigger()
     {
-        if (!_readyState)
+        Debug.Log(_animator.GetCurrentAnimatorStateInfo(0).shortNameHash);
+
+        if (_animator.GetCurrentAnimatorStateInfo(0).IsName(_closed))
         {
-            _animator.Play("paranormal_door_opened", 0, 0);
+            _animator.Play(_opened, 0, 0);
             _readyState = true;
         }
     }
