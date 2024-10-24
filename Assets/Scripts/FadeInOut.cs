@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class FadeInOut : MonoBehaviour
 {
-    public CanvasGroup _canvasgroup;
+    public CanvasGroup startOfScene;
+    public CanvasGroup endOfScene;
     private bool fadein = false;
     private bool fadeout = false;
     public float TimeToFade;
@@ -13,20 +14,20 @@ public class FadeInOut : MonoBehaviour
     void Update()
     {
         if (fadein)
-            if (_canvasgroup.alpha < 1)
+            if (endOfScene.alpha < 1)
             {
-                _canvasgroup.alpha += TimeToFade * Time.deltaTime;
-                if (_canvasgroup.alpha >= 1)
+                endOfScene.alpha += TimeToFade * Time.deltaTime;
+                if (endOfScene.alpha >= 1)
                 {
                     fadein = false;
                 }
             }
 
         if (fadeout)
-            if (_canvasgroup.alpha >= 0)
+            if (startOfScene.alpha >= 0)
             {
-                _canvasgroup.alpha -= TimeToFade * Time.deltaTime;
-                if (_canvasgroup.alpha == 0)
+                startOfScene.alpha -= TimeToFade * Time.deltaTime;
+                if (startOfScene.alpha == 0)
                 {
                     fadeout = false;
                 }
