@@ -216,8 +216,8 @@ MonoBehaviour:
   audioClip: {fileID: 8300000, guid: bc2764f104bad62cf8f1b0413c5cca02, type: 3}
   audioPosition: {fileID: 7322596315016482272}
   volume: 0.5
-  newMaterial: {fileID: 2100000, guid: 8eb36237b204c20ce9092e1f48ba9c9b, type: 2}
-  originalMaterial: {fileID: 2100000, guid: b678756435bef28d792f6854028331fa, type: 2}
+  material: {fileID: 2100000, guid: b678756435bef28d792f6854028331fa, type: 2}
+  newcolor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!65 &3232481626361083038
 BoxCollider:
   m_ObjectHideFlags: 0
