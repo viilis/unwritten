@@ -25,11 +25,6 @@ public class Task
 
         yield return "completed";
     }
-
-    public bool CanBeCompleted()
-    {
-        return true;
-    }
 }
 
 public enum TaskStatus
