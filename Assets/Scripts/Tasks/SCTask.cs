@@ -13,8 +13,8 @@ public class SCTask : MonoBehaviour, ITask
     [SerializeField]
     private string _sceneName;
     public TaskManager _taskManager;
-    private SceneSwitcher _sceneswitcher;
-    public static Action<string> OnTaskCompletion;
+    public SceneSwitcher _sceneswitcher;
+    private Action<string> OnTaskCompletion;
 
     public bool _isCompleted = false;
     public bool isCompleted => _isCompleted;
@@ -30,6 +30,6 @@ public class SCTask : MonoBehaviour, ITask
 
     void Start()
     {
-        _sceneswitcher = GetComponent<SceneSwitcher>();
+        _sceneswitcher.GetComponent<SceneSwitcher>();
     }
 }

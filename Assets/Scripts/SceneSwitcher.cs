@@ -5,11 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitcher : MonoBehaviour
 {
-    FadeInOut fade;
+    [SerializeField]
+    private FadeInOut fade;
 
     void Start()
     {
-        fade = GetComponent<FadeInOut>();
+        fade.GetComponent<FadeInOut>();
     }
 
     public IEnumerator GoToNextScene(string sceneName)

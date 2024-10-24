@@ -13,7 +13,7 @@ public class WTask : MonoBehaviour, ITask
     [SerializeField]
     private string _sceneName;
     public TaskManager _taskManager;
-    private SceneSwitcher _sceneswitcher;
+    public SceneSwitcher _sceneswitcher;
     private Action<string> OnTaskCompletion;
 
     public bool _isCompleted = false;
@@ -30,6 +30,6 @@ public class WTask : MonoBehaviour, ITask
 
     void Start()
     {
-        _sceneswitcher = GetComponent<SceneSwitcher>();
+        _sceneswitcher.GetComponent<SceneSwitcher>();
     }
 }

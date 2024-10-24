@@ -689,6 +689,8 @@ GameObject:
   m_Component:
   - component: {fileID: 313738238}
   - component: {fileID: 313738237}
+  - component: {fileID: 313738240}
+  - component: {fileID: 313738239}
   m_Layer: 0
   m_Name: DayTracker
   m_TagString: Untagged
@@ -724,6 +726,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &313738239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313738236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 673a12da2e6517b4e87b1da992475eb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fade: {fileID: 313738240}
+--- !u!114 &313738240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313738236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ffedc550122584096caea48400f675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _canvasgroup: {fileID: 123797827}
+  TimeToFade: 1
 --- !u!1 &315450674
 GameObject:
   m_ObjectHideFlags: 0
@@ -3248,12 +3277,6 @@ PrefabInstance:
       addedObject: {fileID: 1406228734}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cb4bfd2be57afff8eaac8855292e5064, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1406228733}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cb4bfd2be57afff8eaac8855292e5064, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1406228731}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cb4bfd2be57afff8eaac8855292e5064, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1406228739}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cb4bfd2be57afff8eaac8855292e5064, type: 3}
       insertIndex: -1
@@ -3264,32 +3287,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cb4bfd2be57afff8eaac8855292e5064, type: 3}
   m_PrefabInstance: {fileID: 1406228729}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1406228731
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1406228730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2ffedc550122584096caea48400f675, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _canvasgroup: {fileID: 123797827}
-  TimeToFade: 1
---- !u!114 &1406228733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1406228730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 673a12da2e6517b4e87b1da992475eb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1406228734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3358,6 +3355,7 @@ MonoBehaviour:
   _taskName: Eat dinner
   _sceneName: test_level_2
   _taskManager: {fileID: 1894242016}
+  _sceneswitcher: {fileID: 313738239}
   _isCompleted: 0
 --- !u!4 &1481200721 stripped
 Transform:
@@ -3583,7 +3581,7 @@ RectTransform:
   - {fileID: 607931129}
   - {fileID: 1366921874}
   - {fileID: 123797826}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1808948611}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3601,6 +3599,7 @@ GameObject:
   - component: {fileID: 1808948611}
   - component: {fileID: 1808948610}
   - component: {fileID: 1808948609}
+  - component: {fileID: 1808948612}
   m_Layer: 0
   m_Name: Fade
   m_TagString: Untagged
@@ -3647,9 +3646,23 @@ Transform:
   m_LocalPosition: {x: 83.88392, y: 27.884035, z: -53.33808}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1604670136}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1808948612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808948608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 673a12da2e6517b4e87b1da992475eb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fade: {fileID: 1808948610}
 --- !u!1 &1894242015
 GameObject:
   m_ObjectHideFlags: 0
@@ -4161,12 +4174,6 @@ PrefabInstance:
       addedObject: {fileID: 2110264873}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a731845de431e5d4b813a674dd293824, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2110264876}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a731845de431e5d4b813a674dd293824, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2110264878}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a731845de431e5d4b813a674dd293824, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2110264882}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a731845de431e5d4b813a674dd293824, type: 3}
       insertIndex: -1
@@ -4216,32 +4223,6 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!114 &2110264876
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2110264870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 673a12da2e6517b4e87b1da992475eb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2110264878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2110264870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2ffedc550122584096caea48400f675, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _canvasgroup: {fileID: 123797827}
-  TimeToFade: 1
 --- !u!114 &2110264881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4258,6 +4239,7 @@ MonoBehaviour:
   _taskName: Write email
   _sceneName: test_level_2
   _taskManager: {fileID: 1894242016}
+  _sceneswitcher: {fileID: 313738239}
   _isCompleted: 0
 --- !u!114 &2110264882
 MonoBehaviour:
@@ -4313,5 +4295,4 @@ SceneRoots:
   - {fileID: 1894242017}
   - {fileID: 960070899}
   - {fileID: 1808948611}
-  - {fileID: 1604670136}
   - {fileID: 313738238}
