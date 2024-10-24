@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Outline), typeof(SceneSwitcher))]
+[RequireComponent(typeof(Outline))]
 public class InteractableObject : MonoBehaviour, IInteractable
 {
     private Outline _outline;
