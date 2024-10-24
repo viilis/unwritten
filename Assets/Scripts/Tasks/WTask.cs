@@ -5,16 +5,18 @@ using UnityEngine.Events;
 
 public class WTask : MonoBehaviour, ITask
 {
+    public static event Action<string> OnTaskCompletionEvent;
+
     [SerializeField]
     private float sanityHit = 0;
 
     [SerializeField]
     private string _taskName;
+
     [SerializeField]
     private string _sceneName;
-    public TaskManager _taskManager;
+
     private SceneSwitcher _sceneswitcher;
-    private Action<string> OnTaskCompletion;
 
     public bool _isCompleted = false;
     public bool isCompleted => _isCompleted;
@@ -23,8 +25,9 @@ public class WTask : MonoBehaviour, ITask
     public void Complete()
     {
         _isCompleted = true;
-        OnTaskCompletion?.Invoke(name);
-        _taskManager.OnCompletion(_taskName, true);
+        OnTaskCompletionEvent?.Invoke(name);
+        TaskManager.Instance.OnCompletion(_taskName, true);
+
         StartCoroutine(_sceneswitcher.GoToNextScene(_sceneName));
     }
 

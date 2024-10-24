@@ -7,9 +7,18 @@ using UnityEngine;
 
 public class TaskManager : Singleton<TaskManager>
 {
-    public List<Task> Tasks { get; } = new();
     private static int wTasksDone;
     private static int scTasksDone;
+
+    private void OnEnable()
+    {
+        WTask.OnTaskCompletionEvent += WhenTaskComplitionTriggered;
+    }
+
+    private void OnDisable()
+    {
+        WTask.OnTaskCompletionEvent -= WhenTaskComplitionTriggered;
+    }
 
     public void OnCompletion(string name, bool isWorkTask)
     {
@@ -24,5 +33,10 @@ public class TaskManager : Singleton<TaskManager>
 
         Debug.Log("Completed task: " + name + ", is work task?: " + isWorkTask);
         Debug.Log("Work tasks done: " + wTasksDone + " self care tasks done: " + scTasksDone);
+    }
+
+    private void WhenTaskComplitionTriggered(string taskName)
+    {
+
     }
 }
