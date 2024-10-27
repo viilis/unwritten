@@ -11,6 +11,15 @@ public class SoundManager : Singleton<SoundManager>
     [SerializeField]
     public float globalVolume { get; private set; } = 1f;
 
+    private void Start()
+    {
+        if (soundFXObject == null)
+        {
+            enabled = false;
+            Debug.LogError("Sound manager missing general audio source.");
+        }
+    }
+
     public AudioSource CreateSource(AudioClip audioClip, Transform positionOfPlay, float volume)
     {
         AudioSource aS = Instantiate(soundFXObject, positionOfPlay.position, Quaternion.identity);

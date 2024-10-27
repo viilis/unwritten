@@ -21,7 +21,7 @@ public class InteractableTv : MonoBehaviour, IInteractable, IEvent
     private Material material;
 
     [SerializeField]
-    private Color newcolor;
+    private Color newcolor = Color.white;
 
     private Outline _outline;
     private Light _light;
@@ -34,6 +34,18 @@ public class InteractableTv : MonoBehaviour, IInteractable, IEvent
 
     private void Start()
     {
+        if (material == null)
+        {
+            enabled = false;
+            Debug.LogError("Assign material you want to change");
+        }
+
+        if (audioClip == null)
+        {
+            enabled = false;
+            Debug.LogError("Audio clip missing");
+        }
+
         _audioPlayer = new AudioInLoop(audioClip, audioPosition, volume);
         _cSwitcher = new ColorSwitcher(newcolor, material);
 

@@ -8,7 +8,7 @@ public class RandomMovement : MonoBehaviour, IEvent
     private Rigidbody _rb;
 
     [SerializeField]
-    private Vector3 _forceVector;
+    private Vector3 forceVector;
 
     private void OnEnable()
     {
@@ -28,6 +28,6 @@ public class RandomMovement : MonoBehaviour, IEvent
 
     public void OnEventTrigger()
     {
-        _rb.AddForce(_forceVector);
+        _rb.AddForce(forceVector);
     }
 }

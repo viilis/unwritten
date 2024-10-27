@@ -1,6 +1,8 @@
+using System.Collections.Generic;
 using Unity;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class TaskManager : Singleton<TaskManager>
 {
@@ -11,17 +13,18 @@ public class TaskManager : Singleton<TaskManager>
 
     private void Start()
     {
+        Debug.Log("Started task manager");
         _sw = GetComponent<SceneSwitcher>();
     }
 
     private void OnEnable()
     {
-        Task.OnTaskCompletionEvent += WhenTaskComplitionTriggered;
+        GameTasks.GameTask.OnTaskCompletionEvent += WhenTaskComplitionTriggered;
     }
 
     private void OnDisable()
     {
-        Task.OnTaskCompletionEvent -= WhenTaskComplitionTriggered;
+        GameTasks.GameTask.OnTaskCompletionEvent -= WhenTaskComplitionTriggered;
     }
 
     private void WhenTaskComplitionTriggered(TaskBase tb)
