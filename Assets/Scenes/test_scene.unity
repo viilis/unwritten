@@ -578,29 +578,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 27d6c31411629f514a2b104fa3923b39, type: 3}
       insertIndex: -1
       addedObject: {fileID: 676462119}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 27d6c31411629f514a2b104fa3923b39, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 676462118}
   m_SourcePrefab: {fileID: 100100000, guid: 27d6c31411629f514a2b104fa3923b39, type: 3}
 --- !u!1 &676462117 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 27d6c31411629f514a2b104fa3923b39, type: 3}
   m_PrefabInstance: {fileID: 676462116}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &676462118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 676462117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b3ef40970472b2de8ed8bf3540dd550, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sceneName: test_level_1
-  taskBase: {fileID: 11400000, guid: bd5a7898ddf99074f869f68dfba570cf, type: 2}
 --- !u!114 &676462119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1211,6 +1194,7 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+  m_ScrollDeltaPerTick: 6
 --- !u!1001 &1275590266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1614,29 +1598,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 27d6c31411629f514a2b104fa3923b39, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1802560567}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 27d6c31411629f514a2b104fa3923b39, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1802560566}
   m_SourcePrefab: {fileID: 100100000, guid: 27d6c31411629f514a2b104fa3923b39, type: 3}
 --- !u!1 &1802560565 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 27d6c31411629f514a2b104fa3923b39, type: 3}
   m_PrefabInstance: {fileID: 1802560564}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1802560566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1802560565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b3ef40970472b2de8ed8bf3540dd550, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sceneName: test_level_1
-  taskBase: {fileID: 11400000, guid: 1e07fc8b006675526a6eb7e94ca7d174, type: 2}
 --- !u!114 &1802560567
 MonoBehaviour:
   m_ObjectHideFlags: 0
