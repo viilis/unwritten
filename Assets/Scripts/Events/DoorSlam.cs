@@ -16,7 +16,6 @@ public class DoorSlam : MonoBehaviour, IEvent
     private Animator _animator;
 
     private BoxCollider _boxCollider;
-    private bool _readyState;
 
     private string _opened = "paranormal_door_opened";
     private string _closed = "paranormal_door_closed";
@@ -27,7 +26,6 @@ public class DoorSlam : MonoBehaviour, IEvent
 
         _boxCollider = GetComponent<BoxCollider>();
         _boxCollider.isTrigger = true;
-        _readyState = false;
     }
 
     public void OnTriggerEnter()
