@@ -7,7 +7,7 @@ using UnityEngine;
 namespace GameTasks
 {
     [RequireComponent(typeof(Outline))]
-    public abstract class GameTask : MonoBehaviour, IInteractable
+    public class GameTask : MonoBehaviour, IInteractable
     {
         public static event Action<TaskBase> OnTaskCompletionEvent;
 
@@ -41,5 +41,4 @@ namespace GameTasks
             _outline.OutlineWidth = 0f;
         }
     }
-
 }
