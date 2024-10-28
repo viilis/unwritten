@@ -306,6 +306,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cg: {fileID: 3167266764103608042}
+  deadLineTMP: {fileID: 154512489945455640}
+  dayTimeTMP: {fileID: 6529080566980094756}
 --- !u!1 &8762631637557455497
 GameObject:
   m_ObjectHideFlags: 0

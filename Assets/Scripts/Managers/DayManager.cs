@@ -124,6 +124,16 @@ public class DayManager : Singleton<DayManager>
         }
         LoadingCanvas.Instance.cg.alpha = targetValue;
     }
+
+    public string GetDeadlineText()
+    {
+        return dayMessage;
+    }
+
+    public string GetCurrentTimeState()
+    {
+        return _dt;
+    }
 }
 
 
