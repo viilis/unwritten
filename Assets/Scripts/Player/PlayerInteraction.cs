@@ -54,7 +54,6 @@ public class PlayerInteraction : MonoBehaviour
 
     private void OnInteraction(InputAction.CallbackContext context)
     {
-        StartCoroutine(DayManager.Instance.GoToNextScene());
         _iCaster.GetHitComponent()?.Interact();
     }
 
