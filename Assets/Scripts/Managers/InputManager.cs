@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+//TODO: Check if there is race conditions or something
 public class InputManager : Singleton<InputManager>
 {
     [SerializeField]
@@ -15,7 +16,7 @@ public class InputManager : Singleton<InputManager>
 
     public override void Awake()
     {
-        //Don't remove this !!!
+        //FIXME: Does weird shit after one day cycle
         RemoveDuplicates();
 
         _playerControls = new PlayerControls();
@@ -44,7 +45,10 @@ public class InputManager : Singleton<InputManager>
 
     private void OnDisable()
     {
-        _playerControls.Gameplay.Disable();
+        if (this.enabled)
+        {
+            _playerControls.Gameplay.Disable();
+        }
     }
 
     // Locks cursor to application and hides it

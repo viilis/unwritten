@@ -9,6 +9,8 @@ public class Singleton<T> : MonoBehaviour where T : Component
 {
     private static T instance;
 
+    public static bool debug = false;
+
     public static T Instance
     {
         get
@@ -49,10 +51,20 @@ public class Singleton<T> : MonoBehaviour where T : Component
         if (instance == null)
         {
             instance = this as T;
+
+            if (debug)
+            {
+                Debug.Log("Set as instance: " + gameObject.name);
+            }
+
             DontDestroyOnLoad(gameObject);
         }
         else
         {
+            if (debug)
+            {
+                Debug.Log("Removing duplicates: Destroy " + gameObject.name);
+            }
             Destroy(gameObject);
         }
     }

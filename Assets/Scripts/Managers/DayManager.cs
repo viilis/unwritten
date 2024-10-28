@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 public class DayManager : Singleton<DayManager>
 {
     public int daysLeft = 5;
-    public TMP_Text message;
+    private string dayMessage;
 
     [SerializeField]
     [Range(1, 10)]
@@ -19,7 +19,7 @@ public class DayManager : Singleton<DayManager>
 
     private void Start()
     {
-        message.text = daysLeft + " days until deadline";
+        dayMessage = daysLeft + " days until deadline";
 
         // Start game by fading in(?)
         StartCoroutine(FadeLoadingScreen(0, fadeDuration));
@@ -64,11 +64,11 @@ public class DayManager : Singleton<DayManager>
 
                 if (daysLeft == 1)
                 {
-                    message.text = daysLeft + " day until deadline";
+                    dayMessage = daysLeft + " day until deadline";
                 }
                 else
                 {
-                    message.text = daysLeft + " days until deadline";
+                    dayMessage = daysLeft + " days until deadline";
                 }
 
                 _dt = Daytimes.Morning;
