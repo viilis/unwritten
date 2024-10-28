@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class InternalVoices : MonoBehaviour, IEvent
 {
-
     [SerializeField]
     private AudioClip _audioClip;
 
