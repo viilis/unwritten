@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6588ef0d17be3f40bacaf6329cc2bf32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventInterval: 5
+  eventInterval: 10
   level1Threshold: 70
   level2Threshold: 50
   level3Threshold: 20

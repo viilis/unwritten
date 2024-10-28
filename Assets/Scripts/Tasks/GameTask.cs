@@ -20,6 +20,16 @@ namespace GameTasks
         [SerializeField]
         private TaskBase taskBase;
 
+        private void Start()
+        {
+            _outline = GetComponent<Outline>();
+            _outline.OutlineMode = Outline.Mode.OutlineHidden;
+            _outlineWidth = _outline.OutlineWidth;
+
+            //hide until first interaction;
+            _outline.OutlineWidth = 0f;
+        }
+
         public void Interact()
         {
             if (taskBase.taskState != TaskStates.Done)

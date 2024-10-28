@@ -3322,10 +3322,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a0a8f8d22d4fe8f9810e466be5b5aed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sanityHit: 0
-  _taskName: Eat dinner
   _sceneName: test_level_2
-  _isCompleted: 0
+  taskBase: {fileID: 0}
 --- !u!4 &1481200721 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5690d79e9a3a3e0469065ba5ebeddd12, type: 3}
@@ -3660,6 +3658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45ee0ca8cff457013b5515ecde0d1b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneNames: []
 --- !u!4 &1894242017
 Transform:
   m_ObjectHideFlags: 0
@@ -4143,9 +4142,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a731845de431e5d4b813a674dd293824, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2110264882}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a731845de431e5d4b813a674dd293824, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2110264881}
   m_SourcePrefab: {fileID: 100100000, guid: a731845de431e5d4b813a674dd293824, type: 3}
 --- !u!1 &2110264870 stripped
 GameObject:
@@ -4191,22 +4187,6 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!114 &2110264881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2110264870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd629c1306b6df30a9f79c39bda0c962, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sanityHit: 0
-  _taskName: Write email
-  _sceneName: test_level_2
-  _isCompleted: 0
 --- !u!114 &2110264882
 MonoBehaviour:
   m_ObjectHideFlags: 0

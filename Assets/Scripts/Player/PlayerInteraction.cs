@@ -14,8 +14,8 @@ public class PlayerInteraction : MonoBehaviour
     private LayerMask layerMask;
 
     // For inputs
-    private PlayerControls _playerControls;
     private Transform _playerCamera;
+
     private InputAction _interactAction;
     private InputAction _lookAction;
     private InputAction _moveAction;
@@ -26,11 +26,17 @@ public class PlayerInteraction : MonoBehaviour
     private void Awake()
     {
         _playerCamera = Camera.main.transform;
-        _playerControls = new PlayerControls();
 
-        _interactAction = _playerControls.Gameplay.Interact;
-        _moveAction = _playerControls.Gameplay.Move;
-        _lookAction = _playerControls.Gameplay.Look;
+        _interactAction = InputManager.Instance.GetInteractAction();
+        _moveAction = InputManager.Instance.GetMovementAction();
+        _lookAction = InputManager.Instance.GetLookAction();
+    }
+
+    private void OnEnable()
+    {
+        _interactAction.performed += OnInteraction;
+        _lookAction.performed += OnLook;
+        _moveAction.performed += OnMove;
     }
 
     private void Start()
@@ -38,40 +44,25 @@ public class PlayerInteraction : MonoBehaviour
         _iCaster = new Caster<IInteractable>(layerMask, _playerCamera, interactionDistance, true);
     }
 
-    private void OnEnable()
-    {
-        _interactAction.Enable();
-        _interactAction.performed += OnInteraction;
-
-        _lookAction.Enable();
-        _lookAction.performed += OnLook;
-
-        _moveAction.Enable();
-        _moveAction.performed += OnMove;
-
-    }
 
     private void OnDisable()
     {
         _moveAction.performed -= OnMove;
-        _moveAction.Disable();
-
         _lookAction.performed -= OnLook;
-        _lookAction.Disable();
-
         _interactAction.performed -= OnInteraction;
-        _interactAction.Disable();
     }
 
 
     private void OnInteraction(InputAction.CallbackContext context)
     {
+        StartCoroutine(DayManager.Instance.GoToNextScene());
         _iCaster.GetHitComponent()?.Interact();
     }
 
     // Move these into Ingame ui thing
     private void OnLook(InputAction.CallbackContext context)
     {
+
         var result = _iCaster.GetHitComponent();
         OnSight(result);
     }

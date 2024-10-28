@@ -44,7 +44,7 @@ public class Singleton<T> : MonoBehaviour where T : Component
         }
     }
 
-    private void RemoveDuplicates()
+    public void RemoveDuplicates()
     {
         if (instance == null)
         {
