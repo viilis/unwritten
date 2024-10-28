@@ -59,6 +59,7 @@ public class InteractableTv : MonoBehaviour, IInteractable, IEvent
 
         // Light init
         _light = lightObj.GetComponent<Light>();
+
         if (_light != null)
         {
             _lSwitcher = new LightSwitcher(_light, false);
