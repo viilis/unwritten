@@ -71,12 +71,12 @@ public class InteractableTv : MonoBehaviour, IInteractable, IEvent
 
     private void OnEnable()
     {
-        EventManager.OnParanormalElectronicsEvent += OnEventTrigger;
+        EventManager.Instance.OnParanormalElectronics += OnEventTrigger;
     }
 
     private void OnDisable()
     {
-        EventManager.OnParanormalElectronicsEvent -= OnEventTrigger;
+        EventManager.Instance.OnParanormalElectronics -= OnEventTrigger;
     }
 
     public void Interact()

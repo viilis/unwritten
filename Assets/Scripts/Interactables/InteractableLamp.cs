@@ -49,12 +49,12 @@ public class InteractableLamp : MonoBehaviour, IInteractable, IEvent
 
     public void OnEnable()
     {
-        EventManager.OnParanormalElectronicsEvent += OnEventTrigger;
+        EventManager.Instance.OnParanormalElectronics += OnEventTrigger;
     }
 
     public void OnDisable()
     {
-        EventManager.OnParanormalElectronicsEvent += OnEventTrigger;
+        EventManager.Instance.OnParanormalElectronics += OnEventTrigger;
     }
 
     public void Interact()

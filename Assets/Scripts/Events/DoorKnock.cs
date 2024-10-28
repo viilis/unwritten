@@ -13,26 +13,35 @@ public class DoorKnock : MonoBehaviour, IEvent
     private float _volume = 0;
 
     private bool _canBeTriggered = false;
-    private BoxCollider _tg;
 
     [SerializeField]
     private bool playOnlyFromCollision = true;
 
+    [SerializeField]
+    private BoxCollider bc;
+
     private void Start()
     {
         _audioPlayer = new AudioPerAction(_audioClip, gameObject.transform, _volume);
-        _tg = GetComponent<BoxCollider>();
-        _tg.isTrigger = true;
+
+        if (bc != null)
+        {
+            bc.isTrigger = true;
+        }
+        else
+        {
+            Debug.LogError("MISSING COLLIDER");
+        }
     }
 
     private void OnEnable()
     {
-        EventManager.OnParanormalAudioEvent += OnEventTrigger;
+        EventManager.Instance.OnParanormalDoorKnock += OnEventTrigger;
     }
 
     private void OnDisable()
     {
-        EventManager.OnParanormalAudioEvent -= OnEventTrigger;
+        EventManager.Instance.OnParanormalDoorKnock -= OnEventTrigger;
     }
 
     private void OnTriggerEnter()

@@ -12,7 +12,7 @@ public class RandomMovement : MonoBehaviour, IEvent
 
     private void OnEnable()
     {
-        EventManager.OnParanormalObjMovementEvent += OnEventTrigger;
+        EventManager.Instance.OnParanormalObjMovement += OnEventTrigger;
     }
 
     // Start is called before the first frame update
@@ -23,7 +23,7 @@ public class RandomMovement : MonoBehaviour, IEvent
 
     private void OnDisable()
     {
-        EventManager.OnParanormalObjMovementEvent -= OnEventTrigger;
+        EventManager.Instance.OnParanormalObjMovement -= OnEventTrigger;
     }
 
     public void OnEventTrigger()

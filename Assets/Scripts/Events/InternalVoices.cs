@@ -23,12 +23,12 @@ public class InternalVoices : MonoBehaviour, IEvent
 
     private void OnEnable()
     {
-        EventManager.OnInternalVoicesEvent += OnEventTrigger;
+        EventManager.Instance.OnInternalVoices += OnEventTrigger;
     }
 
     private void OnDisable()
     {
-        EventManager.OnInternalVoicesEvent -= OnEventTrigger;
+        EventManager.Instance.OnInternalVoices -= OnEventTrigger;
     }
 
     public void OnEventTrigger()

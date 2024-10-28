@@ -29,12 +29,12 @@ public class TalkingItem : MonoBehaviour, IEvent
 
     private void OnEnable()
     {
-        EventManager.OnTalkingItemsEvent += OnEventTrigger;
+        EventManager.Instance.OnTalkingItems += OnEventTrigger;
     }
 
     private void OnDisable()
     {
-        EventManager.OnTalkingItemsEvent -= OnEventTrigger;
+        EventManager.Instance.OnTalkingItems -= OnEventTrigger;
     }
 
     public void OnEventTrigger()

@@ -15,9 +15,6 @@ namespace GameTasks
         private float _outlineWidth;
 
         [SerializeField]
-        private string _sceneName;
-
-        [SerializeField]
         private TaskBase taskBase;
 
         private void Start()

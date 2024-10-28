@@ -34,18 +34,18 @@ public class DoorSlam : MonoBehaviour, IEvent
         {
             _animator.Play(_closed, 0, 0f);
             _audioPlayer.PlayOnce();
-            EventManager.OnParanormalDoorSlamEvent -= OnEventTrigger;
+            EventManager.Instance.OnParanormalDoorSlam -= OnEventTrigger;
         }
     }
 
     private void OnEnable()
     {
-        EventManager.OnParanormalDoorSlamEvent += OnEventTrigger;
+        EventManager.Instance.OnParanormalDoorSlam += OnEventTrigger;
     }
 
     private void OnDisable()
     {
-        EventManager.OnParanormalDoorSlamEvent -= OnEventTrigger;
+        EventManager.Instance.OnParanormalDoorSlam -= OnEventTrigger;
     }
 
     public void OnEventTrigger()

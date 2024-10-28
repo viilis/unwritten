@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class EventManager : Singleton<EventManager>
 {
-    public static event Action OnParanormalElectronicsEvent;
-    public static event Action OnParanormalObjMovementEvent;
-    public static event Action OnParanormalAudioEvent;
-    public static event Action OnInternalVoicesEvent;
-    public static event Action OnTalkingItemsEvent;
-    public static event Action OnParanormalDoorSlamEvent;
+    public event Action OnParanormalElectronics;
+    public event Action OnParanormalObjMovement;
+    public event Action OnParanormalDoorKnock;
+    public event Action OnInternalVoices;
+    public event Action OnTalkingItems;
+    public event Action OnParanormalDoorSlam;
 
     [SerializeField]
     [Tooltip("Can be used for calling events between x sec intervals. Defaults to 10 which translates to 5 seconds IRL time.")]
@@ -35,20 +35,20 @@ public class EventManager : Singleton<EventManager>
         if (currentSanity <= level1Threshold)
         {
             Debug.Log("Level 1.");
-            OnParanormalObjMovementEvent?.Invoke();
+            OnParanormalObjMovement?.Invoke();
         }
 
         if (currentSanity <= level2Threshold)
         {
             Debug.Log("Level 2.");
-            OnParanormalElectronicsEvent?.Invoke();
-            OnParanormalDoorSlamEvent?.Invoke();
+            OnParanormalElectronics?.Invoke();
+            OnParanormalDoorSlam?.Invoke();
         }
 
         if (currentSanity <= level3Threshold)
         {
             Debug.Log("Level 3.");
-            OnInternalVoicesEvent?.Invoke();
+            OnInternalVoices?.Invoke();
         }
     }
 
@@ -64,8 +64,7 @@ public class EventManager : Singleton<EventManager>
 
         if (_timer <= 0)
         {
-            // Call action e.g OnParanormalAudioEvent?.Invoke();
-            Debug.Log("Invoked on interval" + eventInterval);
+            Debug.Log("Eventmanager -> invoked on interval" + eventInterval);
             _timer = eventInterval;
         }
     }
