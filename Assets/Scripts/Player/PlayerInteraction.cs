@@ -44,7 +44,6 @@ public class PlayerInteraction : MonoBehaviour
         _iCaster = new Caster<IInteractable>(layerMask, _playerCamera, interactionDistance, true);
     }
 
-
     private void OnDisable()
     {
         _moveAction.performed -= OnMove;

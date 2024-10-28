@@ -31,6 +31,8 @@ public class DayManager : Singleton<DayManager>
     /// <returns>IEnumerator, MOST BE CALLED IN COROUTINE</returns>
     public IEnumerator GoToNextScene()
     {
+        InputManager.Instance.DisableAllInputs();
+
         yield return StartCoroutine(FadeLoadingScreen(1, fadeDuration));
 
         AsyncOperation operation = null;
@@ -91,9 +93,9 @@ public class DayManager : Singleton<DayManager>
                 // When 90% ready, new scene can be launched. https://docs.unity3d.com/ScriptReference/AsyncOperation-allowSceneActivation.html
                 if (operation.progress >= 0.9f)
                 {
-                    Debug.Log("COMPELETED");
-
                     // Launch new scene
+                    InputManager.Instance.EnableAllInputs();
+
                     operation.allowSceneActivation = true;
                     yield return StartCoroutine(FadeLoadingScreen(0, fadeDuration));
                 }

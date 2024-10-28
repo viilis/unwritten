@@ -83,4 +83,33 @@ public class InputManager : Singleton<InputManager>
     {
         return _lookAction;
     }
+
+    // Disablers and enablers
+    public void DisableInteractButton()
+    {
+        _interactAction.Disable();
+    }
+
+    public void EnableInteractButton()
+    {
+        _interactAction.Enable();
+    }
+
+    public void DisableAllInputs()
+    {
+        if (debug)
+        {
+            Debug.Log("Disabled all inputs");
+        }
+        _playerControls.Gameplay.Disable();
+    }
+
+    public void EnableAllInputs()
+    {
+        if (debug)
+        {
+            Debug.Log("Enabled all inputs");
+        }
+        _playerControls.Gameplay.Enable();
+    }
 }
