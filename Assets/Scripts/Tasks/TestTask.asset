@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52d90fade38d37d7ab18c3734ae06213, type: 3}
   m_Name: TestTask
   m_EditorClassIdentifier: 
-  taskName: Testi otsikko
-  taskDescription: Testi deski
+  taskName: Eat pizza
+  taskDescription: yummy pizza mm
   taskState: 2
   dialogBase: {fileID: 11400000, guid: 795a40125779f7dd9b8c54c3f5bc3c26, type: 2}
-  sanityHit: -10
+  sanityHit: 50

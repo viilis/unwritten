@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: TestDialog
   m_EditorClassIdentifier: 
   dialogAuthor: Me
-  dialogContent: nice nice yes yes dialog
+  dialogContent: Ohh ahh so good pizza
   audio: {fileID: 0}

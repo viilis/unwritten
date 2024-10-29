@@ -14,15 +14,15 @@ public class TaskManager : Singleton<TaskManager>
 
     private void OnEnable()
     {
-        GameTasks.GameTask.OnTaskCompletionEvent += WhenTaskComplitionTriggered;
+        GameTasks.GameTask.OnTaskCompletionEvent += WhenTaskCompletionTriggered;
     }
 
     private void OnDisable()
     {
-        GameTasks.GameTask.OnTaskCompletionEvent -= WhenTaskComplitionTriggered;
+        GameTasks.GameTask.OnTaskCompletionEvent -= WhenTaskCompletionTriggered;
     }
 
-    private void WhenTaskComplitionTriggered(TaskBase tb)
+    private void WhenTaskCompletionTriggered(TaskBase tb)
     {
         Debug.Log("Completed task: " + tb.taskName);
 
