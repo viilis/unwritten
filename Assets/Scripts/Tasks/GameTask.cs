@@ -38,8 +38,11 @@ namespace GameTasks
 
         public void BeforeInteraction()
         {
-            _outline.OutlineMode = Outline.Mode.OutlineVisible;
-            _outline.OutlineWidth = _outlineWidth;
+            if (taskBase.taskState != TaskStates.Done)
+            {
+                _outline.OutlineMode = Outline.Mode.OutlineVisible;
+                _outline.OutlineWidth = _outlineWidth;
+            }
         }
 
         public void UndoBeforeInteraction()

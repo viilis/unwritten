@@ -2468,13 +2468,13 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3732412489461408951, guid: 3694a8b1a2049414aad2b2af61856fcf, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8537311394353416632}
+      addedObject: {fileID: 2118854032074111083}
     - targetCorrespondingSourceObject: {fileID: 3732412489461408951, guid: 3694a8b1a2049414aad2b2af61856fcf, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2230027943277348907}
+      addedObject: {fileID: 7337880378821472550}
     - targetCorrespondingSourceObject: {fileID: 3732412489461408951, guid: 3694a8b1a2049414aad2b2af61856fcf, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4944392537120332466}
+      addedObject: {fileID: 524098514301728113}
   m_SourcePrefab: {fileID: 100100000, guid: 3694a8b1a2049414aad2b2af61856fcf, type: 3}
 --- !u!4 &5616666516725275421 stripped
 Transform:
@@ -2486,7 +2486,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3732412489461408951, guid: 3694a8b1a2049414aad2b2af61856fcf, type: 3}
   m_PrefabInstance: {fileID: 5366268810741480694}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &8537311394353416632
+--- !u!64 &2118854032074111083
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2508,7 +2508,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4729988176110476404, guid: 3694a8b1a2049414aad2b2af61856fcf, type: 3}
---- !u!114 &2230027943277348907
+--- !u!114 &7337880378821472550
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2522,11 +2522,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMode: 0
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
+  outlineWidth: 8
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!114 &4944392537120332466
+--- !u!114 &524098514301728113
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2538,7 +2538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a0a8f8d22d4fe8f9810e466be5b5aed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskBase: {fileID: 0}
+  taskBase: {fileID: 11400000, guid: b21f3c5114ce995afbd76395fd056094, type: 2}
 --- !u!1001 &5472739500535460176
 PrefabInstance:
   m_ObjectHideFlags: 0
