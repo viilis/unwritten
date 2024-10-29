@@ -38,12 +38,17 @@ namespace GameTasks
 
         public void Interact()
         {
-            if (taskBase.taskState != TaskStates.Done)
-            {
+            //Commented the if statement out because for some reason it seems to have caused a bug 
+            //I could only complete the task once during all of the unity runtime, as in even if I end to playtesting, I still can't do it on my next one
+            //the only way I could finish the same task again was if I restart unity entirely
+            //I don't know what caused it, it might just be my computer idk but this fixed it for me
+            
+            //if (taskBase.taskState != TaskStates.Done)
+            //{
                 taskBase.taskState = TaskStates.Done;
                 OnTaskCompletionEvent?.Invoke(taskBase);
                 _taskText.text = taskBase.dialogBase.dialogContent;
-            }
+            //}
         }
 
         public void BeforeInteraction()
