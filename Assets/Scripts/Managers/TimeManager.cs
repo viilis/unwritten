@@ -5,10 +5,10 @@ using UnityEngine;
 // --- Observer pattern ---
 // You can make anything to subscribe OnHour/MinuteChange and this class Invokes them
 // at every in-game minute/hour change. Could be used for e.g. clock object
-public class TimeManager : MonoBehaviour
+public class TimeManager : Singleton<TimeManager>
 {
-    public static Action<int> OnMinuteChange;
-    public static Action<int> OnHourChange;
+    public event Action<int> OnMinuteChange;
+    public event Action<int> OnHourChange;
 
     public int Minute { get; private set; }
     public int Hour { get; private set; }

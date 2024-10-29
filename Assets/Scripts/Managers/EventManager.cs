@@ -36,6 +36,7 @@ public class EventManager : Singleton<EventManager>
         {
             Debug.Log("Level 1.");
             OnParanormalObjMovement?.Invoke();
+            OnParanormalDoorKnock?.Invoke();
         }
 
         if (currentSanity <= level2Threshold)
@@ -49,6 +50,7 @@ public class EventManager : Singleton<EventManager>
         {
             Debug.Log("Level 3.");
             OnInternalVoices?.Invoke();
+            OnTalkingItems?.Invoke();
         }
     }
 
