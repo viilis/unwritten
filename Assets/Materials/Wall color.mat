@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Television_var
+  m_Name: Wall color
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 3724558101408282144, guid: 7a278e46404508301bd04008111b6bf3, type: 3}
+  m_Parent: {fileID: 2100000, guid: 22e27fcc88e8e8f4db4b8e3bbf40b03a, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -26,5 +26,5 @@ Material:
     m_Ints: []
     m_Floats: []
     m_Colors:
-    - _Color: {r: 0.30581364, g: 0.30581364, b: 0.30581364, a: 0}
+    - _Color: {r: 0.4415095, g: 0.3053604, b: 0.2524101, a: 1}
   m_BuildTextureStacks: []
