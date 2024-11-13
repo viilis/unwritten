@@ -2,11 +2,14 @@ using System;
 using System.Collections.Generic;
 using Unity;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SoundManager : Singleton<SoundManager>
 {
     [SerializeField]
     private AudioSource soundFXObject;
+    [SerializeField]
+    Slider volumeSlider;
 
     [SerializeField]
     public float globalVolume { get; private set; } = 1f;
@@ -78,5 +81,10 @@ public class SoundManager : Singleton<SoundManager>
         audioSource.Play();
 
         Destroy(audioSource.gameObject, clipLength);
+    }
+
+    public void ChangeVolume()
+    {
+        AudioListener.volume = volumeSlider.value;
     }
 }
