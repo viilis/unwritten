@@ -1,29 +1,33 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using Unity;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class TaskManager : Singleton<TaskManager>
 {
-    public Action<Task> OnTaskAdded;
-    public List<Task> Tasks { get; } = new();
-    private static int wTasksDone;
-    private static int scTasksDone;
 
-    public void OnCompletion(string name, bool isWorkTask)
+    private void Start()
     {
-        if(isWorkTask)
-        {
-            wTasksDone++;
-        } 
-        else if(!isWorkTask)
-        {
-            scTasksDone++;
-        }
+        Debug.Log("Started task manager");
+    }
 
-        Debug.Log("Completed task: " + name + ", is work task?: " + isWorkTask);
-        Debug.Log("Work tasks done: " + wTasksDone + " self care tasks done: " + scTasksDone);
-    }  
+    private void OnEnable()
+    {
+        GameTasks.GameTask.OnTaskCompletionEvent += WhenTaskCompletionTriggered;
+    }
+
+    private void OnDisable()
+    {
+        GameTasks.GameTask.OnTaskCompletionEvent -= WhenTaskCompletionTriggered;
+    }
+
+    private void WhenTaskCompletionTriggered(TaskBase tb)
+    {
+        Debug.Log("Completed task: " + tb.taskName);
+
+        PlayerSanity.ChangeSanity(tb.sanityHit);
+
+        StartCoroutine(DayManager.Instance.GoToNextScene());
+    }
 }

@@ -4,11 +4,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Dialogs/Dialog with audio")]
 public class DialogBase : ScriptableObject
 {
-    [SerializeField] public string dialogName { get; }
-    [SerializeField] public string dialogDesc { get; }
+    public string dialogAuthor;
+    public string dialogContent;
 
-    [SerializeField] public string dialogAuthor { get; }
-    [SerializeField] public string dialogContent { get; }
-
-    [SerializeField] public AudioClip audio { get; }
+    public AudioClip audio;
 }

@@ -39,7 +39,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4842980672243423780}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
@@ -105,9 +105,9 @@ GameObject:
   - component: {fileID: 7322596315016482272}
   - component: {fileID: -1396051045354200675}
   - component: {fileID: -6532036016299495493}
+  - component: {fileID: 4690698427169238550}
   - component: {fileID: 4437524922316645774}
   - component: {fileID: 3232481626361083038}
-  - component: {fileID: 4690698427169238550}
   m_Layer: 3
   m_Name: InteractableTv
   m_TagString: Untagged
@@ -159,8 +159,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 6777221604287674797, guid: 7a278e46404508301bd04008111b6bf3, type: 3}
-  - {fileID: 2100000, guid: 654f02790ad017407bd83a53aa76f666, type: 2}
+  - {fileID: 2100000, guid: 765afb936571fae039ec31d8099ba1aa, type: 2}
+  - {fileID: 2100000, guid: b678756435bef28d792f6854028331fa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -182,6 +182,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4690698427169238550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5571195706714242258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 8
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!114 &4437524922316645774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,8 +216,8 @@ MonoBehaviour:
   audioClip: {fileID: 8300000, guid: bc2764f104bad62cf8f1b0413c5cca02, type: 3}
   audioPosition: {fileID: 7322596315016482272}
   volume: 0.5
-  material: {fileID: 2100000, guid: 654f02790ad017407bd83a53aa76f666, type: 2}
-  newcolor: {r: 0.80533355, g: 0.80533355, b: 0.80533355, a: 0}
+  material: {fileID: 2100000, guid: b678756435bef28d792f6854028331fa, type: 2}
+  newcolor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!65 &3232481626361083038
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -221,21 +239,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.22646034, y: 1.1503989, z: 1.8259611}
   m_Center: {x: 0.046209037, y: 0.5775544, z: 0.0059756637}
---- !u!114 &4690698427169238550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5571195706714242258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 1
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 10
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
