@@ -41,11 +41,6 @@ public class DayManager : Singleton<DayManager>
         switch (_dt)
         {
             case Daytimes.Morning:
-                if (daysLeft <= 0)
-                {
-                    //TODO: Call / build ending logic here
-                }
-
                 _dt = Daytimes.Afternoon;
                 operation = SceneManager.LoadSceneAsync(_dt);
                 break;
@@ -73,9 +68,27 @@ public class DayManager : Singleton<DayManager>
                     dayMessage = daysLeft + " days until deadline";
                 }
 
+                if (daysLeft < 0)
+                {
+                    float currentSanity = PlayerSanity.GetSanity();
+                    if(currentSanity > 70f)
+                    {
+                        _dt = Daytimes.GoodEnding;
+                        operation = SceneManager.LoadSceneAsync(_dt);
+                        break;
+                    }
+                    else if(currentSanity > 0f || currentSanity <= 70f)
+                    {
+                        _dt = Daytimes.NeutralEnding;
+                        operation = SceneManager.LoadSceneAsync(_dt);
+                        break;
+                    }
+                }
+
                 _dt = Daytimes.Morning;
                 operation = SceneManager.LoadSceneAsync(_dt);
                 break;
+
             default:
                 Debug.LogError("Invalid Daytime");
                 yield break;
@@ -144,4 +157,6 @@ public static class Daytimes
     public const string Afternoon = "afternoon";
     public const string Evening = "evening";
     public const string Night = "night";
+    public const string GoodEnding = "goodEnding";
+    public const string NeutralEnding = "neutralEnding";
 }
