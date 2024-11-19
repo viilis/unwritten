@@ -40,6 +40,12 @@ public class LoadingCanvas : Singleton<LoadingCanvas>
                 deadLineTMP.text = "neutral ending";
                 dayTimeTMP.text = "oh ok";   
             }
+            else if(DayManager.Instance.GetCurrentTimeState() == "gameOver")
+            {
+                deadLineTMP.text = null;
+                dayTimeTMP.text = null;   
+            }
+
         }
 
     }

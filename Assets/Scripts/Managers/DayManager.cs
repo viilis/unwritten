@@ -16,6 +16,7 @@ public class DayManager : Singleton<DayManager>
 
     private string _dt = Daytimes.Morning;
     private PlayerControls _playerControls;
+    public float currentSanity;
 
     private void Start()
     {
@@ -25,11 +26,16 @@ public class DayManager : Singleton<DayManager>
         StartCoroutine(FadeLoadingScreen(0, fadeDuration));
     }
 
+    private void Update()
+    {
+        currentSanity = PlayerSanity.GetSanity();
+    }
+
     /// <summary>
     /// Goes to next day time (changes scene). Has simple state machine so function knows what daytime comes next.
     /// </summary>
     /// <returns>IEnumerator, MOST BE CALLED IN COROUTINE</returns>
-    public IEnumerator GoToNextScene()
+    public IEnumerator GoToNextScene(bool isGameOver)
     {
         InputManager.Instance.DisableAllInputs();
 
@@ -38,60 +44,68 @@ public class DayManager : Singleton<DayManager>
         AsyncOperation operation = null;
 
         //FIXME: Day counting logic might be broken but yeah, fix it here
-        switch (_dt)
+        if(!isGameOver)
         {
-            case Daytimes.Morning:
-                _dt = Daytimes.Afternoon;
-                operation = SceneManager.LoadSceneAsync(_dt);
-                break;
+            switch (_dt)
+            {
+                case Daytimes.Morning:
+                    _dt = Daytimes.Afternoon;
+                    operation = SceneManager.LoadSceneAsync(_dt);
+                    break;
 
-            case Daytimes.Afternoon:
-                _dt = Daytimes.Evening;
-                operation = SceneManager.LoadSceneAsync(_dt);
-                break;
+                case Daytimes.Afternoon:
+                    _dt = Daytimes.Evening;
+                    operation = SceneManager.LoadSceneAsync(_dt);
+                    break;
 
-            case Daytimes.Evening:
-                _dt = Daytimes.Night;
-                operation = SceneManager.LoadSceneAsync(_dt);
-                break;
+                case Daytimes.Evening:
+                    _dt = Daytimes.Night;
+                    operation = SceneManager.LoadSceneAsync(_dt);
+                    break;
 
-            case Daytimes.Night:
-                // Day cycle done
-                daysLeft--;
-
-                if (daysLeft == 1)
-                {
-                    dayMessage = daysLeft + " day until deadline";
-                }
-                else
-                {
-                    dayMessage = daysLeft + " days until deadline";
-                }
-
-                if (daysLeft < 0)
-                {
-                    float currentSanity = PlayerSanity.GetSanity();
-                    if(currentSanity > 70f)
+                case Daytimes.Night:
+                    // Day cycle done
+                    daysLeft--;
+                    
+                    if (daysLeft == 1)
                     {
-                        _dt = Daytimes.GoodEnding;
-                        operation = SceneManager.LoadSceneAsync(_dt);
-                        break;
+                        dayMessage = daysLeft + " day until deadline";
                     }
-                    else if(currentSanity > 0f || currentSanity <= 70f)
+                    else
                     {
-                        _dt = Daytimes.NeutralEnding;
-                        operation = SceneManager.LoadSceneAsync(_dt);
-                        break;
+                        dayMessage = daysLeft + " days until deadline";
                     }
-                }
 
-                _dt = Daytimes.Morning;
-                operation = SceneManager.LoadSceneAsync(_dt);
-                break;
+                    if (daysLeft < 0)
+                    {
+                        if(currentSanity > 70f)
+                        {
+                            EventManager.Instance.isGameOver = true;
+                            _dt = Daytimes.GoodEnding;
+                            operation = SceneManager.LoadSceneAsync(_dt);
+                            break;
+                        }
+                        else if(currentSanity > 0f || currentSanity <= 70f)
+                        {
+                            EventManager.Instance.isGameOver = true;
+                            _dt = Daytimes.NeutralEnding;
+                            operation = SceneManager.LoadSceneAsync(_dt);
+                            break;
+                        }
+                    }
 
-            default:
-                Debug.LogError("Invalid Daytime");
-                yield break;
+                    _dt = Daytimes.Morning;
+                    operation = SceneManager.LoadSceneAsync(_dt);
+                    break;
+
+                default:
+                    Debug.LogError("Invalid Daytime");
+                    yield break;
+            }
+        }
+        else
+        {
+            operation = SceneManager.LoadSceneAsync(Daytimes.GameOver);
         }
 
         // Loads next scene ready for launch in coroutine so that main thread (actual game) won't freeze. https://docs.unity3d.com/ScriptReference/SceneManagement.SceneManager.LoadSceneAsync.html
@@ -159,4 +173,5 @@ public static class Daytimes
     public const string Night = "night";
     public const string GoodEnding = "goodEnding";
     public const string NeutralEnding = "neutralEnding";
+    public const string GameOver = "gameOver";
 }
