@@ -7,6 +7,7 @@ using UnityEngine.AI;
 public class TaskManager : Singleton<TaskManager>
 {
 
+    public static float _sanityHit;
     private void Start()
     {
         Debug.Log("Started task manager");
@@ -26,8 +27,8 @@ public class TaskManager : Singleton<TaskManager>
     {
         Debug.Log("Completed task: " + tb.taskName);
 
-        PlayerSanity.ChangeSanity(tb.sanityHit);
+        _sanityHit = tb.sanityHit;
 
-        StartCoroutine(DayManager.Instance.GoToNextScene());
+        StartCoroutine(DayManager.Instance.GoToNextScene(false));
     }
 }
