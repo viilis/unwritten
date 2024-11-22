@@ -23,7 +23,30 @@ public class LoadingCanvas : Singleton<LoadingCanvas>
 
     private void Update()
     {
-        deadLineTMP.text = DayManager.Instance.GetDeadlineText();
-        dayTimeTMP.text = DayManager.Instance.GetCurrentTimeState();
+        if(DayManager.Instance.daysLeft >= 0)
+        {
+            deadLineTMP.text = DayManager.Instance.GetDeadlineText();
+            dayTimeTMP.text = DayManager.Instance.GetCurrentTimeState();           
+        }
+        else
+        {
+            if(DayManager.Instance.GetCurrentTimeState() == "goodEnding")
+            {
+                deadLineTMP.text = "good ending";
+                dayTimeTMP.text = "yippiee!";   
+            }
+            else if(DayManager.Instance.GetCurrentTimeState() == "neutralEnding")
+            {
+                deadLineTMP.text = "neutral ending";
+                dayTimeTMP.text = "oh ok";   
+            }
+            else if(DayManager.Instance.GetCurrentTimeState() == "gameOver")
+            {
+                deadLineTMP.text = null;
+                dayTimeTMP.text = null;   
+            }
+
+        }
+
     }
 }

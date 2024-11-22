@@ -9,6 +9,9 @@ public class EventManager : Singleton<EventManager>
     public static event Action OnInternalVoicesEvent;
     public static event Action OnTalkingItemsEvent;
     public static event Action OnParanormalDoorSlamEvent;
+    
+    [SerializeField]
+    private int sanityTick;
 
     [SerializeField]
     [Tooltip("Can be used for calling events between x sec intervals. Defaults to 10 which translates to 5 seconds IRL time.")]
@@ -22,8 +25,12 @@ public class EventManager : Singleton<EventManager>
 
     [SerializeField]
     private float level3Threshold = 20f;
+    [SerializeReference]
+    private float level4Threshold = 0f;
 
     private float _timer;
+    public bool isGameOver = false;
+    public static string gameOverText = null;
 
     private void OnEnable()
     {
@@ -50,6 +57,14 @@ public class EventManager : Singleton<EventManager>
             Debug.Log("Level 3.");
             OnInternalVoicesEvent?.Invoke();
         }
+
+        if (currentSanity <= level4Threshold)
+        {
+            Debug.Log("Game Over!!!!!");
+            isGameOver = true;
+            gameOverText = "you died oh no :(";
+            StartCoroutine(DayManager.Instance.GoToNextScene(true));
+        }
     }
 
     private void Start()
@@ -67,6 +82,10 @@ public class EventManager : Singleton<EventManager>
             // Call action e.g OnParanormalAudioEvent?.Invoke();
             Debug.Log("Invoked on interval" + eventInterval);
             _timer = eventInterval;
+
+            //decrease sanity by a set amount every time timer ticks down
+            if(!isGameOver)
+                PlayerSanity.ChangeSanity(sanityTick);
         }
     }
 
