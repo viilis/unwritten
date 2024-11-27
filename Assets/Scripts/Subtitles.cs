@@ -30,6 +30,7 @@ public class Subtitles : MonoBehaviour
 
     IEnumerator ManagerSubtitleCoroutine()
     {
+        //There's probably a better way to do this but I'm tired and annoyed so this will have to do
         switch(DayManager.Instance.daysLeft)
         {
             case 5:
@@ -40,6 +41,7 @@ public class Subtitles : MonoBehaviour
                 yield return new WaitForSecondsRealtime(line.duration);
                 dialogueBg.gameObject.SetActive(false);
             }
+            TaskManager.canDoTasks = true;
             break;
 
             case 4:
@@ -50,6 +52,7 @@ public class Subtitles : MonoBehaviour
                 yield return new WaitForSecondsRealtime(line.duration);
                 dialogueBg.gameObject.SetActive(false);
             }
+            TaskManager.canDoTasks = true;
             break;
 
             case 3:
@@ -60,6 +63,7 @@ public class Subtitles : MonoBehaviour
                 yield return new WaitForSecondsRealtime(line.duration);
                 dialogueBg.gameObject.SetActive(false);
             }
+            TaskManager.canDoTasks = true;
             break;
 
             case 2:
@@ -70,6 +74,7 @@ public class Subtitles : MonoBehaviour
                 yield return new WaitForSecondsRealtime(line.duration);
                 dialogueBg.gameObject.SetActive(false);
             }
+            TaskManager.canDoTasks = true;
             break;
 
             case 1:
@@ -80,6 +85,7 @@ public class Subtitles : MonoBehaviour
                 yield return new WaitForSecondsRealtime(line.duration);
                 dialogueBg.gameObject.SetActive(false);
             }
+            TaskManager.canDoTasks = true;
             break;
         }
 
@@ -89,7 +95,7 @@ public class Subtitles : MonoBehaviour
 [System.Serializable]
 public class SubtitleLine
 {
-    public string text; // The subtitle text to display
-    public float duration; // Duration (in seconds) for which this subtitle should be displayed
+    public string text;
+    public float duration;
 }
 

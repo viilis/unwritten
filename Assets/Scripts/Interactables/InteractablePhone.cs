@@ -27,7 +27,8 @@ public class InteractablePhone : MonoBehaviour, IInteractable
     [SerializeField]
     private AudioClip phoneRingAudio;
     [SerializeField]
-    private AudioClip managerDialogueAudio;
+    private AudioClip[] managerDialogue;
+
     [SerializeField]
     private Transform audioPosition;
     private AudioInLoop _phoneRinging;
@@ -56,15 +57,18 @@ public class InteractablePhone : MonoBehaviour, IInteractable
     public void Interact()
     {
         //TODO: don't enable taskmanager until after the voice acting clip has finished playing
-        _managerDialogue = new AudioPerAction(managerDialogueAudio, audioPosition, volume);
+        _managerDialogue = new AudioPerAction(managerDialogue[DayManager.Instance.daysLeft -1], audioPosition, volume);
+
         _phoneRinging.StopPlaying();
         _managerDialogue.PlayOnce();
+
         _subtitles.GetComponent<Subtitles>().StartManagerSubtitles();
+
         _taskInfo.enabled = false;
         _taskText.text = "";
+
         //disable box collider after answering phone so the raycaster doesn't do anything to the phone anymore
         GetComponent<BoxCollider>().enabled = false;
-        TaskManager.canDoTasks = true;
     }
 
     public void BeforeInteraction()

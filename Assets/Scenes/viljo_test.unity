@@ -290,7 +290,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8758475486270216183, guid: 74cdecce5e5cb9185af50a68e509db59, type: 3}
       propertyPath: daysLeft
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -565,7 +565,12 @@ MonoBehaviour:
   _taskInfo: {fileID: 2085008393}
   volume: 0.5
   phoneRingAudio: {fileID: 8300000, guid: 4cddb36b0c3dfca4fa0b44a6def30931, type: 3}
-  managerDialogueAudio: {fileID: 8300000, guid: 4af3f089daf0166009ba6cb2c1ed5509, type: 3}
+  managerDialogue:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 2483206da14e8faaf8fa0eef93e8d293, type: 3}
+  - {fileID: 8300000, guid: 6f02900f43a54db77a23eb02dd336803, type: 3}
+  - {fileID: 8300000, guid: 4af3f089daf0166009ba6cb2c1ed5509, type: 3}
   audioPosition: {fileID: 1458320131}
   taskBase: {fileID: 11400000, guid: 2154f92188e31da4fbe8ecc8abc41abd, type: 2}
 --- !u!114 &1458320135
@@ -812,12 +817,12 @@ MonoBehaviour:
   ManagerDayLeft4:
   - text: day2
     duration: 1
-  - text: poo
-    duration: 1
+  - text: testing day2
+    duration: 10
   ManagerDayLeft5:
   - text: day1
     duration: 1
-  - text: pee
+  - text: testing day1
     duration: 1
   FriendCall: []
   dialogueText: {fileID: 2085008391}
