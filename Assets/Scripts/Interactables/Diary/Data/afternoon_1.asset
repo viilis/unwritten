@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb2d9799c9471ebea9c5423e9787428c, type: 3}
+  m_Name: afternoon_1
+  m_EditorClassIdentifier: 
+  timeStamp: 2020/1/7
+  pageText: "I guess this is going to be more of a weekly thing? Anyway, great news\u2014I
+    made it to the second phase of the King\u2019s Writer Writing Contest! This year
+    is starting off strong."
