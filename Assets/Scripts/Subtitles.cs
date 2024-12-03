@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class Subtitles : MonoBehaviour
 {
-    public SubtitleLine[] ManagerDayLeft1;
+    public SubtitleLine[] ManagerDayLeft0;
+    public SubtitleLine[] ManagerDayLeft1; 
     public SubtitleLine[] ManagerDayLeft2; 
     public SubtitleLine[] ManagerDayLeft3; 
     public SubtitleLine[] ManagerDayLeft4; 
-    public SubtitleLine[] ManagerDayLeft5; 
-    public SubtitleLine[] FriendCall; 
+    public SubtitleLine[] SituationalCall; 
 
     public TMP_Text dialogueText;
     public Image dialogueBg;
@@ -29,17 +29,6 @@ public class Subtitles : MonoBehaviour
     {
         switch(DayManager.Instance.daysLeft)
         {
-            case 5:
-            foreach (var line in ManagerDayLeft5)
-            {
-                dialogueText.text = line.text;
-                dialogueBg.gameObject.SetActive(true);
-                yield return new WaitForSecondsRealtime(line.duration);
-                dialogueBg.gameObject.SetActive(false);
-            }
-            TaskManager.canDoTasks = true;
-            break;
-
             case 4:
             foreach (var line in ManagerDayLeft4)
             {
@@ -75,6 +64,17 @@ public class Subtitles : MonoBehaviour
 
             case 1:
             foreach (var line in ManagerDayLeft1)
+            {
+                dialogueText.text = line.text;
+                dialogueBg.gameObject.SetActive(true);
+                yield return new WaitForSecondsRealtime(line.duration);
+                dialogueBg.gameObject.SetActive(false);
+            }
+            TaskManager.canDoTasks = true;
+            break;
+
+            case 0:
+            foreach (var line in ManagerDayLeft0)
             {
                 dialogueText.text = line.text;
                 dialogueBg.gameObject.SetActive(true);

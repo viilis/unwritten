@@ -53,7 +53,7 @@ public class InteractablePhone : MonoBehaviour, IInteractable
     public void Interact()
     {
         //TODO: don't enable taskmanager until after the voice acting clip has finished playing
-        _managerDialogue = new AudioPerAction(managerDialogue[DayManager.Instance.daysLeft -1], audioPosition, volume);
+        _managerDialogue = new AudioPerAction(managerDialogue[DayManager.Instance.daysLeft], audioPosition, volume);
 
         _phoneRinging.StopPlaying();
         _managerDialogue.PlayOnce();
