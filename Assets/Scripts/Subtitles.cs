@@ -5,9 +5,6 @@ using UnityEngine.UI;
 
 public class Subtitles : MonoBehaviour
 {
-
-    //note to self: never write shit like this again
-
     public SubtitleLine[] ManagerDayLeft1;
     public SubtitleLine[] ManagerDayLeft2; 
     public SubtitleLine[] ManagerDayLeft3; 
@@ -30,7 +27,6 @@ public class Subtitles : MonoBehaviour
 
     IEnumerator ManagerSubtitleCoroutine()
     {
-        //There's probably a better way to do this but I'm tired and annoyed so this will have to do
         switch(DayManager.Instance.daysLeft)
         {
             case 5:

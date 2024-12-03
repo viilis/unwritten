@@ -11,8 +11,8 @@ namespace GameTasks
     [RequireComponent(typeof(Outline))]
     public class GameTask : MonoBehaviour, IInteractable
     {
+        public bool blockTask = false;
         public static event Action<TaskBase> OnTaskCompletionEvent;
-
         private Outline _outline;
         private float _outlineWidth;
 
@@ -22,6 +22,7 @@ namespace GameTasks
         [SerializeField]
         private Image _taskInfo;
         private TMP_Text _taskText;
+        string _taskName;
         private void Start()
         {
             _outline = GetComponent<Outline>();
@@ -32,13 +33,28 @@ namespace GameTasks
             _taskText = _taskInfo.GetComponentInChildren<TMP_Text>();
             _taskText.text = "";
 
+            _taskName = taskBase.taskName;
+            
+            //to prevent the player from spamming the same work task the entire day
+            if(_taskName.Equals("Write chapter") && TaskManager.checkmark1)
+                blockTask = true;
+
+            if(_taskName.Equals("Review text") && TaskManager.checkmark2)
+                blockTask = true;
+
+            if(_taskName.Equals("Check emails") && TaskManager.checkmark3)
+                blockTask = true;
+
+            if(_taskName.Equals("Do research") && TaskManager.checkmark4)
+                blockTask = true;
+
             //hide until first interaction;
             _outline.OutlineWidth = 0f;
         }
 
         public void Interact()
         {
-            if(TaskManager.canDoTasks)
+            if(TaskManager.canDoTasks && !blockTask)
             {
                 taskBase.taskState = TaskStates.Done;
                 OnTaskCompletionEvent?.Invoke(taskBase);
@@ -47,7 +63,8 @@ namespace GameTasks
             }
             else
             {
-                Debug.Log("unable to do tasks");
+                _taskText.text = "I should do something else..";
+                Debug.Log("Unable to do task");
             }
         }
 
