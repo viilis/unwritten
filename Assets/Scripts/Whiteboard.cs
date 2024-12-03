@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Whiteboard : MonoBehaviour
@@ -10,23 +11,11 @@ public class Whiteboard : MonoBehaviour
     public GameObject checkmark3;
     public GameObject checkmark4;
 
-    void Update()
+    void Start()
     {
-        if(TaskManager.Instance._taskName.Equals("Write chapter"))
-        {
-            checkmark1.SetActive(true);
-        } 
-        else if(TaskManager.Instance._taskName.Equals("Review text"))
-        {
-            checkmark2.SetActive(true);
-        } 
-        else if(TaskManager.Instance._taskName.Equals("Check email"))
-        {
-            checkmark3.SetActive(true);
-        } 
-        else if(TaskManager.Instance._taskName.Equals("Do research"))
-        {
-            checkmark4.SetActive(true);
-        }
-    }
+        checkmark1.SetActive(TaskManager.checkmark1);
+        checkmark2.SetActive(TaskManager.checkmark2);
+        checkmark3.SetActive(TaskManager.checkmark3);
+        checkmark4.SetActive(TaskManager.checkmark4);
+    }   
 }

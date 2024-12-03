@@ -138,6 +138,10 @@ PrefabInstance:
       propertyPath: _taskInfo
       value: 
       objectReference: {fileID: 1848837844}
+    - target: {fileID: 1610935270140962911, guid: c79461e31ea257d4eb771aa3bff32dcf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1781545510383814048, guid: c79461e31ea257d4eb771aa3bff32dcf, type: 3}
       propertyPath: _taskInfo
       value: 
@@ -193,6 +197,10 @@ PrefabInstance:
     - target: {fileID: 2900419460929432846, guid: c79461e31ea257d4eb771aa3bff32dcf, type: 3}
       propertyPath: m_Name
       value: InteractablesWithTasks
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584078379639266361, guid: c79461e31ea257d4eb771aa3bff32dcf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4705508895264624024, guid: c79461e31ea257d4eb771aa3bff32dcf, type: 3}
       propertyPath: _taskInfo
