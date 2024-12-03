@@ -34,6 +34,8 @@ public class InteractablePhone : MonoBehaviour, IInteractable
 
     public void Start()
     {
+        TaskManager.canDoTasks = false;
+
         //TODO: disable doing tasks until player has answered the phone
         _phoneRinging = new AudioInLoop(phoneRingAudio, audioPosition, volume);
         _phoneRinging.StartPlaying();
@@ -54,6 +56,7 @@ public class InteractablePhone : MonoBehaviour, IInteractable
     {
         //TODO: don't enable taskmanager until after the voice acting clip has finished playing
         _managerDialogue = new AudioPerAction(managerDialogue[DayManager.Instance.daysLeft], audioPosition, volume);
+        EventManager.Instance.DisableSanityTick();
 
         _phoneRinging.StopPlaying();
         _managerDialogue.PlayOnce();

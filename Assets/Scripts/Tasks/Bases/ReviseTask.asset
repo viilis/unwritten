@@ -16,4 +16,4 @@ MonoBehaviour:
   taskDescription: Review written pages
   taskState: 2
   dialogBase: {fileID: 11400000, guid: deae9664126a4684ba6fae3d84f8bd34, type: 2}
-  sanityHit: -20
+  sanityHit: -5

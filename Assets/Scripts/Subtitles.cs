@@ -38,6 +38,7 @@ public class Subtitles : MonoBehaviour
                 dialogueBg.gameObject.SetActive(false);
             }
             TaskManager.canDoTasks = true;
+            EventManager.Instance.EnableSanityTick();
             break;
 
             case 3:
@@ -49,6 +50,7 @@ public class Subtitles : MonoBehaviour
                 dialogueBg.gameObject.SetActive(false);
             }
             TaskManager.canDoTasks = true;
+            EventManager.Instance.EnableSanityTick();
             break;
 
             case 2:
@@ -60,6 +62,7 @@ public class Subtitles : MonoBehaviour
                 dialogueBg.gameObject.SetActive(false);
             }
             TaskManager.canDoTasks = true;
+            EventManager.Instance.EnableSanityTick();
             break;
 
             case 1:
@@ -71,6 +74,7 @@ public class Subtitles : MonoBehaviour
                 dialogueBg.gameObject.SetActive(false);
             }
             TaskManager.canDoTasks = true;
+            EventManager.Instance.EnableSanityTick();
             break;
 
             case 0:
@@ -82,6 +86,7 @@ public class Subtitles : MonoBehaviour
                 dialogueBg.gameObject.SetActive(false);
             }
             TaskManager.canDoTasks = true;
+            EventManager.Instance.EnableSanityTick();
             break;
         }
 

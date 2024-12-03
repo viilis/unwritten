@@ -16,4 +16,4 @@ MonoBehaviour:
   taskDescription: Do research for your book
   taskState: 2
   dialogBase: {fileID: 11400000, guid: add8cfd629770744fa90ceb13f1d804e, type: 2}
-  sanityHit: -20
+  sanityHit: -5

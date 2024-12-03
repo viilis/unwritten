@@ -12,10 +12,11 @@ public class EventManager : Singleton<EventManager>
     
     [SerializeField]
     private int sanityTick;
+    private int tempSanity;
 
     [SerializeField]
     [Tooltip("Can be used for calling events between x sec intervals. Defaults to 10 which translates to 5 seconds IRL time.")]
-    private float eventInterval = 10f; // 5 seconds
+    private float eventInterval = 20f; // 10 seconds
 
     [SerializeField]
     private float level1Threshold = 70f;
@@ -35,6 +36,17 @@ public class EventManager : Singleton<EventManager>
     private void OnEnable()
     {
         PlayerSanity.OnSanityChange += OnSanityChange;
+    }
+
+    public void EnableSanityTick()
+    {
+        sanityTick = tempSanity;
+    }
+
+    public void DisableSanityTick()
+    {
+        tempSanity = sanityTick;
+        sanityTick = 0;
     }
 
     private void OnSanityChange(float currentSanity)

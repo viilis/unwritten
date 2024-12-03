@@ -263,12 +263,6 @@ MonoBehaviour:
   - text: 'So... yeah. '
     duration: 3
   ManagerDayLeft2:
-  - text: Oh, come on, still?
-    duration: 3
-  - text: You're not finished?
-    duration: 3
-  - text: I'm begging you at this point, like,
-    duration: 3
   - text: So, I see someone is just waiting to be fired now, huh?
     duration: 5
   - text: ' Like, how many times do I need to tell you that this is your last fucking
@@ -278,7 +272,7 @@ MonoBehaviour:
     duration: 4
   - text: You have three days, okay?
     duration: 2
-  - text: " THREE DAYS.\u200A"
+  - text: THREE DAYS
     duration: 2
   ManagerDayLeft3:
   - text: "Finally something, I guess... \u200A"
@@ -371,6 +365,10 @@ PrefabInstance:
     - target: {fileID: 4313925000251683050, guid: 1d1c44ff80b80c9e0a9cfada0d89205e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8653774230079973506, guid: 1d1c44ff80b80c9e0a9cfada0d89205e, type: 3}
+      propertyPath: sanityTick
+      value: -10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -589,7 +587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8758475486270216183, guid: 74cdecce5e5cb9185af50a68e509db59, type: 3}
       propertyPath: daysLeft
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8758475486270216183, guid: 74cdecce5e5cb9185af50a68e509db59, type: 3}
       propertyPath: fadeDuration
@@ -1066,11 +1064,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7387264968420897461, guid: 4fb6356f69ecb265ebe0e454356cab41, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7489933297143948883, guid: 4fb6356f69ecb265ebe0e454356cab41, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

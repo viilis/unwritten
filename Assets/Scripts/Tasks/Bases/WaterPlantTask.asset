@@ -16,4 +16,4 @@ MonoBehaviour:
   taskDescription: Water your plant
   taskState: 2
   dialogBase: {fileID: 11400000, guid: 27b44cefb74f91d4e8a17c21faf04b0f, type: 2}
-  sanityHit: 0
+  sanityHit: 20
