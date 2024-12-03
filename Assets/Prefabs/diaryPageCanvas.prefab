@@ -223,14 +223,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Didn\u2019t celebrate my birthday this year. But Kev sent me a handwritten
-    letter. A letter. I teared up reading it.  \n\nI\u2019m such a stubborn idiot.
-    I don\u2019t even care about what they said anymore\u2014it was probably just
-    a dumb comment. But going back feels\u2026 embarrassing. What if they don\u2019t
-    want me back? What if they hurt me again?  \n\nI don\u2019t know what I\u2019m
-    fighting for anymore. Maybe I should just say sorry too. A part of me wants that
-    so badly. But I\u2019m just too scared for it to happen all over again.  \n\nHappy
-    birthday, I guess.  "
+  m_text: Missing text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e06527516e338644bb6beec2d8cac3c6, type: 2}
   m_sharedMaterial: {fileID: -407613053378430448, guid: e06527516e338644bb6beec2d8cac3c6, type: 2}

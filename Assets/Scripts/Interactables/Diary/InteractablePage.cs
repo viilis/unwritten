@@ -48,7 +48,6 @@ public class InteractablePage : MonoBehaviour, IInteractable
         }
         else
         {
-
             InputManager.Instance.DisableMouse();
             InputManager.Instance.DisableMovement();
 
