@@ -16,4 +16,4 @@ MonoBehaviour:
   taskDescription: Write in your diary
   taskState: 2
   dialogBase: {fileID: 11400000, guid: 991778687b38e094fa2a31890cef1bb1, type: 2}
-  sanityHit: 0
+  sanityHit: 20

@@ -9,6 +9,7 @@ public class TaskManager : Singleton<TaskManager>
 
     public static bool canDoTasks;
     public static float _sanityHit;
+    public string _taskName;
     private void Start()
     {
         Debug.Log("Started task manager");
@@ -28,6 +29,7 @@ public class TaskManager : Singleton<TaskManager>
     private void WhenTaskCompletionTriggered(TaskBase tb)
     {
         Debug.Log("Completed task: " + tb.taskName);
+        _taskName = tb.taskName;
 
         _sanityHit = tb.sanityHit;
 

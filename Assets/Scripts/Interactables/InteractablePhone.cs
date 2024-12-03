@@ -7,11 +7,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Outline))]
 public class InteractablePhone : MonoBehaviour, IInteractable
 {
-    //I'm starting to get a vibe that this is a terrible script but it is what it is so..
-
-
-    //This phone should only ring in the morning scene so I think this script should be added to the phone only in that one scene
-    //TODO: a switch case thingy that plays a different manager dialogue depending on which morning it is
+     //This phone should only ring in the morning scene so I think this script should be added to the phone only in that one scene
 
     private Outline _outline;
     [SerializeField]

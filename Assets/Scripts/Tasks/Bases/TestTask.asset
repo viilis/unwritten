@@ -16,4 +16,4 @@ MonoBehaviour:
   taskDescription: yummy pizza mm
   taskState: 0
   dialogBase: {fileID: 11400000, guid: 795a40125779f7dd9b8c54c3f5bc3c26, type: 2}
-  sanityHit: -20
+  sanityHit: 20
