@@ -7,20 +7,19 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Outline))]
 public class InteractablePhone : MonoBehaviour, IInteractable
 {
+    //I'm starting to get a vibe that this is a terrible script but it is what it is so..
+
 
     //This phone should only ring in the morning scene so I think this script should be added to the phone only in that one scene
     //TODO: a switch case thingy that plays a different manager dialogue depending on which morning it is
 
     private Outline _outline;
+    [SerializeField]
+    private GameObject _subtitles;
     private float _outlineWidth;
     [SerializeField]
     private Image _taskInfo;
     private TMP_Text _taskText;
-    [SerializeField]
-    private Image _dialogueBox;
-    private TMP_Text _dialogue;
-    [SerializeField]
-    private DialogBase dialogBase;
 
     [SerializeField]
     [Range(0f, 1f)]
@@ -28,7 +27,8 @@ public class InteractablePhone : MonoBehaviour, IInteractable
     [SerializeField]
     private AudioClip phoneRingAudio;
     [SerializeField]
-    private AudioClip managerDialogueAudio;
+    private AudioClip[] managerDialogue;
+
     [SerializeField]
     private Transform audioPosition;
     private AudioInLoop _phoneRinging;
@@ -42,12 +42,10 @@ public class InteractablePhone : MonoBehaviour, IInteractable
         _phoneRinging = new AudioInLoop(phoneRingAudio, audioPosition, volume);
         _phoneRinging.StartPlaying();
 
-        _dialogueBox.enabled = false;
-        _dialogue = _dialogueBox.GetComponentInChildren<TMP_Text>();
-
         _outline = GetComponent<Outline>();
         _outline.OutlineMode = Outline.Mode.OutlineHidden;
         _outlineWidth = _outline.OutlineWidth;
+
 
         //hide until first interaction;
         _outline.OutlineWidth = 0f;
@@ -59,13 +57,16 @@ public class InteractablePhone : MonoBehaviour, IInteractable
     public void Interact()
     {
         //TODO: don't enable taskmanager until after the voice acting clip has finished playing
-        _dialogueBox.enabled = true;
-        _managerDialogue = new AudioPerAction(managerDialogueAudio, audioPosition, volume);
+        _managerDialogue = new AudioPerAction(managerDialogue[DayManager.Instance.daysLeft -1], audioPosition, volume);
+
         _phoneRinging.StopPlaying();
         _managerDialogue.PlayOnce();
-        _dialogue.text = dialogBase.dialogContent;
+
+        _subtitles.GetComponent<Subtitles>().StartManagerSubtitles();
+
         _taskInfo.enabled = false;
         _taskText.text = "";
+
         //disable box collider after answering phone so the raycaster doesn't do anything to the phone anymore
         GetComponent<BoxCollider>().enabled = false;
     }

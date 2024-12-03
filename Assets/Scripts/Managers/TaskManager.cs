@@ -7,10 +7,12 @@ using UnityEngine.AI;
 public class TaskManager : Singleton<TaskManager>
 {
 
+    public static bool canDoTasks;
     public static float _sanityHit;
     private void Start()
     {
         Debug.Log("Started task manager");
+        canDoTasks = false;
     }
 
     private void OnEnable()
