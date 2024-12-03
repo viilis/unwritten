@@ -7,11 +7,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Outline))]
 public class InteractablePhone : MonoBehaviour, IInteractable
 {
-    //I'm starting to get a vibe that this is a terrible script but it is what it is so..
-
-
-    //This phone should only ring in the morning scene so I think this script should be added to the phone only in that one scene
-    //TODO: a switch case thingy that plays a different manager dialogue depending on which morning it is
+     //This phone should only ring in the morning scene so I think this script should be added to the phone only in that one scene
 
     private Outline _outline;
     [SerializeField]
@@ -38,6 +34,8 @@ public class InteractablePhone : MonoBehaviour, IInteractable
 
     public void Start()
     {
+        TaskManager.canDoTasks = false;
+
         //TODO: disable doing tasks until player has answered the phone
         _phoneRinging = new AudioInLoop(phoneRingAudio, audioPosition, volume);
         _phoneRinging.StartPlaying();
@@ -57,7 +55,8 @@ public class InteractablePhone : MonoBehaviour, IInteractable
     public void Interact()
     {
         //TODO: don't enable taskmanager until after the voice acting clip has finished playing
-        _managerDialogue = new AudioPerAction(managerDialogue[DayManager.Instance.daysLeft -1], audioPosition, volume);
+        _managerDialogue = new AudioPerAction(managerDialogue[DayManager.Instance.daysLeft], audioPosition, volume);
+        EventManager.Instance.DisableSanityTick();
 
         _phoneRinging.StopPlaying();
         _managerDialogue.PlayOnce();

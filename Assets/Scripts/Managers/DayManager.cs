@@ -93,8 +93,8 @@ public class DayManager : Singleton<DayManager>
                             break;
                         }
                     }
-
                     _dt = Daytimes.Morning;
+                    TaskManager.Instance.MorningReset();
                     operation = SceneManager.LoadSceneAsync(_dt);
                     break;
 

@@ -16,4 +16,4 @@ MonoBehaviour:
   taskDescription: Play a video game
   taskState: 2
   dialogBase: {fileID: 11400000, guid: 4989d1d0220ff0c4cbcfb3290d4dc1aa, type: 2}
-  sanityHit: 0
+  sanityHit: 20
