@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb2d9799c9471ebea9c5423e9787428c, type: 3}
+  m_Name: evening_2
+  m_EditorClassIdentifier: 
+  timeStamp: 2020/8/26
+  pageText: "That\u2019s it. I\u2019m done. I found out the group has been mocking
+    my work in their private chat. \u201CChildish\u201D? \u201CA waste of time\u201D?!
+    They didn\u2019t even mean for me to see it\u2014it was a stupid screen-share
+    mistake.  \n\nHonestly, FUCK these guys."
+  image: {fileID: 2800000, guid: a4687ccb6c2f911b28213c4344380645, type: 3}

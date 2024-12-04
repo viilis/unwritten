@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb2d9799c9471ebea9c5423e9787428c, type: 3}
+  m_Name: evening_3
+  m_EditorClassIdentifier: 
+  timeStamp: 2023/7/7
+  pageText: "Didn\u2019t celebrate my birthday this year. But Kev sent me a handwritten
+    letter. A letter. I teared up reading it.  \n\nI\u2019m such a stubborn idiot.
+    I don\u2019t even care about what they said anymore\u2014it was probably just
+    a dumb comment. But going back feels\u2026 embarrassing. What if they don\u2019t
+    want me back? What if they hurt me again?  \n\nI don\u2019t know what I\u2019m
+    fighting for anymore. Maybe I should just say sorry too. A part of me wants that
+    so badly. But I\u2019m just too scared for it to happen all over again.  \n\nHappy
+    birthday, I guess."
+  image: {fileID: 2800000, guid: a4687ccb6c2f911b28213c4344380645, type: 3}

@@ -18,6 +18,9 @@ public class DayManager : Singleton<DayManager>
     private PlayerControls _playerControls;
     public float currentSanity;
 
+    [SerializeField]
+    private GameObject diaryPrefab;
+
     private void Start()
     {
         dayMessage = daysLeft + " days until deadline";
@@ -44,7 +47,7 @@ public class DayManager : Singleton<DayManager>
         AsyncOperation operation = null;
 
         //FIXME: Day counting logic might be broken but yeah, fix it here
-        if(!isGameOver)
+        if (!isGameOver)
         {
             switch (_dt)
             {
@@ -66,7 +69,7 @@ public class DayManager : Singleton<DayManager>
                 case Daytimes.Night:
                     // Day cycle done
                     daysLeft--;
-                    
+
                     if (daysLeft == 1)
                     {
                         dayMessage = daysLeft + " day until deadline";
@@ -78,14 +81,14 @@ public class DayManager : Singleton<DayManager>
 
                     if (daysLeft < 0)
                     {
-                        if(currentSanity > 70f)
+                        if (currentSanity > 70f)
                         {
                             EventManager.Instance.isGameOver = true;
                             _dt = Daytimes.GoodEnding;
                             operation = SceneManager.LoadSceneAsync(_dt);
                             break;
                         }
-                        else if(currentSanity > 0f || currentSanity <= 70f)
+                        else if (currentSanity > 0f || currentSanity <= 70f)
                         {
                             EventManager.Instance.isGameOver = true;
                             _dt = Daytimes.NeutralEnding;

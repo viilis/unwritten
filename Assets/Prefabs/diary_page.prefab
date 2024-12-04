@@ -144,3 +144,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pageBase: {fileID: 11400000, guid: 145130e0be78095fd852f9f86d9e2ce5, type: 2}
+  pageCanvasPrefab: {fileID: 1089686794008583138, guid: fc225f6a601fef3b38a50f23c7fdedeb, type: 3}

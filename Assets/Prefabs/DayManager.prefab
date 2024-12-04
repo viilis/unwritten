@@ -44,3 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d328a8e9655592f4192f765ad46dbcf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  daysLeft: 5
+  fadeDuration: 2
+  currentSanity: 0
+  diaryPrefab: {fileID: 9106347068730696224, guid: 44bae9c5622fcee17888c53f338fe506, type: 3}

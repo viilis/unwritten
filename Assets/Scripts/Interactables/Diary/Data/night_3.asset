@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb2d9799c9471ebea9c5423e9787428c, type: 3}
+  m_Name: night_3
+  m_EditorClassIdentifier: 
+  timeStamp: 2024/12/19
+  pageText: "Found this diary while looking for scrap paper for story planning. It\u2019s
+    been a while, so I figured I\u2019d write something.  \n\nLife is\u2026 not great.
+    I\u2019ve been living on frozen pizza and delivery food, and honestly, I feel
+    like a mess.\n\nTried therapy again last year, but it didn\u2019t work out for
+    me. My fourth book? Barely better than the third. And the fifth one? It\u2019s
+    five months overdue, and I\u2019m still completely stuck.\n\nAlso, Kev sent me
+    a Christmas invite, and I said yes\u2026 though I think I was half-asleep when
+    I did. Now I just feel this knot in my stomach\u2014nervous and unsure. I don\u2019t
+    even know if I can face them, or HOW, I will face them.\n\nI just feel like I\u2019ve
+    been stuck in the same place for years. And sometimes, I don\u2019t even know
+    if I care anymore."
+  image: {fileID: 2800000, guid: a4687ccb6c2f911b28213c4344380645, type: 3}

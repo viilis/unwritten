@@ -15,7 +15,7 @@ public class InteractablePage : MonoBehaviour, IInteractable
     [SerializeField]
     private GameObject pageCanvasPrefab;
 
-    private GameObject prefabClone;
+    private GameObject canvasPrefabClone;
     private bool _state = false;
 
     public void Start()
@@ -32,8 +32,6 @@ public class InteractablePage : MonoBehaviour, IInteractable
     {
         _outline.OutlineMode = Outline.Mode.OutlineVisible;
         _outline.OutlineWidth = _outlineWidth;
-
-        //Debug.Log(pageBase.pageText.Substring(0, 10) + "...");
     }
 
     public void Interact()
@@ -44,7 +42,7 @@ public class InteractablePage : MonoBehaviour, IInteractable
         {
             InputManager.Instance.EnableMouse();
             InputManager.Instance.EnableMovement();
-            Destroy(prefabClone);
+            Destroy(canvasPrefabClone);
         }
         else
         {
@@ -52,8 +50,8 @@ public class InteractablePage : MonoBehaviour, IInteractable
             InputManager.Instance.DisableMovement();
 
             // Create clone of prefab ui, init page data.
-            prefabClone = Instantiate(pageCanvasPrefab, new Vector3(0, 0, 0), Quaternion.identity);
-            prefabClone.GetComponent<DiaryCanvas>().InitDiaryCanvas(pageBase);
+            canvasPrefabClone = Instantiate(pageCanvasPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+            canvasPrefabClone.GetComponent<DiaryCanvas>().InitDiaryCanvas(pageBase);
         }
     }
 

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb2d9799c9471ebea9c5423e9787428c, type: 3}
+  m_Name: afternoon_3
+  m_EditorClassIdentifier: 
+  timeStamp: 2022/2/7
+  pageText: "It\u2019s been forever since I opened this. Guess who I saw on the street
+    today? Good old John, Vivian and Kev. COVID and everything really messed up my
+    sense of time, and of course, the one time I go out, I run into them.\nWhat else\u2026
+    I don\u2019t know. The third book in the series isn\u2019t doing great. I guess
+    now that the pandemic\u2019s over, people don\u2019t want to stay inside and
+    read anymore.\nHonestly, though, I really thought the third one was my best work,
+    but apparently, the world disagrees. Fuck."
+  image: {fileID: 2800000, guid: 45aa514d2ddf4eaae8fbd968a7677b6d, type: 3}
