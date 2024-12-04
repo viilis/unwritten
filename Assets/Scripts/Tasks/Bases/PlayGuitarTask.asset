@@ -16,4 +16,4 @@ MonoBehaviour:
   taskDescription: Play guitar
   taskState: 2
   dialogBase: {fileID: 11400000, guid: 6c990d3b64e3f2a42a14d88a2b477b3a, type: 2}
-  sanityHit: 0
+  sanityHit: 20

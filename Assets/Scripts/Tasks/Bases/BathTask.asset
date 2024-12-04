@@ -16,4 +16,4 @@ MonoBehaviour:
   taskDescription: Take a bath
   taskState: 0
   dialogBase: {fileID: 11400000, guid: ded884a5a6710f64ebe4cdc67f8fe6ff, type: 2}
-  sanityHit: 0
+  sanityHit: 20
