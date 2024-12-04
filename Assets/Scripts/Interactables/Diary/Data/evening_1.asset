@@ -18,3 +18,4 @@ MonoBehaviour:
     with my new novel. Days like this remind me why it's so exciting to create new
     stories."
   image: {fileID: 2800000, guid: 45aa514d2ddf4eaae8fbd968a7677b6d, type: 3}
+  interactFX: {fileID: 8300000, guid: 45ecf9a84c1cb31cc9b39f7579e6f567, type: 3}

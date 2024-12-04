@@ -12,4 +12,6 @@ public class PageBase : ScriptableObject
     public string pageText;
 
     public Texture2D image;
+
+    public AudioClip interactFX;
 }

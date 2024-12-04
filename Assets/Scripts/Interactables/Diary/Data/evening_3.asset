@@ -22,3 +22,4 @@ MonoBehaviour:
     so badly. But I\u2019m just too scared for it to happen all over again.  \n\nHappy
     birthday, I guess."
   image: {fileID: 2800000, guid: a4687ccb6c2f911b28213c4344380645, type: 3}
+  interactFX: {fileID: 8300000, guid: 45ecf9a84c1cb31cc9b39f7579e6f567, type: 3}

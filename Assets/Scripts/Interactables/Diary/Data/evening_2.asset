@@ -18,3 +18,4 @@ MonoBehaviour:
     They didn\u2019t even mean for me to see it\u2014it was a stupid screen-share
     mistake.  \n\nHonestly, FUCK these guys."
   image: {fileID: 2800000, guid: a4687ccb6c2f911b28213c4344380645, type: 3}
+  interactFX: {fileID: 8300000, guid: 45ecf9a84c1cb31cc9b39f7579e6f567, type: 3}

@@ -21,9 +21,21 @@ public class DayManager : Singleton<DayManager>
     [SerializeField]
     private GameObject diaryPrefab;
 
+    public List<GameObject> _pages;
+    public int PagesRead = 0;
+
     private void Start()
     {
         dayMessage = daysLeft + " days until deadline";
+
+        GameObject _diaryPrefabClone = Instantiate(diaryPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+
+        foreach (Transform t in _diaryPrefabClone.transform)
+        {
+            _pages.Add(t.gameObject);
+        }
+
+        _pages[UnityEngine.Random.Range(0, _pages.Count - 1)].SetActive(true);
 
         // Start game by fading in(?)
         StartCoroutine(FadeLoadingScreen(0, fadeDuration));
@@ -32,6 +44,7 @@ public class DayManager : Singleton<DayManager>
     private void Update()
     {
         currentSanity = PlayerSanity.GetSanity();
+        Debug.Log(_pages.Count);
     }
 
     /// <summary>
@@ -41,6 +54,11 @@ public class DayManager : Singleton<DayManager>
     public IEnumerator GoToNextScene(bool isGameOver)
     {
         InputManager.Instance.DisableAllInputs();
+
+        if (_pages.Count > 0)
+        {
+            _pages[UnityEngine.Random.Range(0, _pages.Count - 1)].SetActive(true);
+        }
 
         yield return StartCoroutine(FadeLoadingScreen(1, fadeDuration));
 

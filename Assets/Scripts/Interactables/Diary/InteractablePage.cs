@@ -18,6 +18,8 @@ public class InteractablePage : MonoBehaviour, IInteractable
     private GameObject canvasPrefabClone;
     private bool _state = false;
 
+    private AudioPerAction _apa;
+
     public void Start()
     {
         _outline = GetComponent<Outline>();
@@ -26,6 +28,8 @@ public class InteractablePage : MonoBehaviour, IInteractable
 
         //hide until first interaction;
         _outline.OutlineWidth = 0f;
+
+        _apa = new AudioPerAction(pageBase.interactFX, this.transform, SoundManager.Instance.globalVolume);
     }
 
     public void BeforeInteraction()
@@ -43,9 +47,16 @@ public class InteractablePage : MonoBehaviour, IInteractable
             InputManager.Instance.EnableMouse();
             InputManager.Instance.EnableMovement();
             Destroy(canvasPrefabClone);
+
+            this.gameObject.SetActive(false);
+
+            DayManager.Instance._pages.Remove(this.gameObject);
+            DayManager.Instance.PagesRead++;
         }
         else
         {
+            _apa.PlayOnce();
+
             InputManager.Instance.DisableMouse();
             InputManager.Instance.DisableMovement();
 
