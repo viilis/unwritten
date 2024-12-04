@@ -40,6 +40,7 @@ public class InteractablePage : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        // bool state to see if we have interacted
         _state = !_state;
 
         if (!_state)
