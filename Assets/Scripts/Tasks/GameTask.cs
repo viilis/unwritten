@@ -11,7 +11,6 @@ namespace GameTasks
     [RequireComponent(typeof(Outline))]
     public class GameTask : MonoBehaviour, IInteractable
     {
-        public bool blockTask = false;
         public static event Action<TaskBase> OnTaskCompletionEvent;
         private Outline _outline;
         private float _outlineWidth;
@@ -35,36 +34,31 @@ namespace GameTasks
 
             _taskName = taskBase.taskName;
             
-            //to prevent the player from spamming the same work task the entire day
-            if(_taskName.Equals("Write chapter") && TaskManager.checkmark1)
-                blockTask = true;
-
-            if(_taskName.Equals("Review text") && TaskManager.checkmark2)
-                blockTask = true;
-
-            if(_taskName.Equals("Check emails") && TaskManager.checkmark3)
-                blockTask = true;
-
-            if(_taskName.Equals("Do research") && TaskManager.checkmark4)
-                blockTask = true;
-
             //hide until first interaction;
             _outline.OutlineWidth = 0f;
         }
 
         public void Interact()
         {
-            if(TaskManager.canDoTasks && !blockTask)
+            if(TaskManager.canDoTasks)
             {
-                taskBase.taskState = TaskStates.Done;
-                OnTaskCompletionEvent?.Invoke(taskBase);
-                _taskText.text = taskBase.dialogBase.dialogContent;
-                //TaskManager.canDoTasks = false;
+                if(taskBase.taskState != TaskStates.Done)
+                {
+                    taskBase.taskState = TaskStates.Done;
+                    OnTaskCompletionEvent?.Invoke(taskBase);
+                    _taskText.text = taskBase.dialogBase.dialogContent;
+                    //TaskManager.canDoTasks = false;
+                }
+                else
+                {
+                    _taskText.text = "I should do something else..";
+                    Debug.Log("Unable to do task, task state done");
+                }
             }
             else
             {
                 _taskText.text = "I should do something else..";
-                Debug.Log("Unable to do task");
+                Debug.Log("Unable to do task, CanDoTasks is false");
             }
         }
 

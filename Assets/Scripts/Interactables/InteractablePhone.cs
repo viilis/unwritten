@@ -34,7 +34,7 @@ public class InteractablePhone : MonoBehaviour, IInteractable
 
     public void Start()
     {
-        TaskManager.canDoTasks = false;
+        //TaskManager.canDoTasks = false;
 
         //TODO: disable doing tasks until player has answered the phone
         _phoneRinging = new AudioInLoop(phoneRingAudio, audioPosition, volume);
