@@ -44,7 +44,6 @@ public class DayManager : Singleton<DayManager>
     private void Update()
     {
         currentSanity = PlayerSanity.GetSanity();
-        Debug.Log(_pages.Count);
     }
 
     /// <summary>

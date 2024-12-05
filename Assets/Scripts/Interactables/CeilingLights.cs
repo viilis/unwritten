@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof (Outline))]
 public class CeilingLights : MonoBehaviour, IInteractable
 {
     private Outline _outline;
@@ -32,7 +33,7 @@ public class CeilingLights : MonoBehaviour, IInteractable
         {
             if (light.TryGetComponent<Light>(out Light l))
             {
-                light.SetActive(!light.activeSelf);
+                light.SetActive(!light.activeInHierarchy);
             }
         }
     }
