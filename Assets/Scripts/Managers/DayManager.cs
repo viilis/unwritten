@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 public class DayManager : Singleton<DayManager>
 {
-    public int daysLeft = 5;
+    public int daysLeft = 4;
     private string dayMessage;
 
     [SerializeField]
@@ -29,6 +29,7 @@ public class DayManager : Singleton<DayManager>
         dayMessage = daysLeft + " days until deadline";
 
         GameObject _diaryPrefabClone = Instantiate(diaryPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        DontDestroyOnLoad(_diaryPrefabClone);
 
         foreach (Transform t in _diaryPrefabClone.transform)
         {
@@ -44,7 +45,7 @@ public class DayManager : Singleton<DayManager>
     private void Update()
     {
         currentSanity = PlayerSanity.GetSanity();
-        Debug.Log(_pages.Count);
+        //Debug.Log(_pages.Count);
     }
 
     /// <summary>
