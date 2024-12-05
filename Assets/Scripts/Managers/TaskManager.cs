@@ -6,6 +6,7 @@ using UnityEngine.AI;
 
 public class TaskManager : Singleton<TaskManager>
 {
+    private static List<TaskBase> _taskList;
     public static bool canDoTasks;
     public static float _sanityHit;
     public string _taskName;
@@ -15,10 +16,11 @@ public class TaskManager : Singleton<TaskManager>
     public static bool checkmark4 = false;
     private void Start()
     {
+        _taskList = new List<TaskBase>();
         Debug.Log("Started task manager");
 
         //REMEMBER TO SET TO FALSE
-        canDoTasks = false;
+        canDoTasks = true;
     }
 
     public void MorningReset()
@@ -27,6 +29,12 @@ public class TaskManager : Singleton<TaskManager>
         checkmark2 = false;
         checkmark3 = false;
         checkmark4 = false;
+
+        foreach (TaskBase t in _taskList)
+        {
+            t.taskState = TaskStates.notStarted;
+        }
+        _taskList.Clear();
     }
 
     private void OnEnable()
@@ -43,8 +51,8 @@ public class TaskManager : Singleton<TaskManager>
     {
         Debug.Log("Completed task: " + tb.taskName);
         _taskName = tb.taskName;
-
         _sanityHit = tb.sanityHit;
+        _taskList.Add(tb);
 
         if (_taskName.Equals("Write chapter"))
         {

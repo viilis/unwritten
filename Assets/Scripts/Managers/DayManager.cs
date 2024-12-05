@@ -31,6 +31,7 @@ public class DayManager : Singleton<DayManager>
         dayMessage = daysLeft + " days until deadline";
 
         GameObject _diaryPrefabClone = Instantiate(diaryPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        DontDestroyOnLoad(_diaryPrefabClone);
 
         foreach (Transform t in _diaryPrefabClone.transform)
         {
