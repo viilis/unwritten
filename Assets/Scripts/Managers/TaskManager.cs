@@ -46,19 +46,19 @@ public class TaskManager : Singleton<TaskManager>
 
         _sanityHit = tb.sanityHit;
 
-        if(_taskName.Equals("Write chapter"))
+        if (_taskName.Equals("Write chapter"))
         {
             checkmark1 = true;
-        } 
-        else if(_taskName.Equals("Review text"))
+        }
+        else if (_taskName.Equals("Review text"))
         {
             checkmark2 = true;
-        } 
-        else if(_taskName.Equals("Check email"))
+        }
+        else if (_taskName.Equals("Check email"))
         {
             checkmark3 = true;
         }
-        else if(_taskName.Equals("Do research"))
+        else if (_taskName.Equals("Do research"))
         {
             checkmark4 = true;
         }
