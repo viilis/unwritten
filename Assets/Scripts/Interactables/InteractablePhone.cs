@@ -7,7 +7,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Outline))]
 public class InteractablePhone : MonoBehaviour, IInteractable
 {
-     //This phone should only ring in the morning scene so I think this script should be added to the phone only in that one scene
+    //This phone should only ring in the morning scene so I think this script should be added to the phone only in that one scene
 
     private Outline _outline;
     [SerializeField]
@@ -22,6 +22,7 @@ public class InteractablePhone : MonoBehaviour, IInteractable
     private float volume = 0.5f;
     [SerializeField]
     private AudioClip phoneRingAudio;
+
     [SerializeField]
     private AudioClip[] managerDialogue;
 

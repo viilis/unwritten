@@ -7,7 +7,9 @@ using UnityEngine.InputSystem;
 
 public class DayManager : Singleton<DayManager>
 {
-    public int daysLeft = 5;
+    [Range(0, 4)]
+    public int daysLeft = 4;
+
     private string dayMessage;
 
     [SerializeField]
