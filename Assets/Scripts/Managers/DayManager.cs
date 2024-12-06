@@ -7,7 +7,9 @@ using UnityEngine.InputSystem;
 
 public class DayManager : Singleton<DayManager>
 {
+    [Range(0, 4)]
     public int daysLeft = 4;
+
     private string dayMessage;
 
     [SerializeField]
@@ -45,7 +47,6 @@ public class DayManager : Singleton<DayManager>
     private void Update()
     {
         currentSanity = PlayerSanity.GetSanity();
-        //Debug.Log(_pages.Count);
     }
 
     /// <summary>
