@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class Subtitles : MonoBehaviour
 {
     public SubtitleLine[] ManagerDayLeft0;
-    public SubtitleLine[] ManagerDayLeft1; 
-    public SubtitleLine[] ManagerDayLeft2; 
-    public SubtitleLine[] ManagerDayLeft3; 
-    public SubtitleLine[] ManagerDayLeft4; 
-    public SubtitleLine[] SituationalCall; 
+    public SubtitleLine[] ManagerDayLeft1;
+    public SubtitleLine[] ManagerDayLeft2;
+    public SubtitleLine[] ManagerDayLeft3;
+    public SubtitleLine[] ManagerDayLeft4;
+    public SubtitleLine[] SituationalCall;
 
     public TMP_Text dialogueText;
     public Image dialogueBg;
@@ -27,67 +27,67 @@ public class Subtitles : MonoBehaviour
 
     IEnumerator ManagerSubtitleCoroutine()
     {
-        switch(DayManager.Instance.daysLeft)
+        switch (DayManager.Instance.daysLeft)
         {
             case 4:
-            foreach (var line in ManagerDayLeft4)
-            {
-                dialogueText.text = line.text;
-                dialogueBg.gameObject.SetActive(true);
-                yield return new WaitForSecondsRealtime(line.duration);
-                dialogueBg.gameObject.SetActive(false);
-            }
-            TaskManager.canDoTasks = true;
-            EventManager.Instance.EnableSanityTick();
-            break;
+                foreach (var line in ManagerDayLeft4)
+                {
+                    dialogueText.text = line.text;
+                    dialogueBg.gameObject.SetActive(true);
+                    yield return new WaitForSecondsRealtime(line.duration);
+                    dialogueBg.gameObject.SetActive(false);
+                }
+                TaskManager.canDoTasks = true;
+                EventManager.Instance.EnableSanityTick();
+                break;
 
             case 3:
-            foreach (var line in ManagerDayLeft3)
-            {
-                dialogueText.text = line.text;
-                dialogueBg.gameObject.SetActive(true);
-                yield return new WaitForSecondsRealtime(line.duration);
-                dialogueBg.gameObject.SetActive(false);
-            }
-            TaskManager.canDoTasks = true;
-            EventManager.Instance.EnableSanityTick();
-            break;
+                foreach (var line in ManagerDayLeft3)
+                {
+                    dialogueText.text = line.text;
+                    dialogueBg.gameObject.SetActive(true);
+                    yield return new WaitForSecondsRealtime(line.duration);
+                    dialogueBg.gameObject.SetActive(false);
+                }
+                TaskManager.canDoTasks = true;
+                EventManager.Instance.EnableSanityTick();
+                break;
 
             case 2:
-            foreach (var line in ManagerDayLeft2)
-            {
-                dialogueText.text = line.text;
-                dialogueBg.gameObject.SetActive(true);
-                yield return new WaitForSecondsRealtime(line.duration);
-                dialogueBg.gameObject.SetActive(false);
-            }
-            TaskManager.canDoTasks = true;
-            EventManager.Instance.EnableSanityTick();
-            break;
+                foreach (var line in ManagerDayLeft2)
+                {
+                    dialogueText.text = line.text;
+                    dialogueBg.gameObject.SetActive(true);
+                    yield return new WaitForSecondsRealtime(line.duration);
+                    dialogueBg.gameObject.SetActive(false);
+                }
+                TaskManager.canDoTasks = true;
+                EventManager.Instance.EnableSanityTick();
+                break;
 
             case 1:
-            foreach (var line in ManagerDayLeft1)
-            {
-                dialogueText.text = line.text;
-                dialogueBg.gameObject.SetActive(true);
-                yield return new WaitForSecondsRealtime(line.duration);
-                dialogueBg.gameObject.SetActive(false);
-            }
-            TaskManager.canDoTasks = true;
-            EventManager.Instance.EnableSanityTick();
-            break;
+                foreach (var line in ManagerDayLeft1)
+                {
+                    dialogueText.text = line.text;
+                    dialogueBg.gameObject.SetActive(true);
+                    yield return new WaitForSecondsRealtime(line.duration);
+                    dialogueBg.gameObject.SetActive(false);
+                }
+                TaskManager.canDoTasks = true;
+                EventManager.Instance.EnableSanityTick();
+                break;
 
             case 0:
-            foreach (var line in ManagerDayLeft0)
-            {
-                dialogueText.text = line.text;
-                dialogueBg.gameObject.SetActive(true);
-                yield return new WaitForSecondsRealtime(line.duration);
-                dialogueBg.gameObject.SetActive(false);
-            }
-            TaskManager.canDoTasks = true;
-            EventManager.Instance.EnableSanityTick();
-            break;
+                foreach (var line in ManagerDayLeft0)
+                {
+                    dialogueText.text = line.text;
+                    dialogueBg.gameObject.SetActive(true);
+                    yield return new WaitForSecondsRealtime(line.duration);
+                    dialogueBg.gameObject.SetActive(false);
+                }
+                TaskManager.canDoTasks = true;
+                EventManager.Instance.EnableSanityTick();
+                break;
         }
 
     }

@@ -9,7 +9,7 @@ public class EventManager : Singleton<EventManager>
     public static event Action OnInternalVoicesEvent;
     public static event Action OnTalkingItemsEvent;
     public static event Action OnParanormalDoorSlamEvent;
-    
+
     [SerializeField]
     private int sanityTick;
     private int tempSanity;
@@ -96,7 +96,7 @@ public class EventManager : Singleton<EventManager>
             _timer = eventInterval;
 
             //decrease sanity by a set amount every time timer ticks down
-            if(!isGameOver)
+            if (!isGameOver)
                 PlayerSanity.ChangeSanity(sanityTick);
         }
     }

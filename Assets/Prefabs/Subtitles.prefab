@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &545005642395325916
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6051654448182744234}
+  - component: {fileID: 5851297626773038015}
+  m_Layer: 0
+  m_Name: Subtitles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6051654448182744234
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545005642395325916}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 639.3312, y: 91.093544, z: -600.96484}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5851297626773038015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545005642395325916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e61516d297207b946ab352bed696c46a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ManagerDayLeft0:
+  - text: ...
+    duration: 2
+  - text: No, no, no. This is not going to be enough.
+    duration: 7
+  - text: I, I don't think the publisher would like this.
+    duration: 5
+  - text: ...
+    duration: 2
+  - text: Hey, I know I've been really tough on you for the past few days,
+    duration: 6
+  - text: but like, please, we really really need to get this done, alright?
+    duration: 6
+  - text: I really don't want you to lose your job
+    duration: 2.5
+  - text: 'and I really want to keep mine as well. So... '
+    duration: 5
+  - text: one more day, one more day, please... Like...
+    duration: 5
+  - text: 'finish this. Don''t let me down. '
+    duration: 4
+  - text: 'Don''t let yourself down. '
+    duration: 3
+  - text: Alright?
+    duration: 2
+  - text: Send me...
+    duration: 2.5
+  - text: the rest you have..
+    duration: 2.5
+  - text: by the end of the day.. yeah...
+    duration: 4.5
+  ManagerDayLeft1:
+  - text: Oh, come on, still?
+    duration: 3
+  - text: You're not finished?
+    duration: 3
+  - text: I'm begging you at this point, like,
+    duration: 3
+  - text: I really don't know how much longer I can stall them for.
+    duration: 3
+  - text: ...
+    duration: 3
+  - text: 'You know... I would also hate to see you go. '
+    duration: 4
+  - text: ' Like, please, I don''t know what else I can do, but...'
+    duration: 5
+  - text: ...
+    duration: 3
+  - text: just send me whatever you have by the end of today, okay?
+    duration: 3
+  - text: I'll try to figure out something.
+    duration: 2
+  - text: 'So... yeah. '
+    duration: 3
+  ManagerDayLeft2:
+  - text: So, I see someone is just waiting to be fired now, huh?
+    duration: 5
+  - text: ' Like, how many times do I need to tell you that this is your last fucking
+      shot?'
+    duration: 6
+  - text: You're not a baby anymore. Get your shit together and finish this.
+    duration: 4
+  - text: You have three days, okay?
+    duration: 2
+  - text: THREE DAYS
+    duration: 2
+  ManagerDayLeft3:
+  - text: "Finally something, I guess... \u200A"
+    duration: 3.5
+  - text: but like, how are you gonna finish the rest in four days?
+    duration: 4
+  - text: " Like, I told you, this is your last chance, okay? \u200A"
+    duration: 4
+  - text: For me and for you, don't fuck this up. Please.
+    duration: 5
+  ManagerDayLeft4:
+  - text: Come on, what do you think you're doing?
+    duration: 2.5
+  - text: We promised the publisher that the novel will be ready in five days
+    duration: 3.8
+  - text: ' and now you''re telling me you''re still chapters behind?'
+    duration: 4
+  - text: 'Like, get to work, no more excuses, '
+    duration: 3
+  - text: "and send me whatever you have by the end of tonight. \u200A"
+    duration: 2
+  - text: "The end of tonight.\u200A"
+    duration: 2
+  SituationalCall: []
+  dialogueText: {fileID: 0}
+  dialogueBg: {fileID: 0}
