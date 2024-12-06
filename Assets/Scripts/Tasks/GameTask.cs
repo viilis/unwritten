@@ -12,7 +12,6 @@ namespace GameTasks
     public class GameTask : MonoBehaviour, IInteractable
     {
         public static event Action<TaskBase> OnTaskCompletionEvent;
-
         private Outline _outline;
         private float _outlineWidth;
 
@@ -22,6 +21,7 @@ namespace GameTasks
         [SerializeField]
         private Image _taskInfo;
         private TMP_Text _taskText;
+        string _taskName;
         private void Start()
         {
             _outline = GetComponent<Outline>();
@@ -32,23 +32,34 @@ namespace GameTasks
             _taskText = _taskInfo.GetComponentInChildren<TMP_Text>();
             _taskText.text = "";
 
+            _taskName = taskBase.taskName;
+            
             //hide until first interaction;
             _outline.OutlineWidth = 0f;
         }
 
         public void Interact()
         {
-            //Commented the if statement out because for some reason it seems to have caused a bug 
-            //I could only complete the task once during all of the unity runtime, as in even if I end to playtesting, I still can't do it on my next one
-            //the only way I could finish the same task again was if I restart unity entirely
-            //I don't know what caused it, it might just be my computer idk but this fixed it for me
-            
-            //if (taskBase.taskState != TaskStates.Done)
-            //{
-                taskBase.taskState = TaskStates.Done;
-                OnTaskCompletionEvent?.Invoke(taskBase);
-                _taskText.text = taskBase.dialogBase.dialogContent;
-            //}
+            if(TaskManager.canDoTasks)
+            {
+                if(taskBase.taskState != TaskStates.Done)
+                {
+                    taskBase.taskState = TaskStates.Done;
+                    OnTaskCompletionEvent?.Invoke(taskBase);
+                    _taskText.text = taskBase.dialogBase.dialogContent;
+                    //TaskManager.canDoTasks = false;
+                }
+                else
+                {
+                    _taskText.text = "I should do something else..";
+                    Debug.Log("Unable to do task, task state done");
+                }
+            }
+            else
+            {
+                _taskText.text = "I should do something else..";
+                Debug.Log("Unable to do task, CanDoTasks is false");
+            }
         }
 
         public void BeforeInteraction()

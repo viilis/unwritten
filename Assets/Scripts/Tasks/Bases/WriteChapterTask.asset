@@ -16,4 +16,4 @@ MonoBehaviour:
   taskDescription: start writing
   taskState: 2
   dialogBase: {fileID: 11400000, guid: f8e7e7340cbbc9141bd31fd1d4c70cdd, type: 2}
-  sanityHit: 0
+  sanityHit: -5

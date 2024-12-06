@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 public class DayManager : Singleton<DayManager>
 {
-    public int daysLeft = 5;
+    public int daysLeft = 4;
     private string dayMessage;
 
     [SerializeField]
@@ -18,9 +18,25 @@ public class DayManager : Singleton<DayManager>
     private PlayerControls _playerControls;
     public float currentSanity;
 
+    [SerializeField]
+    private GameObject diaryPrefab;
+
+    public List<GameObject> _pages;
+    public int PagesRead = 0;
+
     private void Start()
     {
         dayMessage = daysLeft + " days until deadline";
+
+        GameObject _diaryPrefabClone = Instantiate(diaryPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        DontDestroyOnLoad(_diaryPrefabClone);
+
+        foreach (Transform t in _diaryPrefabClone.transform)
+        {
+            _pages.Add(t.gameObject);
+        }
+
+        _pages[UnityEngine.Random.Range(0, _pages.Count - 1)].SetActive(true);
 
         // Start game by fading in(?)
         StartCoroutine(FadeLoadingScreen(0, fadeDuration));
@@ -29,6 +45,7 @@ public class DayManager : Singleton<DayManager>
     private void Update()
     {
         currentSanity = PlayerSanity.GetSanity();
+        //Debug.Log(_pages.Count);
     }
 
     /// <summary>
@@ -39,12 +56,17 @@ public class DayManager : Singleton<DayManager>
     {
         InputManager.Instance.DisableAllInputs();
 
+        if (_pages.Count > 0)
+        {
+            _pages[UnityEngine.Random.Range(0, _pages.Count - 1)].SetActive(true);
+        }
+
         yield return StartCoroutine(FadeLoadingScreen(1, fadeDuration));
 
         AsyncOperation operation = null;
 
         //FIXME: Day counting logic might be broken but yeah, fix it here
-        if(!isGameOver)
+        if (!isGameOver)
         {
             switch (_dt)
             {
@@ -66,7 +88,7 @@ public class DayManager : Singleton<DayManager>
                 case Daytimes.Night:
                     // Day cycle done
                     daysLeft--;
-                    
+
                     if (daysLeft == 1)
                     {
                         dayMessage = daysLeft + " day until deadline";
@@ -78,14 +100,14 @@ public class DayManager : Singleton<DayManager>
 
                     if (daysLeft < 0)
                     {
-                        if(currentSanity > 70f)
+                        if (currentSanity > 70f)
                         {
                             EventManager.Instance.isGameOver = true;
                             _dt = Daytimes.GoodEnding;
                             operation = SceneManager.LoadSceneAsync(_dt);
                             break;
                         }
-                        else if(currentSanity > 0f || currentSanity <= 70f)
+                        else if (currentSanity > 0f || currentSanity <= 70f)
                         {
                             EventManager.Instance.isGameOver = true;
                             _dt = Daytimes.NeutralEnding;
@@ -93,8 +115,8 @@ public class DayManager : Singleton<DayManager>
                             break;
                         }
                     }
-
                     _dt = Daytimes.Morning;
+                    TaskManager.Instance.MorningReset();
                     operation = SceneManager.LoadSceneAsync(_dt);
                     break;
 

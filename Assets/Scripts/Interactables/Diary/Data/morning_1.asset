@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb2d9799c9471ebea9c5423e9787428c, type: 3}
+  m_Name: morning_1
+  m_EditorClassIdentifier: 
+  timeStamp: 2020/1/1
+  pageText: "Well, they say, \u201CNew year, new start,\u201D right? Kev gave me
+    this diary for Christmas, saying something about how writing might be my therapy.
+    He\u2019s probably just trolling (as always), but hey, I can\u2019t afford a
+    real therapist anyway, so\u2026 might as well give this a shot."
+  image: {fileID: 2800000, guid: a4687ccb6c2f911b28213c4344380645, type: 3}
+  interactFX: {fileID: 8300000, guid: 45ecf9a84c1cb31cc9b39f7579e6f567, type: 3}

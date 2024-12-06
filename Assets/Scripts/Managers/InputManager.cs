@@ -85,6 +85,8 @@ public class InputManager : Singleton<InputManager>
     }
 
     // Disablers and enablers
+
+    // --- Interaction ---
     public void DisableInteractButton()
     {
         _interactAction.Disable();
@@ -93,6 +95,29 @@ public class InputManager : Singleton<InputManager>
     public void EnableInteractButton()
     {
         _interactAction.Enable();
+    }
+
+
+    // --- WASD Movement ---
+    public void EnableMovement()
+    {
+        _moveAction.Enable();
+    }
+
+    public void DisableMovement()
+    {
+        _moveAction.Disable();
+    }
+
+    // -- Mouse movement ---
+    public void EnableMouse()
+    {
+        _lookAction.Enable();
+    }
+
+    public void DisableMouse()
+    {
+        _lookAction.Disable();
     }
 
     public void DisableAllInputs()
