@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8945796204690412555}
   - component: {fileID: 3504072252141165331}
   - component: {fileID: 3641277448374520986}
+  - component: {fileID: 2621067811740901533}
   m_Layer: 0
   m_Name: Shower Curtain
   m_TagString: Untagged
@@ -83,6 +84,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2621067811740901533
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512381959455330117}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0012466789, y: 0.007212427, z: 0.03469655}
+  m_Center: {x: 0.00013911344, y: -0.000039618553, z: -0.0019470851}
 --- !u!1 &592987322627511840
 GameObject:
   m_ObjectHideFlags: 0
