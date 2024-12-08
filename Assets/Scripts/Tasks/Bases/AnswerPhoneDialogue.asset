@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogAuthor: aaa
   dialogContent: 
-  audio: {fileID: 8300000, guid: 6f02900f43a54db77a23eb02dd336803, type: 3}
+  audio: {fileID: 0}

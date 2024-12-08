@@ -10,7 +10,7 @@ public class TalkingItem : MonoBehaviour, IEvent
 
     [SerializeField]
     [Range(0, 1)]
-    private float _volume = 0;
+    private float _volume = 1;
 
     private void Start()
     {

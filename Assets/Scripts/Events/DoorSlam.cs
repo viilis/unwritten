@@ -19,6 +19,7 @@ public class DoorSlam : MonoBehaviour, IEvent
 
     private string _opened = "paranormal_door_opened";
     private string _closed = "paranormal_door_closed";
+    private string _idle = "door_idle";
 
     private void Start()
     {
@@ -50,9 +51,9 @@ public class DoorSlam : MonoBehaviour, IEvent
 
     public void OnEventTrigger()
     {
-        if (_animator.GetCurrentAnimatorStateInfo(0).IsName(_closed))
+        if (_animator.GetCurrentAnimatorStateInfo(0).IsName(_idle))
         {
-            _animator.Play(_opened, 0, 0);
+            _animator.Play(_opened, 0, 0f);
         }
     }
 }

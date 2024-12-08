@@ -9,23 +9,25 @@ public class EventManager : Singleton<EventManager>
     public static event Action OnInternalVoicesEvent;
     public static event Action OnTalkingItemsEvent;
     public static event Action OnParanormalDoorSlamEvent;
+    public static event Action OnShadowManEvent;
+    public static event Action OnBloodWritingEvent;
 
     [SerializeField]
     private int sanityTick;
-    private int tempSanity;
+    public bool sanityTickEnabled = true;
 
     [SerializeField]
     [Tooltip("Can be used for calling events between x sec intervals. Defaults to 10 which translates to 5 seconds IRL time.")]
-    private float eventInterval = 20f; // 10 seconds
+    private float eventInterval = 10f; // 5 seconds
 
     [SerializeField]
-    private float level1Threshold = 70f;
+    private float level1Threshold = 100f;
 
     [SerializeField]
-    private float level2Threshold = 50f;
+    private float level2Threshold = 75f;
 
     [SerializeField]
-    private float level3Threshold = 20f;
+    private float level3Threshold = 25f;
     [SerializeReference]
     private float level4Threshold = 0f;
 
@@ -38,23 +40,13 @@ public class EventManager : Singleton<EventManager>
         PlayerSanity.OnSanityChange += OnSanityChange;
     }
 
-    public void EnableSanityTick()
-    {
-        sanityTick = tempSanity;
-    }
-
-    public void DisableSanityTick()
-    {
-        tempSanity = sanityTick;
-        sanityTick = 0;
-    }
-
     private void OnSanityChange(float currentSanity)
     {
         if (currentSanity <= level1Threshold)
         {
             Debug.Log("Level 1.");
             OnParanormalObjMovementEvent?.Invoke();
+            OnParanormalAudioEvent?.Invoke();
         }
 
         if (currentSanity <= level2Threshold)
@@ -62,12 +54,15 @@ public class EventManager : Singleton<EventManager>
             Debug.Log("Level 2.");
             OnParanormalElectronicsEvent?.Invoke();
             OnParanormalDoorSlamEvent?.Invoke();
+            OnShadowManEvent?.Invoke();
         }
 
         if (currentSanity <= level3Threshold)
         {
             Debug.Log("Level 3.");
             OnInternalVoicesEvent?.Invoke();
+            OnTalkingItemsEvent?.Invoke();
+            OnBloodWritingEvent?.Invoke();
         }
 
         if (currentSanity <= level4Threshold)
@@ -96,8 +91,11 @@ public class EventManager : Singleton<EventManager>
             _timer = eventInterval;
 
             //decrease sanity by a set amount every time timer ticks down
-            if (!isGameOver)
+            if (!isGameOver && sanityTickEnabled && DayManager.Instance.GetCurrentTimeState() != "morning")
+            {
                 PlayerSanity.ChangeSanity(sanityTick);
+                Debug.Log("hit with " + sanityTick);
+            }
         }
     }
 
