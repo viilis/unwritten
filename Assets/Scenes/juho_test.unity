@@ -301,67 +301,17 @@ PlayableDirector:
     value: {fileID: 1348137361}
   m_ExposedReferences:
     m_References: []
---- !u!1 &377210061 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9098567601951676384, guid: d520df5007e439cecb931298bbc564b2, type: 3}
+--- !u!114 &377210064 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3679272223957328568, guid: d520df5007e439cecb931298bbc564b2, type: 3}
   m_PrefabInstance: {fileID: 2023162683}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &377210062 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2202548140071226360, guid: d520df5007e439cecb931298bbc564b2, type: 3}
-  m_PrefabInstance: {fileID: 2023162683}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 377210061}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47afeebd625e68f97a247ed48b7843c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &377210064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 377210061}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 5f02429009110c345b3f17f7dcec8595, type: 2}
-    - {fileID: 11400000, guid: 578fb179b18ff27429fc8634da168af6, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 377210062}
-          m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
-          m_MethodName: DisableAllInputs
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 377210062}
-          m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
-          m_MethodName: EnableAllInputs
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &406974510
 GameObject:
   m_ObjectHideFlags: 0
@@ -1427,10 +1377,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9098567601951676384, guid: d520df5007e439cecb931298bbc564b2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 377210064}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d520df5007e439cecb931298bbc564b2, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
