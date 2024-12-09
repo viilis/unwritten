@@ -25,6 +25,11 @@ public class Subtitles : MonoBehaviour
         StartCoroutine(ManagerSubtitleCoroutine());
     }
 
+    public void StartEndingSubtitles()
+    {
+        StartCoroutine(EndingSubtitles());
+    }
+
     IEnumerator ManagerSubtitleCoroutine()
     {
         switch (DayManager.Instance.daysLeft)
@@ -90,6 +95,17 @@ public class Subtitles : MonoBehaviour
                 break;
         }
 
+    }
+
+    IEnumerator EndingSubtitles()
+    {
+        foreach (var line in SituationalCall)
+        {
+            dialogueText.text = line.text;
+            dialogueBg.gameObject.SetActive(true);
+            yield return new WaitForSecondsRealtime(line.duration);
+            dialogueBg.gameObject.SetActive(false);
+        }
     }
 }
 

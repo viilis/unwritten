@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/levels (don't edit)/menu.unity
     guid: d69a152602cdb60468fa0123e1b6e194
   - enabled: 1
+    path: Assets/Scenes/levels (don't edit)/endOfDay.unity
+    guid: 66a974417c80b5b47b43f2658a58c006
+  - enabled: 1
     path: Assets/Scenes/levels (don't edit)/morning.unity
     guid: 82502a4a3e573a777ae0ddfaaf136cb0
   - enabled: 1

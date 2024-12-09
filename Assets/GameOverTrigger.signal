@@ -9,11 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52d90fade38d37d7ab18c3734ae06213, type: 3}
-  m_Name: CheckEmailTask
+  m_Script: {fileID: 11500000, guid: d6fa2d92fc1b3f34da284357edf89c3b, type: 3}
+  m_Name: GameOverTrigger
   m_EditorClassIdentifier: 
-  taskName: Check email
-  taskDescription: Check your email inbox
-  taskState: 2
-  dialogBase: {fileID: 11400000, guid: a3353eebd4f62b245a8fd077765169fd, type: 2}
-  sanityHit: -5

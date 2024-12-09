@@ -87,8 +87,14 @@ public class DayManager : Singleton<DayManager>
                     break;
 
                 case Daytimes.Night:
+                    _dt = Daytimes.EndOfDay;
+                    operation = SceneManager.LoadSceneAsync(_dt);
+                    break;
+
+                case Daytimes.EndOfDay:
                     // Day cycle done
                     daysLeft--;
+                    TaskManager.Instance.MorningReset();
 
                     if (daysLeft == 1)
                     {
@@ -117,7 +123,6 @@ public class DayManager : Singleton<DayManager>
                         }
                     }
                     _dt = Daytimes.Morning;
-                    TaskManager.Instance.MorningReset();
                     operation = SceneManager.LoadSceneAsync(_dt);
                     break;
 
@@ -197,4 +202,5 @@ public static class Daytimes
     public const string GoodEnding = "goodEnding";
     public const string NeutralEnding = "neutralEnding";
     public const string GameOver = "gameOver";
+    public const string EndOfDay = "endOfDay";
 }

@@ -31,6 +31,14 @@ public class LoadingCanvas : Singleton<LoadingCanvas>
 
     private void Update()
     {
+        if((DayManager.Instance.GetCurrentTimeState() == "endOfDay"))
+        {
+            deadLineTMP.text = null;
+            dayTimeTMP.text = null;
+            quoteTMP.text = null;
+        }
+        else
+        {
         switch(DayManager.Instance.daysLeft)
         {
             case 4:
@@ -77,6 +85,7 @@ public class LoadingCanvas : Singleton<LoadingCanvas>
                     dayTimeTMP.text = null;   
             }
             break;
+        }
 
         }
     }
