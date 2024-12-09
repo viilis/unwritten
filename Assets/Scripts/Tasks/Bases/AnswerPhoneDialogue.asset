@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e208d23ff94a16d2ba7a11d65ae812a, type: 3}
   m_Name: AnswerPhoneDialogue
   m_EditorClassIdentifier: 
-  dialogAuthor: 
+  dialogAuthor: aaa
   dialogContent: 
   audio: {fileID: 0}

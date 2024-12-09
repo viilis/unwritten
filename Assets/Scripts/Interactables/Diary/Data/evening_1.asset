@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb2d9799c9471ebea9c5423e9787428c, type: 3}
+  m_Name: evening_1
+  m_EditorClassIdentifier: 
+  timeStamp: 2020/1/28
+  pageText: "The weather was perfect today, so I decided to switch things up and
+    work at a caf\xE9. The fresh air was such a boost\u2014I was totally in the zone
+    with my new novel. Days like this remind me why it's so exciting to create new
+    stories."
+  image: {fileID: 2800000, guid: 45aa514d2ddf4eaae8fbd968a7677b6d, type: 3}
+  interactFX: {fileID: 8300000, guid: 45ecf9a84c1cb31cc9b39f7579e6f567, type: 3}
