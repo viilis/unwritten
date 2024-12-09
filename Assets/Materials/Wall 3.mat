@@ -11,7 +11,8 @@ Material:
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 2100000, guid: 7df8924d70f76b5318792f182d6a0e42, type: 2}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _GLOSSYREFLECTIONS_OFF
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -26,6 +27,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Glossiness: 0.5
+    - _GlossyReflections: 0
     m_Colors:
     - _Color: {r: 0.3679245, g: 0.27077922, b: 0.2204076, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
