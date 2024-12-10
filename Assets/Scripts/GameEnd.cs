@@ -8,4 +8,8 @@ public class GameEnd : MonoBehaviour
     {
         StartCoroutine(DayManager.Instance.GoToNextScene(true));
     }
+    public void SwitchScene()
+    {
+        StartCoroutine(DayManager.Instance.GoToNextScene(false));
+    }
 }
