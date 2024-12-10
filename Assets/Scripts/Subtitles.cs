@@ -11,6 +11,7 @@ public class Subtitles : MonoBehaviour
     public SubtitleLine[] ManagerDayLeft3;
     public SubtitleLine[] ManagerDayLeft4;
     public SubtitleLine[] SituationalCall;
+    public SubtitleLine[] KevEndingCall;
 
     public TMP_Text dialogueText;
     public Image dialogueBg;
@@ -28,6 +29,11 @@ public class Subtitles : MonoBehaviour
     public void StartSituationalSubtitles()
     {
         StartCoroutine(SituationalSubtitles());
+    }
+
+    public void StartKevEndingCall()
+    {
+        StartCoroutine(KevEndingSubtitles());
     }
 
     IEnumerator ManagerSubtitleCoroutine()
@@ -94,7 +100,6 @@ public class Subtitles : MonoBehaviour
                 EventManager.Instance.sanityTickEnabled = true;
                 break;
         }
-
     }
 
     IEnumerator SituationalSubtitles()
@@ -106,8 +111,16 @@ public class Subtitles : MonoBehaviour
             yield return new WaitForSecondsRealtime(line.duration);
             dialogueBg.gameObject.SetActive(false);
         }
-        TaskManager.canDoTasks = true;
-        EventManager.Instance.sanityTickEnabled = true;
+    }
+    IEnumerator KevEndingSubtitles()
+    {
+        foreach (var line in KevEndingCall)
+        {
+            dialogueText.text = line.text;
+            dialogueBg.gameObject.SetActive(true);
+            yield return new WaitForSecondsRealtime(line.duration);
+            dialogueBg.gameObject.SetActive(false);
+        }
     }
 }
 
