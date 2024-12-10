@@ -41,6 +41,6 @@ public class DoorKnock : MonoBehaviour, IEvent
         if (!_audioPlayer.isPlaying)
         {
             _audioPlayer.StartPlaying();
-        }   
+        }
     }
 }
