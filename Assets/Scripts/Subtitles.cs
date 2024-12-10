@@ -25,9 +25,9 @@ public class Subtitles : MonoBehaviour
         StartCoroutine(ManagerSubtitleCoroutine());
     }
 
-    public void StartEndingSubtitles()
+    public void StartSituationalSubtitles()
     {
-        StartCoroutine(EndingSubtitles());
+        StartCoroutine(SituationalSubtitles());
     }
 
     IEnumerator ManagerSubtitleCoroutine()
@@ -97,7 +97,7 @@ public class Subtitles : MonoBehaviour
 
     }
 
-    IEnumerator EndingSubtitles()
+    IEnumerator SituationalSubtitles()
     {
         foreach (var line in SituationalCall)
         {
@@ -106,6 +106,8 @@ public class Subtitles : MonoBehaviour
             yield return new WaitForSecondsRealtime(line.duration);
             dialogueBg.gameObject.SetActive(false);
         }
+        TaskManager.canDoTasks = true;
+        EventManager.Instance.sanityTickEnabled = true;
     }
 }
 

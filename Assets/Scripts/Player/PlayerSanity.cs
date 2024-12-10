@@ -16,6 +16,11 @@ public class PlayerSanity : MonoBehaviour
         OnSanityChange?.Invoke(_sanity);
     }
 
+    public static void ResetSanity()
+    {
+        _sanity = 150;
+    }
+
     public static float GetSanity()
     {
         return _sanity;

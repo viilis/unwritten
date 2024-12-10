@@ -42,7 +42,7 @@ namespace GameTasks
         {
             if(TaskManager.canDoTasks)
             {
-                if(taskBase.taskState != TaskStates.Done)
+                if(!TaskManager._taskList.Contains(taskBase))
                 {
                     taskBase.taskState = TaskStates.Done;
                     OnTaskCompletionEvent?.Invoke(taskBase);

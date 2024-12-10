@@ -403,7 +403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playButton: {fileID: 1760453118}
   audioPosition: {fileID: 503862428}
-  menuMusic: {fileID: 8300000, guid: 9d51954b6c6eb334b94473f7ee6724ad, type: 3}
+  menuMusic: {fileID: 8300000, guid: 1815d8ec8699ee949a9efe6c65864bbc, type: 3}
   volumeSlider: {fileID: 1458466671}
   volume: 1
 --- !u!4 &382873138

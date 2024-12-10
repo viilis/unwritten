@@ -69,7 +69,7 @@ public class EventManager : Singleton<EventManager>
         {
             Debug.Log("Game Over!!!!!");
             isGameOver = true;
-            gameOverText = "you died oh no :(";
+            gameOverText = "Try to take it more easy next time";
             StartCoroutine(DayManager.Instance.GoToNextScene(true));
         }
     }

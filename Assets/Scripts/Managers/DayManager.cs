@@ -208,4 +208,5 @@ public static class Daytimes
     public const string NeutralEnding = "neutralEnding";
     public const string GameOver = "gameOver";
     public const string EndOfDay = "endOfDay";
+    public const string Menu = "menu";
 }

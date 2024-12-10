@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 public class TaskManager : Singleton<TaskManager>
 {
-    private static List<TaskBase> _taskList;
+    public static List<TaskBase> _taskList;
     public static bool canDoTasks;
     public static float _sanityHit;
     public string _taskName;
@@ -30,10 +30,6 @@ public class TaskManager : Singleton<TaskManager>
         checkmark3 = false;
         checkmark4 = false;
 
-        foreach (TaskBase t in _taskList)
-        {
-            t.taskState = TaskStates.notStarted;
-        }
         _taskList.Clear();
     }
 
