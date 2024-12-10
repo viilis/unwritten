@@ -72,27 +72,32 @@ public class DayManager : Singleton<DayManager>
             switch (_dt)
             {
                 case Daytimes.Morning:
+                    EventManager.Instance.sanityTickEnabled = false;
                     _dt = Daytimes.Afternoon;
                     operation = SceneManager.LoadSceneAsync(_dt);
                     break;
 
                 case Daytimes.Afternoon:
+                    EventManager.Instance.sanityTickEnabled = true;
                     _dt = Daytimes.Evening;
                     operation = SceneManager.LoadSceneAsync(_dt);
                     break;
 
                 case Daytimes.Evening:
+                    EventManager.Instance.sanityTickEnabled = true;
                     _dt = Daytimes.Night;
                     operation = SceneManager.LoadSceneAsync(_dt);
                     break;
 
                 case Daytimes.Night:
+                    EventManager.Instance.sanityTickEnabled = true;
                     _dt = Daytimes.EndOfDay;
                     operation = SceneManager.LoadSceneAsync(_dt);
                     break;
 
                 case Daytimes.EndOfDay:
                     // Day cycle done
+                    EventManager.Instance.sanityTickEnabled = false;
                     daysLeft--;
                     TaskManager.Instance.MorningReset();
 

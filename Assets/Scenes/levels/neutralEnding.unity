@@ -525,6 +525,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1498495165666909976, guid: 4fb6356f69ecb265ebe0e454356cab41, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2867460175870602526, guid: 4fb6356f69ecb265ebe0e454356cab41, type: 3}
       propertyPath: m_Name
       value: Movable_Player
@@ -567,6 +571,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3479929439744909988, guid: 4fb6356f69ecb265ebe0e454356cab41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389077064387656114, guid: 4fb6356f69ecb265ebe0e454356cab41, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6590022328068697613, guid: 4fb6356f69ecb265ebe0e454356cab41, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7387264968420897461, guid: 4fb6356f69ecb265ebe0e454356cab41, type: 3}
@@ -633,6 +645,10 @@ PrefabInstance:
       propertyPath: m_SceneBindings.Array.data[7].value
       value: 
       objectReference: {fileID: 117327862}
+    - target: {fileID: 9135532845017335552, guid: 4fb6356f69ecb265ebe0e454356cab41, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -733,19 +749,19 @@ MonoBehaviour:
   ManagerDayLeft4: []
   SituationalCall:
   - text: Wow, on schedule, huh?
-    duration: 2
-  - text: 'I''m actually quite surprised. '
     duration: 3
+  - text: 'I''m actually quite surprised. '
+    duration: 2.5
   - text: Yeah, this is definitely enough for the publisher to be, like, satisfied.
     duration: 4
   - text: 'At least for now. '
     duration: 2
   - text: 'I actually can''t believe you did it. '
-    duration: 2
+    duration: 3.5
   - text: This is almost like an impossible task, but somehow you managed it.
-    duration: 6
+    duration: 5
   - text: 'Yeah, let me get back to you after I talk to the publisher, '
-    duration: 3
+    duration: 3.5
   - text: and hope everything works out well for you too.
     duration: 2
   - text: Take a day or two. I'm sure you are...

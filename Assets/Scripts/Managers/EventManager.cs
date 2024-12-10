@@ -91,7 +91,7 @@ public class EventManager : Singleton<EventManager>
             _timer = eventInterval;
 
             //decrease sanity by a set amount every time timer ticks down
-            if (!isGameOver && sanityTickEnabled && DayManager.Instance.GetCurrentTimeState() != "morning")
+            if (!isGameOver && sanityTickEnabled)
             {
                 PlayerSanity.ChangeSanity(sanityTick);
                 Debug.Log("hit with " + sanityTick);

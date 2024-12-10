@@ -280,7 +280,8 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SitDownOnBed
   m_Markers:
-    m_Objects: []
+    m_Objects:
+    - {fileID: -7947525788759803068}
   m_InfiniteClipPreExtrapolation: 1
   m_InfiniteClipPostExtrapolation: 1
   m_InfiniteClipOffsetPosition: {x: 0, y: 0, z: 0}
@@ -299,6 +300,22 @@ MonoBehaviour:
   m_OpenClipOffsetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_ApplyOffsets: 0
+--- !u!114 &-7947525788759803068
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Signal Emitter
+  m_EditorClassIdentifier: 
+  m_Time: 15.316666666666666
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: a24568fffe3a61548beef662bb05844c, type: 2}
 --- !u!74 &-6010037896627028005
 AnimationClip:
   m_ObjectHideFlags: 0
@@ -3100,7 +3117,7 @@ MonoBehaviour:
   m_Loop: 0
   m_bufferingTime: 0.1
   m_ClipProperties:
-    volume: 0.395
+    volume: 0.428
 --- !u!114 &3487749924963043990
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3308,7 +3325,7 @@ MonoBehaviour:
     m_Start: 90.83333333333333
     m_ClipIn: 0
     m_Asset: {fileID: -762068857041044394}
-    m_Duration: 3.533333333333333
+    m_Duration: 3.5333333333333314
     m_TimeScale: 1
     m_ParentTrack: {fileID: 8114705476540941936}
     m_EaseInDuration: 0
