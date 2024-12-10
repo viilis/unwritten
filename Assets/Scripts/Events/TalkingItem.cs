@@ -15,13 +15,14 @@ public class TalkingItem : MonoBehaviour, IEvent
     private void Start()
     {
         _audioPlayer = new AudioInLoop(_audioClip, gameObject.transform, _volume);
+
         _tg = GetComponent<BoxCollider>();
         _tg.isTrigger = true;
     }
 
     private void OnTriggerEnter()
     {
-        if (_audioPlayer.isPlaying)
+        if (_audioPlayer != null && _audioPlayer.isPlaying)
         {
             _audioPlayer.StopPlaying();
         }
@@ -39,7 +40,7 @@ public class TalkingItem : MonoBehaviour, IEvent
 
     public void OnEventTrigger()
     {
-        if (!_audioPlayer.isPlaying)
+        if (_audioPlayer != null && !_audioPlayer.isPlaying)
         {
             _audioPlayer.StartPlaying();
         }
