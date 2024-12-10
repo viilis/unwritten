@@ -111,7 +111,10 @@ public class Subtitles : MonoBehaviour
             yield return new WaitForSecondsRealtime(line.duration);
             dialogueBg.gameObject.SetActive(false);
         }
+        TaskManager.canDoTasks = true;
+        EventManager.Instance.sanityTickEnabled = true;
     }
+    
     IEnumerator KevEndingSubtitles()
     {
         foreach (var line in KevEndingCall)

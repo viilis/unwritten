@@ -47,7 +47,6 @@ namespace GameTasks
                     taskBase.taskState = TaskStates.Done;
                     OnTaskCompletionEvent?.Invoke(taskBase);
                     _taskText.text = taskBase.dialogBase.dialogContent;
-                    //TaskManager.canDoTasks = false;
                 }
                 else
                 {

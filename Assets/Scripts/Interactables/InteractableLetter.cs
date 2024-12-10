@@ -66,6 +66,7 @@ public class InteractableLetter : MonoBehaviour, IInteractable
 
         if (!_state)
         {
+            EventManager.Instance.sanityTickEnabled = true;
             InputManager.Instance.EnableMouse();
             InputManager.Instance.EnableMovement();
             postCard[DayManager.Instance.daysLeft].SetActive(false);
@@ -74,6 +75,7 @@ public class InteractableLetter : MonoBehaviour, IInteractable
         }
         else
         {
+            EventManager.Instance.sanityTickEnabled = false;
             _apa.PlayOnce();
             _taskInfo.enabled = false;
             _taskText.text = "";

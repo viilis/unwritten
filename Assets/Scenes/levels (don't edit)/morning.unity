@@ -714,7 +714,7 @@ PrefabInstance:
       objectReference: {fileID: 1827349813}
     - target: {fileID: 8758475486270216183, guid: 74cdecce5e5cb9185af50a68e509db59, type: 3}
       propertyPath: daysLeft
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8758475486270216183, guid: 74cdecce5e5cb9185af50a68e509db59, type: 3}
       propertyPath: crosshair
@@ -2144,7 +2144,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3797399852215008336}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
@@ -2162,7 +2162,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3797399852215008336}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e8dda872e213874fa12b5aff8d9dd8a, type: 3}
   m_Name: 

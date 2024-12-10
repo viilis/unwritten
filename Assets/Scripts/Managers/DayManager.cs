@@ -73,7 +73,7 @@ public class DayManager : Singleton<DayManager>
             switch (_dt)
             {
                 case Daytimes.Morning:
-                    EventManager.Instance.sanityTickEnabled = false;
+                    EventManager.Instance.sanityTickEnabled = true;
                     _dt = Daytimes.Afternoon;
                     operation = SceneManager.LoadSceneAsync(_dt);
                     break;
@@ -91,7 +91,7 @@ public class DayManager : Singleton<DayManager>
                     break;
 
                 case Daytimes.Night:
-                    EventManager.Instance.sanityTickEnabled = true;
+                    EventManager.Instance.sanityTickEnabled = false;
                     _dt = Daytimes.EndOfDay;
                     operation = SceneManager.LoadSceneAsync(_dt);
                     break;
@@ -113,6 +113,8 @@ public class DayManager : Singleton<DayManager>
 
                     if (daysLeft < 0)
                     {
+                        EventManager.Instance.isGameOver = true;
+                        
                         if (currentSanity > 70f)
                         {
                             EventManager.Instance.isGameOver = true;
@@ -122,7 +124,6 @@ public class DayManager : Singleton<DayManager>
                         }
                         else if (currentSanity > 0f || currentSanity <= 70f)
                         {
-                            EventManager.Instance.isGameOver = true;
                             _dt = Daytimes.NeutralEnding;
                             operation = SceneManager.LoadSceneAsync(_dt);
                             break;

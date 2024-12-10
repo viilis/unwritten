@@ -22,7 +22,7 @@ public class TaskManager : Singleton<TaskManager>
         Debug.Log("Started task manager");
 
         //REMEMBER TO SET TO FALSE
-        canDoTasks = true;
+        canDoTasks = false;
     }
 
     public void MorningReset()

@@ -12709,7 +12709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8302fe6828b2819d79f32a357f73b72d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceVector: {x: -300, y: 0, z: 0}
+  forceVector: {x: 0, y: 0, z: 300}
 --- !u!4 &674096663423600753 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 13bc0ba63de1dfa49b43eac6a7401463, type: 3}

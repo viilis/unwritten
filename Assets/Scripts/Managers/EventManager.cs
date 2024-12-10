@@ -77,6 +77,9 @@ public class EventManager : Singleton<EventManager>
     private void Start()
     {
         _timer = eventInterval;
+
+        //should be false for the first morning
+        sanityTickEnabled = false;
     }
 
     // Has timer logic if we want to invoke some events based on time interval after loading scene
@@ -95,6 +98,10 @@ public class EventManager : Singleton<EventManager>
             {
                 PlayerSanity.ChangeSanity(sanityTick);
                 Debug.Log("hit with " + sanityTick);
+            }
+            else
+            {
+                Debug.Log("Sanitytick not enabled");
             }
         }
     }
