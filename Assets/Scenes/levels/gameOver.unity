@@ -286,15 +286,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Game Over
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e06527516e338644bb6beec2d8cac3c6, type: 2}
-  m_sharedMaterial: {fileID: -407613053378430448, guid: e06527516e338644bb6beec2d8cac3c6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9e4df9c3098e634419a8d59b111a175e, type: 2}
+  m_sharedMaterial: {fileID: -3010090635053068055, guid: 9e4df9c3098e634419a8d59b111a175e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190268
+  m_fontColor: {r: 0.735849, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -714,15 +714,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Try again
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e06527516e338644bb6beec2d8cac3c6, type: 2}
-  m_sharedMaterial: {fileID: -407613053378430448, guid: e06527516e338644bb6beec2d8cac3c6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9e4df9c3098e634419a8d59b111a175e, type: 2}
+  m_sharedMaterial: {fileID: -3010090635053068055, guid: 9e4df9c3098e634419a8d59b111a175e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4280032351
+  m_fontColor: {r: 0.37254903, g: 0.10980393, b: 0.10980393, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1018,18 +1018,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '"You finished your work but you paid the price. \nTry to take it more
-    easy next time"'
+  m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e06527516e338644bb6beec2d8cac3c6, type: 2}
-  m_sharedMaterial: {fileID: -407613053378430448, guid: e06527516e338644bb6beec2d8cac3c6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9e4df9c3098e634419a8d59b111a175e, type: 2}
+  m_sharedMaterial: {fileID: -3010090635053068055, guid: 9e4df9c3098e634419a8d59b111a175e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4288190616
-  m_fontColor: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
+    rgba: 4282400970
+  m_fontColor: {r: 0.7924528, g: 0.25044498, b: 0.25044498, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1556,15 +1555,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Quit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e06527516e338644bb6beec2d8cac3c6, type: 2}
-  m_sharedMaterial: {fileID: -407613053378430448, guid: e06527516e338644bb6beec2d8cac3c6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9e4df9c3098e634419a8d59b111a175e, type: 2}
+  m_sharedMaterial: {fileID: -3010090635053068055, guid: 9e4df9c3098e634419a8d59b111a175e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4280032351
+  m_fontColor: {r: 0.37254903, g: 0.10980393, b: 0.10980393, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
