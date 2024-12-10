@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   taskName: Check email
   taskDescription: Check your email inbox
-  taskState: 0
+  taskState: 2
   dialogBase: {fileID: 11400000, guid: a3353eebd4f62b245a8fd077765169fd, type: 2}
   sanityHit: -5

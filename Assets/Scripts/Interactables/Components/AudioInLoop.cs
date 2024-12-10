@@ -25,7 +25,10 @@ public class AudioInLoop
 
     public void StopPlaying()
     {
-        SoundManager.Instance.StopFromLoop(_audioSource);
-        isPlaying = false;
+        if (_audioSource != null)
+        {
+            SoundManager.Instance.StopFromLoop(_audioSource);
+            isPlaying = false;
+        }
     }
 }
