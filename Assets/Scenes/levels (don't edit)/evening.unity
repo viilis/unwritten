@@ -232,8 +232,12 @@ PrefabInstance:
       value: DayManager
       objectReference: {fileID: 0}
     - target: {fileID: 8758475486270216183, guid: 74cdecce5e5cb9185af50a68e509db59, type: 3}
+      propertyPath: letter
+      value: 
+      objectReference: {fileID: 2067625221}
+    - target: {fileID: 8758475486270216183, guid: 74cdecce5e5cb9185af50a68e509db59, type: 3}
       propertyPath: daysLeft
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8758475486270216183, guid: 74cdecce5e5cb9185af50a68e509db59, type: 3}
       propertyPath: fadeDuration
@@ -458,6 +462,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 5261184201073193194, guid: cc3ac5528d7c8a84ea8ef4f56855b05a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 3904657378943452641, guid: cc3ac5528d7c8a84ea8ef4f56855b05a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 2298199683057336283, guid: cc3ac5528d7c8a84ea8ef4f56855b05a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: cc3ac5528d7c8a84ea8ef4f56855b05a, type: 3}
@@ -1812,6 +1822,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd8f76e75348880d2afd32114a1c07af, type: 3}
+--- !u!1 &2067625221 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3288156068344318210, guid: cc3ac5528d7c8a84ea8ef4f56855b05a, type: 3}
+  m_PrefabInstance: {fileID: 397900353}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2098516270
 GameObject:
   m_ObjectHideFlags: 0

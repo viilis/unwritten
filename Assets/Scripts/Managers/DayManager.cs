@@ -22,6 +22,7 @@ public class DayManager : Singleton<DayManager>
 
     [SerializeField]
     private GameObject diaryPrefab;
+    [SerializeField]
 
     public List<GameObject> _pages;
     public int PagesRead = 0;
