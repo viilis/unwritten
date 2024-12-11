@@ -46,132 +46,132 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ManagerDayLeft0:
   - text: ...
-    author: 
+    author: Manager
     duration: 2
   - text: No, no, no. This is not going to be enough.
-    author: 
+    author: Manager
     duration: 7
   - text: I, I don't think the publisher would like this.
-    author: 
+    author: Manager
     duration: 5
   - text: ...
-    author: 
+    author: Manager
     duration: 2
   - text: Hey, I know I've been really tough on you for the past few days,
-    author: 
+    author: Manager
     duration: 6
   - text: but like, please, we really really need to get this done, alright?
-    author: 
+    author: Manager
     duration: 6
   - text: I really don't want you to lose your job
-    author: 
+    author: Manager
     duration: 2.5
   - text: 'and I really want to keep mine as well. So... '
-    author: 
+    author: Manager
     duration: 5
   - text: one more day, one more day, please... Like...
-    author: 
+    author: Manager
     duration: 5
   - text: 'finish this. Don''t let me down. '
-    author: 
+    author: Manager
     duration: 4
   - text: 'Don''t let yourself down. '
-    author: 
+    author: Manager
     duration: 3
   - text: Alright?
-    author: 
+    author: Manager
     duration: 2
   - text: Send me...
-    author: 
+    author: Manager
     duration: 2.5
   - text: the rest you have..
-    author: 
+    author: Manager
     duration: 2.5
   - text: by the end of the day.. yeah...
-    author: 
+    author: Manager
     duration: 4.5
   ManagerDayLeft1:
   - text: Oh, come on, still?
-    author: 
+    author: Manager
     duration: 3
   - text: You're not finished?
-    author: 
+    author: Manager
     duration: 3
   - text: I'm begging you at this point, like,
-    author: 
+    author: Manager
     duration: 3
   - text: I really don't know how much longer I can stall them for.
-    author: 
+    author: Manager
     duration: 3
   - text: ...
-    author: 
+    author: Manager
     duration: 3
   - text: 'You know... I would also hate to see you go. '
-    author: 
+    author: Manager
     duration: 4
   - text: ' Like, please, I don''t know what else I can do, but...'
-    author: 
+    author: Manager
     duration: 5
   - text: ...
-    author: 
+    author: Manager
     duration: 3
   - text: just send me whatever you have by the end of today, okay?
-    author: 
+    author: Manager
     duration: 3
   - text: I'll try to figure out something.
-    author: 
+    author: Manager
     duration: 2
   - text: 'So... yeah. '
-    author: 
+    author: Manager
     duration: 3
   ManagerDayLeft2:
   - text: So, I see someone is just waiting to be fired now, huh?
-    author: 
+    author: Manager
     duration: 5
   - text: ' Like, how many times do I need to tell you that this is your last fucking
       shot?'
-    author: 
+    author: Manager
     duration: 6
   - text: You're not a baby anymore. Get your shit together and finish this.
-    author: 
+    author: Manager
     duration: 4
   - text: You have three days, okay?
-    author: 
+    author: Manager
     duration: 2
   - text: THREE DAYS
-    author: 
+    author: Manager
     duration: 2
   ManagerDayLeft3:
   - text: "Finally something, I guess... \u200A"
-    author: 
+    author: Manager
     duration: 3.5
   - text: but like, how are you gonna finish the rest in four days?
-    author: 
+    author: Manager
     duration: 4
   - text: " Like, I told you, this is your last chance, okay? \u200A"
-    author: 
+    author: Manager
     duration: 4
   - text: For me and for you, don't fuck this up. Please.
-    author: 
+    author: Manager
     duration: 5
   ManagerDayLeft4:
   - text: Come on, what do you think you're doing?
-    author: 
+    author: Manager
     duration: 2.5
   - text: We promised the publisher that the novel will be ready in five days
-    author: 
+    author: Manager
     duration: 3.8
   - text: ' and now you''re telling me you''re still chapters behind?'
-    author: 
+    author: Manager
     duration: 4
   - text: 'Like, get to work, no more excuses, '
-    author: 
+    author: Manager
     duration: 3
   - text: "and send me whatever you have by the end of tonight. \u200A"
-    author: 
+    author: Manager
     duration: 2
   - text: "The end of tonight.\u200A"
-    author: 
+    author: Manager
     duration: 2
   SituationalCall: []
   KevEndingCall: []

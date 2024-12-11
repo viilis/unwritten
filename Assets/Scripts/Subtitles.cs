@@ -15,8 +15,6 @@ public class Subtitles : MonoBehaviour
 
     public TMP_Text dialogueText;
     public Image dialogueBg;
-    [SerializeField]
-    private TMP_Text _callerName;
 
     [SerializeField]
     private TMP_Text dialogAuthor;
@@ -28,26 +26,16 @@ public class Subtitles : MonoBehaviour
 
     public void StartManagerSubtitles()
     {
-        _callerName.text = "Manager";
         StartCoroutine(ManagerSubtitleCoroutine());
     }
 
     public void StartSituationalSubtitles()
     {
-        if(DayManager.Instance.GetCurrentTimeState() == "evening")
-        {
-            _callerName.text = "Kev";
-        }
-        else
-        {
-            _callerName.text = "Kev";
-        }
         StartCoroutine(SituationalSubtitles());
     }
 
     public void StartKevEndingCall()
     {
-        _callerName.text = "Kev";
         StartCoroutine(KevEndingSubtitles());
     }
 
