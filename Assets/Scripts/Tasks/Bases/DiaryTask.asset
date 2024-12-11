@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   taskName: Write in diary
   taskDescription: Write in your diary
-  taskState: 2
+  taskState: 0
   dialogBase: {fileID: 11400000, guid: 991778687b38e094fa2a31890cef1bb1, type: 2}
   sanityHit: 20

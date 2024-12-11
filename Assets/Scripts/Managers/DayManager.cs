@@ -9,7 +9,6 @@ public class DayManager : Singleton<DayManager>
 {
     [Range(0, 4)]
     public int daysLeft = 4;
-
     private string dayMessage;
 
     [SerializeField]
@@ -22,6 +21,7 @@ public class DayManager : Singleton<DayManager>
 
     [SerializeField]
     private GameObject diaryPrefab;
+    [SerializeField]
 
     public List<GameObject> _pages;
     public int PagesRead = 0;
@@ -72,27 +72,32 @@ public class DayManager : Singleton<DayManager>
             switch (_dt)
             {
                 case Daytimes.Morning:
+                    EventManager.Instance.sanityTickEnabled = true;
                     _dt = Daytimes.Afternoon;
                     operation = SceneManager.LoadSceneAsync(_dt);
                     break;
 
                 case Daytimes.Afternoon:
+                    EventManager.Instance.sanityTickEnabled = true;
                     _dt = Daytimes.Evening;
                     operation = SceneManager.LoadSceneAsync(_dt);
                     break;
 
                 case Daytimes.Evening:
+                    EventManager.Instance.sanityTickEnabled = true;
                     _dt = Daytimes.Night;
                     operation = SceneManager.LoadSceneAsync(_dt);
                     break;
 
                 case Daytimes.Night:
+                    EventManager.Instance.sanityTickEnabled = false;
                     _dt = Daytimes.EndOfDay;
                     operation = SceneManager.LoadSceneAsync(_dt);
                     break;
 
                 case Daytimes.EndOfDay:
                     // Day cycle done
+                    EventManager.Instance.sanityTickEnabled = false;
                     daysLeft--;
                     TaskManager.Instance.MorningReset();
 
@@ -107,6 +112,8 @@ public class DayManager : Singleton<DayManager>
 
                     if (daysLeft < 0)
                     {
+                        EventManager.Instance.isGameOver = true;
+                        
                         if (currentSanity > 70f)
                         {
                             EventManager.Instance.isGameOver = true;
@@ -116,7 +123,6 @@ public class DayManager : Singleton<DayManager>
                         }
                         else if (currentSanity > 0f || currentSanity <= 70f)
                         {
-                            EventManager.Instance.isGameOver = true;
                             _dt = Daytimes.NeutralEnding;
                             operation = SceneManager.LoadSceneAsync(_dt);
                             break;
@@ -203,4 +209,5 @@ public static class Daytimes
     public const string NeutralEnding = "neutralEnding";
     public const string GameOver = "gameOver";
     public const string EndOfDay = "endOfDay";
+    public const string Menu = "menu";
 }

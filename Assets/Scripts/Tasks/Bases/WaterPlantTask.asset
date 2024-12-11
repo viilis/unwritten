@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   taskName: Water your plant
   taskDescription: Water your plant
-  taskState: 2
+  taskState: 0
   dialogBase: {fileID: 11400000, guid: 27b44cefb74f91d4e8a17c21faf04b0f, type: 2}
   sanityHit: 20

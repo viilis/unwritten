@@ -7,8 +7,6 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Outline))]
 public class InteractablePhone : MonoBehaviour, IInteractable
 {
-    //This phone should only ring in the morning scene so I think this script should be added to the phone only in that one scene
-
     private Outline _outline;
     [SerializeField]
     private GameObject _subtitles;
@@ -25,21 +23,26 @@ public class InteractablePhone : MonoBehaviour, IInteractable
 
     [SerializeField]
     private AudioClip[] managerDialogue;
+    [SerializeField]
+    private AudioClip kevDialogue;
 
     [SerializeField]
     private Transform audioPosition;
     private AudioInLoop _phoneRinging;
     private AudioPerAction _managerDialogue;
+    private AudioPerAction _kevDialogue;
     [SerializeField]
     private TaskBase taskBase;
 
     public void Start()
     {
-        TaskManager.canDoTasks = false;
-
-        //TODO: disable doing tasks until player has answered the phone
         _phoneRinging = new AudioInLoop(phoneRingAudio, audioPosition, volume);
-        _phoneRinging.StartPlaying();
+        
+        if(DayManager.Instance.GetCurrentTimeState() == "morning" || (DayManager.Instance.GetCurrentTimeState() == "evening" && DayManager.Instance.daysLeft == 3))
+        {
+            _phoneRinging.StartPlaying();
+            TaskManager.canDoTasks = false;
+        }        
 
         _outline = GetComponent<Outline>();
         _outline.OutlineMode = Outline.Mode.OutlineHidden;
@@ -55,14 +58,21 @@ public class InteractablePhone : MonoBehaviour, IInteractable
     }
     public void Interact()
     {
-        //TODO: don't enable taskmanager until after the voice acting clip has finished playing
-        _managerDialogue = new AudioPerAction(managerDialogue[DayManager.Instance.daysLeft], audioPosition, volume);
         EventManager.Instance.sanityTickEnabled = false;
+        _managerDialogue = new AudioPerAction(managerDialogue[DayManager.Instance.daysLeft], audioPosition, volume);
+        _kevDialogue = new AudioPerAction(kevDialogue, audioPosition, volume);
 
         _phoneRinging.StopPlaying();
-        _managerDialogue.PlayOnce();
-
-        _subtitles.GetComponent<Subtitles>().StartManagerSubtitles();
+        if(DayManager.Instance.GetCurrentTimeState() == "morning")
+        {
+            _managerDialogue.PlayOnce();
+            _subtitles.GetComponent<Subtitles>().StartManagerSubtitles();
+        }
+        else if(DayManager.Instance.GetCurrentTimeState() == "evening" && DayManager.Instance.daysLeft == 3)
+        {
+            _kevDialogue.PlayOnce();
+            _subtitles.GetComponent<Subtitles>().StartSituationalSubtitles();
+        }
 
         _taskInfo.enabled = false;
         _taskText.text = "";
