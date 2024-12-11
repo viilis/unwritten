@@ -19,18 +19,25 @@ public class GameOver : MonoBehaviour
     [Range(0f, 1f)]
     public float volume;
     private AsyncOperation op;
+    [SerializeField]
+    private GameObject diaryPrefab;
 
     void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        restartButton.interactable = false;
+        restartButton.onClick.AddListener(Restart);
+
         displayText.text = EventManager.gameOverText;
         gameOverLoop = new AudioInLoop(gameOverMusic, audioPosition, volume);
         gameOverLoop.StartPlaying();
+
+        StartCoroutine(LoadScene());
     }
-    public void RestartGame()
-    {
-        SceneManager.LoadScene("menu");
-    }
-        private IEnumerator LoadScene()
+
+    private IEnumerator LoadScene()
     {
         op = SceneManager.LoadSceneAsync(Daytimes.Menu);
         op.allowSceneActivation = false;
@@ -49,6 +56,7 @@ public class GameOver : MonoBehaviour
 
     void Restart()
     {
+        DayManager.Instance.daysLeft = 4;
         TaskManager.Instance.MorningReset();
         PlayerSanity.ResetSanity();
         EventManager.Instance.isGameOver = false;

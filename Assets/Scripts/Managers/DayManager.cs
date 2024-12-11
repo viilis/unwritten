@@ -9,7 +9,6 @@ public class DayManager : Singleton<DayManager>
 {
     [Range(0, 4)]
     public int daysLeft = 4;
-
     private string dayMessage;
 
     [SerializeField]

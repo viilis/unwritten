@@ -413,6 +413,7 @@ MonoBehaviour:
   audioPosition: {fileID: 503862428}
   gameOverMusic: {fileID: 8300000, guid: 9d51954b6c6eb334b94473f7ee6724ad, type: 3}
   volume: 1
+  diaryPrefab: {fileID: 0}
 --- !u!1 &503862425
 GameObject:
   m_ObjectHideFlags: 0
@@ -1723,7 +1724,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1760453117
 RectTransform:
   m_ObjectHideFlags: 0

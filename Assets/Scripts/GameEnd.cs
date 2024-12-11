@@ -8,7 +8,7 @@ public class GameEnd : MonoBehaviour
     {
         if(DayManager.Instance.GetCurrentTimeState() == "neutralEnding")
         {
-            EventManager.gameOverText = "You finished your work but you paid the price.\nTry to take it more easy next time.";
+            EventManager.gameOverText = "You finished your work but you paid the price.\nTry to take it easier next time.";
             StartCoroutine(DayManager.Instance.GoToNextScene(true));
         }
         else if(DayManager.Instance.GetCurrentTimeState() == "goodEnding")

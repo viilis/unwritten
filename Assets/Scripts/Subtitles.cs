@@ -41,6 +41,7 @@ public class Subtitles : MonoBehaviour
         switch (DayManager.Instance.daysLeft)
         {
             case 4:
+                EventManager.Instance.sanityTickEnabled = false;
                 foreach (var line in ManagerDayLeft4)
                 {
                     dialogueText.text = line.text;
@@ -53,6 +54,7 @@ public class Subtitles : MonoBehaviour
                 break;
 
             case 3:
+                EventManager.Instance.sanityTickEnabled = false; 
                 foreach (var line in ManagerDayLeft3)
                 {
                     dialogueText.text = line.text;
@@ -65,6 +67,7 @@ public class Subtitles : MonoBehaviour
                 break;
 
             case 2:
+                EventManager.Instance.sanityTickEnabled = false;
                 foreach (var line in ManagerDayLeft2)
                 {
                     dialogueText.text = line.text;
@@ -77,6 +80,7 @@ public class Subtitles : MonoBehaviour
                 break;
 
             case 1:
+                EventManager.Instance.sanityTickEnabled = false;
                 foreach (var line in ManagerDayLeft1)
                 {
                     dialogueText.text = line.text;
@@ -89,6 +93,7 @@ public class Subtitles : MonoBehaviour
                 break;
 
             case 0:
+                EventManager.Instance.sanityTickEnabled = false;
                 foreach (var line in ManagerDayLeft0)
                 {
                     dialogueText.text = line.text;
