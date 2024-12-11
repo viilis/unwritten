@@ -261,6 +261,7 @@ MonoBehaviour:
     duration: 1.5
   dialogueText: {fileID: 2071367674}
   dialogueBg: {fileID: 1454253335}
+  _callerName: {fileID: 1855859250}
 --- !u!1 &300122414
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,6 +945,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6289741566987140096, guid: cc3ac5528d7c8a84ea8ef4f56855b05a, type: 3}
+      propertyPath: _callerName
+      value: 
+      objectReference: {fileID: 1855859250}
     - target: {fileID: 8719478534562766809, guid: cc3ac5528d7c8a84ea8ef4f56855b05a, type: 3}
       propertyPath: m_Name
       value: InteractablesWithTasks
@@ -973,6 +978,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2298199683057336283, guid: cc3ac5528d7c8a84ea8ef4f56855b05a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 1575949190357645674, guid: cc3ac5528d7c8a84ea8ef4f56855b05a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1855859252}
   m_SourcePrefab: {fileID: 100100000, guid: cc3ac5528d7c8a84ea8ef4f56855b05a, type: 3}
 --- !u!224 &970759863 stripped
 RectTransform:
@@ -1759,6 +1767,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2764420062294819439, guid: 4fb6356f69ecb265ebe0e454356cab41, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2867460175870602526, guid: 4fb6356f69ecb265ebe0e454356cab41, type: 3}
       propertyPath: m_Name
       value: Movable_Player
@@ -1817,7 +1829,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: fafc38c27d3cb99419da51d5be12aeac, type: 2}
     - target: {fileID: 7387264968420897461, guid: 4fb6356f69ecb265ebe0e454356cab41, type: 3}
       propertyPath: m_SceneBindings.Array.size
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7387264968420897461, guid: 4fb6356f69ecb265ebe0e454356cab41, type: 3}
       propertyPath: m_SceneBindings.Array.data[1].key
@@ -1854,7 +1866,7 @@ PrefabInstance:
     - target: {fileID: 7387264968420897461, guid: 4fb6356f69ecb265ebe0e454356cab41, type: 3}
       propertyPath: m_SceneBindings.Array.data[9].key
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3355542224872576120, guid: fafc38c27d3cb99419da51d5be12aeac, type: 2}
     - target: {fileID: 7387264968420897461, guid: 4fb6356f69ecb265ebe0e454356cab41, type: 3}
       propertyPath: m_SceneBindings.Array.data[1].value
       value: 
@@ -1890,7 +1902,7 @@ PrefabInstance:
     - target: {fileID: 7387264968420897461, guid: 4fb6356f69ecb265ebe0e454356cab41, type: 3}
       propertyPath: m_SceneBindings.Array.data[9].value
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1855859252}
     - target: {fileID: 9135532845017335552, guid: 4fb6356f69ecb265ebe0e454356cab41, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -2335,6 +2347,43 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1855859248 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1575949190357645674, guid: cc3ac5528d7c8a84ea8ef4f56855b05a, type: 3}
+  m_PrefabInstance: {fileID: 970759862}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1855859250 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8441955026595568702, guid: cc3ac5528d7c8a84ea8ef4f56855b05a, type: 3}
+  m_PrefabInstance: {fileID: 970759862}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855859248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &1855859252
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855859248}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1972264554
 PrefabInstance:
   m_ObjectHideFlags: 0

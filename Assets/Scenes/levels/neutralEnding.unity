@@ -1494,6 +1494,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2764420062294819439, guid: 4fb6356f69ecb265ebe0e454356cab41, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2867460175870602526, guid: 4fb6356f69ecb265ebe0e454356cab41, type: 3}
       propertyPath: m_Name
       value: Movable_Player
@@ -1746,6 +1750,7 @@ MonoBehaviour:
   KevEndingCall: []
   dialogueText: {fileID: 765213885}
   dialogueBg: {fileID: 223564403}
+  _callerName: {fileID: 1948916115}
 --- !u!1 &1015521696
 GameObject:
   m_ObjectHideFlags: 0
@@ -2523,6 +2528,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1948916115 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8441955026595568702, guid: cc3ac5528d7c8a84ea8ef4f56855b05a, type: 3}
+  m_PrefabInstance: {fileID: 41379307}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1975656390
 PrefabInstance:
   m_ObjectHideFlags: 0
