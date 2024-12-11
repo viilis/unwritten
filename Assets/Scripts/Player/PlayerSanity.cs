@@ -8,12 +8,17 @@ public class PlayerSanity : MonoBehaviour
     public static event Action<float> OnSanityChange;
 
     [SerializeField]
-    private static float _sanity = 150;
+    private static float _sanity = 125;
 
     public static void ChangeSanity(float amount)
     {
         _sanity += amount;
         OnSanityChange?.Invoke(_sanity);
+    }
+
+    public static void ResetSanity()
+    {
+        _sanity = 125;
     }
 
     public static float GetSanity()

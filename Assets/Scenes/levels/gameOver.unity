@@ -286,15 +286,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Game Over
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e06527516e338644bb6beec2d8cac3c6, type: 2}
-  m_sharedMaterial: {fileID: -407613053378430448, guid: e06527516e338644bb6beec2d8cac3c6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9e4df9c3098e634419a8d59b111a175e, type: 2}
+  m_sharedMaterial: {fileID: -3010090635053068055, guid: 9e4df9c3098e634419a8d59b111a175e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190268
+  m_fontColor: {r: 0.735849, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -408,8 +408,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f6e65ffb4629904cb368810d627014b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverText: yee
+  restartButton: {fileID: 1760453118}
   displayText: {fileID: 854054086}
+  audioPosition: {fileID: 503862428}
+  gameOverMusic: {fileID: 8300000, guid: 9d51954b6c6eb334b94473f7ee6724ad, type: 3}
+  volume: 1
+  diaryPrefab: {fileID: 0}
 --- !u!1 &503862425
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,15 +715,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Try again
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e06527516e338644bb6beec2d8cac3c6, type: 2}
-  m_sharedMaterial: {fileID: -407613053378430448, guid: e06527516e338644bb6beec2d8cac3c6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9e4df9c3098e634419a8d59b111a175e, type: 2}
+  m_sharedMaterial: {fileID: -3010090635053068055, guid: 9e4df9c3098e634419a8d59b111a175e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4280032351
+  m_fontColor: {r: 0.37254903, g: 0.10980393, b: 0.10980393, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1017,15 +1021,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e06527516e338644bb6beec2d8cac3c6, type: 2}
-  m_sharedMaterial: {fileID: -407613053378430448, guid: e06527516e338644bb6beec2d8cac3c6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9e4df9c3098e634419a8d59b111a175e, type: 2}
+  m_sharedMaterial: {fileID: -3010090635053068055, guid: 9e4df9c3098e634419a8d59b111a175e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4282400970
+  m_fontColor: {r: 0.7924528, g: 0.25044498, b: 0.25044498, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1042,15 +1046,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 2
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1078,7 +1082,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -136.74402, y: -33.356323, z: -151.58868, w: -65.84686}
+  m_margin: {x: -180.53046, y: -33.356323, z: -179.72784, w: -65.84686}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1552,15 +1556,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Quit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e06527516e338644bb6beec2d8cac3c6, type: 2}
-  m_sharedMaterial: {fileID: -407613053378430448, guid: e06527516e338644bb6beec2d8cac3c6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9e4df9c3098e634419a8d59b111a175e, type: 2}
+  m_sharedMaterial: {fileID: -3010090635053068055, guid: 9e4df9c3098e634419a8d59b111a175e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4280032351
+  m_fontColor: {r: 0.37254903, g: 0.10980393, b: 0.10980393, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1720,7 +1724,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1760453117
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1738,7 +1742,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.5219727, y: -118.58002}
+  m_AnchoredPosition: {x: 1.5219727, y: -134.6}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1760453118
@@ -1810,7 +1814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.14901961}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1871,7 +1875,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.5220337, y: -200.58002}
+  m_AnchoredPosition: {x: 1.5220337, y: -216.6}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1866784929
@@ -2128,6 +2132,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: f3a699911fd46cd4c9a06e02348e8a13, type: 3}
+    - target: {fileID: 6302992208536021449, guid: 644509743c0416a42990d559271ae08b, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7091816565187808663, guid: 644509743c0416a42990d559271ae08b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 288.58026
@@ -2220,6 +2228,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0ae578f7cbc6e94bbfc371db5fc565d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playButton: {fileID: 0}
+  audioPosition: {fileID: 0}
+  menuMusic: {fileID: 0}
+  volumeSlider: {fileID: 0}
+  volume: 0
 --- !u!1 &2123452217
 GameObject:
   m_ObjectHideFlags: 0

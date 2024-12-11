@@ -45,6 +45,8 @@ public class InteractablePage : MonoBehaviour, IInteractable
 
         if (!_state)
         {
+            EventManager.Instance.sanityTickEnabled = true;
+            
             InputManager.Instance.EnableMouse();
             InputManager.Instance.EnableMovement();
             Destroy(canvasPrefabClone);
@@ -53,9 +55,13 @@ public class InteractablePage : MonoBehaviour, IInteractable
 
             DayManager.Instance._pages.Remove(this.gameObject);
             DayManager.Instance.PagesRead++;
+
+
         }
         else
         {
+            EventManager.Instance.sanityTickEnabled = false;
+
             _apa.PlayOnce();
 
             InputManager.Instance.DisableMouse();
