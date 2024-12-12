@@ -267,6 +267,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 527904502509780315, guid: cc3ac5528d7c8a84ea8ef4f56855b05a, type: 3}
   m_PrefabInstance: {fileID: 41379307}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &41379309 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5786135825217303541, guid: cc3ac5528d7c8a84ea8ef4f56855b05a, type: 3}
+  m_PrefabInstance: {fileID: 41379307}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &100589565
 GameObject:
   m_ObjectHideFlags: 0
@@ -1726,31 +1737,42 @@ MonoBehaviour:
   ManagerDayLeft4: []
   SituationalCall:
   - text: Wow, on schedule, huh?
+    author: Manager
     duration: 3
   - text: 'I''m actually quite surprised. '
+    author: Manager
     duration: 2.5
   - text: Yeah, this is definitely enough for the publisher to be, like, satisfied.
+    author: Manager
     duration: 4
   - text: 'At least for now. '
+    author: Manager
     duration: 2
   - text: 'I actually can''t believe you did it. '
+    author: Manager
     duration: 3.5
   - text: This is almost like an impossible task, but somehow you managed it.
+    author: Manager
     duration: 5
   - text: 'Yeah, let me get back to you after I talk to the publisher, '
+    author: Manager
     duration: 3.5
   - text: and hope everything works out well for you too.
+    author: Manager
     duration: 2
   - text: Take a day or two. I'm sure you are...
+    author: Manager
     duration: 3
   - text: 'like if you''re not dying, you''re like in a bad place now. '
+    author: Manager
     duration: 5
   - text: So go get some rest.
+    author: Manager
     duration: 2
   KevEndingCall: []
   dialogueText: {fileID: 765213885}
   dialogueBg: {fileID: 223564403}
-  _callerName: {fileID: 1948916115}
+  dialogAuthor: {fileID: 41379309}
 --- !u!1 &1015521696
 GameObject:
   m_ObjectHideFlags: 0
@@ -2528,17 +2550,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1948916115 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8441955026595568702, guid: cc3ac5528d7c8a84ea8ef4f56855b05a, type: 3}
-  m_PrefabInstance: {fileID: 41379307}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1975656390
 PrefabInstance:
   m_ObjectHideFlags: 0
