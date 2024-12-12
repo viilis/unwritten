@@ -366,11 +366,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8653774230079973506, guid: 1d1c44ff80b80c9e0a9cfada0d89205e, type: 3}
       propertyPath: level1Threshold
-      value: 70
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8653774230079973506, guid: 1d1c44ff80b80c9e0a9cfada0d89205e, type: 3}
       propertyPath: level2Threshold
-      value: 50
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 8653774230079973506, guid: 1d1c44ff80b80c9e0a9cfada0d89205e, type: 3}
       propertyPath: level3Threshold
