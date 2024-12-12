@@ -114,14 +114,14 @@ public class DayManager : Singleton<DayManager>
                     {
                         EventManager.Instance.isGameOver = true;
                         
-                        if (currentSanity > 70f)
+                        if (currentSanity > 75f)
                         {
                             EventManager.Instance.isGameOver = true;
                             _dt = Daytimes.GoodEnding;
                             operation = SceneManager.LoadSceneAsync(_dt);
                             break;
                         }
-                        else if (currentSanity > 0f || currentSanity <= 70f)
+                        else if (currentSanity > 0f || currentSanity <= 75f)
                         {
                             _dt = Daytimes.NeutralEnding;
                             operation = SceneManager.LoadSceneAsync(_dt);
