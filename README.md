@@ -1,7 +1,8 @@
-# How to run a project
-
-1. Download and login into Unity Hub
-2. Download game project (this repository)
-3. Add downloaded project in Unity Hub
-4. Make sure you have right unity version downloaded
-5. Open project
+## Unwritten
+This game project was made in the _Introduction to Game Development Tools_ course at the University of Turku by the following developers:
+- Ville Lindberg
+- Viljo Kankare
+- Benson Lo
+- Linus Ma
+- Juho Nykänen
+- Dortje Witt
